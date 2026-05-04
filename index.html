@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/script.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <script src="templates/templates.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/variables.css">
+    
     <title>Maximilian Schmidt</title>
 </head>
 <body>
@@ -25,8 +28,8 @@
         <div>Frontend Developer</div>
         <div>Maximilian Schmidt</div>
         <div>
-            <div>Check my work</div>
-            <div>Contact me</div>
+            <button>Check my work</button>
+            <button>Contact me</button>
         </div>
         <div>Scroll down</div>
         <div>
@@ -43,42 +46,101 @@
             Available for remote work
         </div>
     </div>
+
     <div class="about-me">
-        <img src="img/profile.jpg" alt="Profile Picture">
+        Bild
         <div>
             <div>Who I am</div>
-            <div>About me</div>
+            <div>About me
+                Hey there, I'm Maximilian Schmidt! .....
+                <img src="img/aboutMe/location.svg" alt="Location"> I'm from Waldmühlen, Germany. I am open to work remotely or on-site. 
+                <img src="img/aboutMe/mind.svg" alt="Mind"> I am enthusiastic about lerning new technologies and continuously improving my skills.
+                <img src="img/aboutMe/check.svg" alt="Check"> I am a problem solver.....
+            </div>
         </div>
     </div>
+
     <div class="skill-set">
         <div>
             <div>Technologies</div>
-            <div>Skill Set</div>
+            <div>
+                Skill Set
+
+                You need another skill? 
+                Feel free to contact me, I look forward to expanding on my previous knowledge.
+
+                <button>Let's talk</button>
+            </div>
         </div>
         <div>
-            Skill with pictures
+            <img src="img/skillSet/html.svg" alt="HTML"> HTML
+            <img src="img/skillSet/css.svg" alt="CSS"> CSS
+            <img src="img/skillSet/js.svg" alt="JavaScript"> JavaScript
+            <img src="img/skillSet/ts.svg" alt="Typescript"> Typescript
+            <img src="img/skillSet/angular.svg" alt="Angular"> Angular
+            <img src="img/skillSet/git.svg" alt="Git"> Git
+            <img src="img/skillSet/api.svg" alt="REST-API"> REST-API
+            <img src="img/skillSet/growth.svg" alt="Growth Mindset"> Growth Mindset
         </div>
     </div>
+
     <div class="projects">
-        <div></div>
         <div>
-            Join 
-            Bow of the Dead
-            Pokedex
+            Portfolio
+
+            Feature Projects
+
+            Explore a selection of my work here - Interact with projects to see my skill in action.
+        </div>
+        <div>
+            <div onclick="openProjectInfo('join')">Join  Angular | Typescript | HTML | CSS | Firebase</div>
+            <div onclick="openProjectInfo('bow-of-the-dead')">Bow of the Dead HTML | CSS | JavaScript</div>
+            <div onclick="openProjectInfo('pokedex')">Pokedex HTML | CSS | JavaScript</div>
+            <div onclick="openProjectInfo('da-bubble')">DA Bubble?</div>
         </div>
     </div>
     <div class="other-people">
         <div>What my colleague say about me</div>
         <div>Cards to swipe</div>
+        <div>Arrow left, Point, Arrow right</div>
     </div>
     <div class="contact">
-        <div>Contact me</div>
-        <div>Contact form</div>
+        <div>
+            Contact me
+
+            Let's work together
+
+            Got a problem to solve? 
+
+            Beschreibe, dass leute dich Kontaktieren sollen, an was ich interessiert bin, zeige was du für einen Mehrwert bieten kannst.
+
+            Need a frontend developer? Let's talk!
+
+        </div>
+        <div>
+
+            <input type="text" placeholder="Your Name">
+
+            <input type="email" placeholder="Your Email">
+
+            <textarea placeholder="Your Message"></textarea>
+
+            <checkbox id="consent" name="consent">
+                <label for="consent">I've read the <a href="sites/legal.html" target="_blank">privacy policy</a> and agree to the processing of my data as outlined.</label>
+            </checkbox>
+
+            <button>Say Hello ;)</button>
+        </div>
     </div>
     <div class="footer">
         <div>Logo Web Developer Waldmühlen</div>
         <div>C Maximilian Schmidt 2026</div>
-        <div>Social Media</div>
+        <div>
+            Github
+            linkedin
+            Email
+            Legal Notice
+        </div>
     </div>
 </body>
 </html>
