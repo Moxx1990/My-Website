@@ -71,3 +71,32 @@ body {
 .introduction__text {
     transform: rotate(-90deg);
 }
+
+.footer {
+    height: 126px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer-me {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-copyright {
+    color: var(--alternative-text-color);
+    font-size: var(--font-size-lg);
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: var(--font-size-lg);
+    transition: all 0.3s ease;
+}
