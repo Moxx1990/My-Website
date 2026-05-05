@@ -7,44 +7,52 @@
     <script src="templates/templates.js"></script>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/variables.css">
+    <link rel="stylesheet" href="style/responsive.css">
+    <link rel="stylesheet" href="style/mobile.css">
     
     <title>Maximilian Schmidt</title>
 </head>
 <body>
-    <div class="header">
-        <div>
+    <div class="intro">
+    <div class="header header-multi-bg">
+        <div class="nav">
             <div class="language-switcher">
                 <button id="de-btn">DE</button>
-            <button id="en-btn">EN</button>
+                <button id="en-btn">EN</button>
             </div>
             <div>About me</div>
             <div>Skills</div>
             <div>Projects</div>
         </div>
-        <div>Logo</div>
+        <div>MS Maximilian Schmidt</div>
     </div>
 
-    <div class="intro">
-        <div>Frontend Developer</div>
-        <div>Maximilian Schmidt</div>
-        <div>
-            <button>Check my work</button>
-            <button>Contact me</button>
-        </div>
+    <div class="introduction introduction-multi-bg">
+        <div class="introduction-content">
         <div>Scroll down</div>
         <div>
-            <div>schmidt-max@gmx.de</div>
-            <div>LinkedIn</div>
-            <div>GitHub</div>
+            <div style="font-size: 40px;">Frontend Developer</div>
+            <div style="font-size: 128px;">Maximilian Schmidt</div>
+            <div>
+                <button class="introduction__button">Check my work</button>
+                <button class="introduction__button">Contact me</button>
+            </div>
+            </div>
+        <div>
+            <div class="introduction__text">schmidt-max@gmx.de</div>
+            <div><img src="img/aboutMe/linkedin.svg" alt="LinkedIn"></div>
+            <div><img src="img/aboutMe/github.svg" alt="GitHub"></div>
+        </div>
         </div>
         <div class="banner">
-            Moveable banner with text:
+            Moveable banner with text: 
             Available for work
             Frontend Developer
             Based in Waldmühlen
             Open to work
             Available for remote work
         </div>
+    </div>
     </div>
 
     <div class="about-me">
@@ -85,6 +93,7 @@
     </div>
 
     <div class="projects">
+        <div class="project-info" style="display: none;"></div>
         <div>
             Portfolio
 
@@ -125,11 +134,10 @@
 
             <textarea placeholder="Your Message"></textarea>
 
-            <checkbox id="consent" name="consent">
-                <label for="consent">I've read the <a href="sites/legal.html" target="_blank">privacy policy</a> and agree to the processing of my data as outlined.</label>
-            </checkbox>
+            <input type="checkbox" id="consent" name="consent">
+            <label for="consent">I've read the <a href="sites/legal.html" target="_blank">privacy policy</a> and agree to the processing of my data as outlined.</label>
 
-            <button>Say Hello ;)</button>
+            <button onclick="sendEmail()">Say Hello ;)</button>
         </div>
     </div>
     <div class="footer">
