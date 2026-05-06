@@ -37,7 +37,7 @@ function getProjectLanguages(projectName) {
     }
 }
 
-function openProjectWindow(projectName) {
+function openProjectInfo(projectName) {
     const info = getProjectInfo(projectName);
     const number = getProjectNumber(projectName);
     const languages = getProjectLanguages(projectName);
@@ -63,3 +63,13 @@ function openProject(projectName) {
     }
     window.open(projectUrl, '_blank');
 }
+
+function switchCard() {
+
+}
+
+document.querySelectorAll('.dot').forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        // Slider wechseln
+    });
+});

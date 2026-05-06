@@ -56,63 +56,85 @@
     </div>
 
     <div class="about-me">
-        Bild
-        <div>
-            <div>Who I am</div>
-            <div>About me
-                Hey there, I'm Maximilian Schmidt! .....
-                <img src="img/aboutMe/location.svg" alt="Location"> I'm from Waldmühlen, Germany. I am open to work remotely or on-site. 
-                <img src="img/aboutMe/mind.svg" alt="Mind"> I am enthusiastic about lerning new technologies and continuously improving my skills.
-                <img src="img/aboutMe/check.svg" alt="Check"> I am a problem solver.....
+        <div class="about-me-image">
+            <img src="img/aboutMe/aboutMe.jpg" alt="About Me">
+        </div>
+        <div class="about-me-content">
+            <div class="about-me__little-headline">Who I am</div>
+            <div class="about-me-description">
+                <p class="about-me__headline">About me</p>
+                <p>Hey there, I'm Maximilian Schmidt! .....</p>
+                <p><img src="img/aboutMe/location.svg" alt="Location"> I'm from Waldmühlen, Germany. I am open to work remotely or on-site. </p>
+                <p><img src="img/aboutMe/mind.svg" alt="Mind"> I am enthusiastic about lerning new technologies and continuously improving my skills.</p>
+                <p><img src="img/aboutMe/check.svg" alt="Check"> I am a problem solver.....</p>
             </div>
         </div>
     </div>
 
     <div class="skill-set">
-        <div>
-            <div>Technologies</div>
-            <div>
-                Skill Set
-
-                You need another skill? 
-                Feel free to contact me, I look forward to expanding on my previous knowledge.
+        <div class="skill-set-info">
+            <div class="skill-set__little-headline">Technologies</div>
+            <div class="skill-set-description">
+                <p class="skill-set__headline">Skill Set</p>
+                <p>Short introduction to my skill set.</p>
+                <p>You need another skill?</p>
+                <p>Feel free to contact me, I look forward to expanding on my previous knowledge.</p>
 
                 <button>Let's talk</button>
             </div>
         </div>
-        <div>
-            <img src="img/skillSet/html.svg" alt="HTML"> HTML
-            <img src="img/skillSet/css.svg" alt="CSS"> CSS
-            <img src="img/skillSet/js.svg" alt="JavaScript"> JavaScript
-            <img src="img/skillSet/ts.svg" alt="Typescript"> Typescript
-            <img src="img/skillSet/angular.svg" alt="Angular"> Angular
-            <img src="img/skillSet/git.svg" alt="Git"> Git
-            <img src="img/skillSet/api.svg" alt="REST-API"> REST-API
-            <img src="img/skillSet/growth.svg" alt="Growth Mindset"> Growth Mindset
+        <div class="skills">
+            <div><img src="img/skillSet/html.svg" alt="HTML"> HTML</div>
+            <div><img src="img/skillSet/css.svg" alt="CSS"> CSS</div>
+            <div><img src="img/skillSet/js.svg" alt="JavaScript"> JavaScript</div>
+            <div><img src="img/skillSet/ts.svg" alt="Typescript"> Typescript</div>
+            <div><img src="img/skillSet/angular.svg" alt="Angular"> Angular</div>
+            <div><img src="img/skillSet/git.svg" alt="Git"> Git</div>
+            <div><img src="img/skillSet/api.svg" alt="REST-API"> REST-API</div>
+            <div><img src="img/skillSet/growth.svg" alt="Growth Mindset"> Growth mindset</div>
         </div>
     </div>
+
+    <div class="project-info" style="display: none;"></div>
 
     <div class="projects">
-        <div class="project-info" style="display: none;"></div>
         <div>
-            Portfolio
+            <p class="projects__little-headline">Portfolio</p>
 
-            Feature Projects
+            <p class="projects__headline">Feature Projects</p>
 
-            Explore a selection of my work here - Interact with projects to see my skill in action.
+            <p>Explore a selection of my work here - Interact with projects to see my skill in action.</p>
         </div>
-        <div>
-            <div onclick="openProjectInfo('join')">Join  Angular | Typescript | HTML | CSS | Firebase</div>
-            <div onclick="openProjectInfo('bow-of-the-dead')">Bow of the Dead HTML | CSS | JavaScript</div>
-            <div onclick="openProjectInfo('pokedex')">Pokedex HTML | CSS | JavaScript</div>
-            <div onclick="openProjectInfo('da-bubble')">DA Bubble?</div>
+        <div class="project-list">
+            <div class="project" onclick="openProjectInfo('join')">
+                <div class="project-name">Join</div>  
+                <div class="project-skills">Angular | Typescript | HTML | CSS | Firebase</div>
+            </div>
+            <div class="project" onclick="openProjectInfo('bow-of-the-dead')">
+                <div class="project-name">Bow of the Dead</div>
+                <div class="project-skills">HTML | CSS | JavaScript</div>
+            </div>
+            <div class="project" onclick="openProjectInfo('pokedex')">
+                <div class="project-name">Pokedéx</div>
+                <div class="project-skills">HTML | CSS | JavaScript</div>
+            </div>
         </div>
     </div>
+
     <div class="other-people">
-        <div>What my colleague say about me</div>
-        <div>Cards to swipe</div>
-        <div>Arrow left, Point, Arrow right</div>
+        <div class="other-people__headline">What my colleague say about me</div>
+        <div><img src="img/colleagues/quotes.svg"> Cards to swipe</div>
+        <div class="navigation__helper">
+            <img src="img/colleagues/arrow_back.svg" alt="Back" onclick="switchCard(-1)">
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <img src="img/colleagues/arrow_forward.svg" alt="Forward" onclick="switchCard(+1)">
+        </div>
     </div>
+
     <div class="contact">
         <div>
             Contact me
@@ -150,7 +172,7 @@
             C Maximilian Schmidt 2026
         </div>
         <div class="footer-links">
-            <a href="https://github.com/" target="_blank"> Github</a>
+            <a href="https://github.com/Moxx1990" target="_blank"> Github</a>
             <a href="https://www.linkedin.com/" target="_blank">linkedin</a>
             <a href="mailto:contact@maximilianschmidt.de" target="_blank">Email</a>
             <a href="sites/legal.html" target="_blank">Legal Notice</a>

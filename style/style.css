@@ -5,6 +5,7 @@ body {
     background-color: var(--main-bg-color);
     color: var(--text-color);
     max-width: 1440px;
+    
 }
 
 .intro {
@@ -70,6 +71,186 @@ body {
 
 .introduction__text {
     transform: rotate(-90deg);
+}
+
+.about-me {
+    display: flex;
+    gap: var(--spacing-5xl);
+    padding: var(--spacing-5xl);
+}
+
+.about-me-image {
+    width: 568px;
+    height: 568px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.about-me-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-me-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.about-me__little-headline {
+    color: var(--alternative-text-color);
+    font-size: var(--font-size-lg);
+}
+
+.about-me-description {
+    border: 1px solid var(--alternative-text-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-3xl);
+    width: 540px;
+    height: 568px;
+}
+
+.about-me__headline {
+    font-size: var(--font-size-6xl);
+    color: var(--alternative-text-color);
+}
+
+.skill-set {
+    display: flex;
+    gap: var(--spacing-5xl);
+    padding: var(--spacing-5xl);
+    width: 100%;
+    height: 900px;
+    background: radial-gradient(circle at -60%, var(--sub-bg-color) 30%, var(--main-bg-color) 50%);
+    background-repeat: no-repeat;
+    
+}
+
+.skill-set__little-headline {
+    color: var(--alternative-text-color);
+    font-size: var(--font-size-lg);
+}
+
+.skill-set-description {
+    border: 1px solid var(--alternative-text-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-3xl);
+    background-color: #3DCFB610;
+}
+
+.skill-set__headline {
+    font-size: var(--font-size-6xl);
+    color: var(--alternative-text-color);
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.skills div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    font-size: var(--font-size-lg);
+    font-weight: bold;
+    padding: 10px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-5xl);
+    padding: var(--spacing-5xl);
+    width: 880px;
+    padding-left: 96px;
+}
+
+.projects__little-headline {
+    color: var(--alternative-text-color);
+    font-size: var(--font-size-lg);
+}
+
+.projects__headline {
+    font-size: var(--font-size-6xl);
+    color: var(--alternative-text-color);
+}
+
+.project-list {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--spacing-3xl);
+}
+
+.project {
+    border-bottom: 1px solid var(--alternative-text-color);
+    border-top: 1px solid var(--alternative-text-color);
+    padding: var(--spacing-xl);
+    width: 880px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project:hover {
+    background-color: #3DCFB610;
+    cursor: pointer;
+}
+
+.project-name {
+    font-size: var(--font-size-2xl);
+    color: var(--text-color);
+}
+
+.project-skills {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.other-people {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 452px;
+
+}
+
+.other-people__headline {
+    font-size: var(--font-size-3xl);
+}
+
+.navigation__helper {
+    display: flex;
+    align-items: center;
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--alternative-text-color);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 
 .footer {
