@@ -95,7 +95,25 @@
         </div>
     </div>
 
-    <div class="project-info" style="display: none;"></div>
+    <div id="project-info" class="project-info">
+        <div>
+            <div>
+                ${number}
+                ${projectName}
+                What is this project about?
+                ${info}
+                ${languages}
+                <a href="${github}" class="project__button">Github</a><img src="img/projects/arrow_outward.svg"> 
+                <a href="${link}" class="project__button">Live Test</a><img src="img/projects/arrow_outward.svg">
+            </div>
+
+            <div>
+                <img src="img/projects/close_small.svg">
+                <img src="">
+                <button onclick="switchCard()">Next project <img src="img/projects/arrow_forward.svg"></button>
+            </div>
+        </div>
+    </div>
 
     <div class="projects">
         <div>
@@ -136,32 +154,43 @@
     </div>
 
     <div class="contact">
-        <div>
-            Contact me
+        <div class="contact-me-info">
+            <p>Contact me</p>
 
-            Let's work together
+            <p>Let's work together</p>
 
-            Got a problem to solve? 
+            <p>Got a problem to solve? </p>
 
-            Beschreibe, dass leute dich Kontaktieren sollen, an was ich interessiert bin, zeige was du für einen Mehrwert bieten kannst.
+            <p>Beschreibe, dass leute dich Kontaktieren sollen, an was ich interessiert bin, zeige was du für einen Mehrwert bieten kannst.</p>
 
-            Need a frontend developer? Let's talk!
+            <p>Need a frontend developer? Let's talk!</p>
 
         </div>
-        <div>
+        <form class="contact-form" onsubmit="sendEmail(event)">
+    
+            <label for="name">What's your name?</label>
+            <input type="text" id="name" name="name" placeholder="Your name goes here">
 
-            <input type="text" placeholder="Your Name">
+            <label for="email">What's your email?</label>
+            <input type="email" id="email" name="email" placeholder="youremail@email.com">
 
-            <input type="email" placeholder="Your Email">
+            <label for="help">How can I help you?</label>
+            <textarea id="help" name="help" placeholder="Hello Max, I am interested in..."></textarea>
 
-            <textarea placeholder="Your Message"></textarea>
+            <div class="contact-form__input">
+                <input type="checkbox" id="consent" name="consent" required>
 
-            <input type="checkbox" id="consent" name="consent">
-            <label for="consent">I've read the <a href="sites/legal.html" target="_blank">privacy policy</a> and agree to the processing of my data as outlined.</label>
+                <label for="consent">
+                    I've read the 
+                    <a href="sites/legal.html" target="_blank">privacy policy</a>
+                    and agree to the processing of my data as outlined.
+                </label>
+            </div>
 
-            <button onclick="sendEmail()">Say Hello ;)</button>
-        </div>
+            <button type="submit">Say Hello ;)</button>
+        </form>
     </div>
+
     <div class="footer">
         <div class="footer-me">
             Logo 
