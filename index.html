@@ -95,25 +95,7 @@
         </div>
     </div>
 
-    <div id="project-info" class="project-info">
-        <div>
-            <div>
-                ${number}
-                ${projectName}
-                What is this project about?
-                ${info}
-                ${languages}
-                <a href="${github}" class="project__button">Github</a><img src="img/projects/arrow_outward.svg"> 
-                <a href="${link}" class="project__button">Live Test</a><img src="img/projects/arrow_outward.svg">
-            </div>
-
-            <div>
-                <img src="img/projects/close_small.svg">
-                <img src="">
-                <button onclick="switchCard()">Next project <img src="img/projects/arrow_forward.svg"></button>
-            </div>
-        </div>
-    </div>
+    <div id="project-info" class="project-info"></div>
 
     <div class="projects">
         <div>
@@ -124,16 +106,16 @@
             <p>Explore a selection of my work here - Interact with projects to see my skill in action.</p>
         </div>
         <div class="project-list">
-            <div class="project" onclick="openProjectInfo('join')">
+            <div class="project" onclick="openProjectInfo('Join')">
                 <div class="project-name">Join</div>  
                 <div class="project-skills">Angular | Typescript | HTML | CSS | Firebase</div>
             </div>
-            <div class="project" onclick="openProjectInfo('bow-of-the-dead')">
+            <div class="project" onclick="openProjectInfo('Bow of the Dead')">
                 <div class="project-name">Bow of the Dead</div>
                 <div class="project-skills">HTML | CSS | JavaScript</div>
             </div>
-            <div class="project" onclick="openProjectInfo('pokedex')">
-                <div class="project-name">Pokedéx</div>
+            <div class="project" onclick="openProjectInfo('Pokédex')">
+                <div class="project-name">Pokédex</div>
                 <div class="project-skills">HTML | CSS | JavaScript</div>
             </div>
         </div>

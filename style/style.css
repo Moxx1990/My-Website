@@ -211,6 +211,57 @@ body {
     gap: var(--spacing-sm);
 }
 
+.project-info-card {
+    display: flex;
+}
+
+.project-number {
+    font-size: 128px;
+    color: var(--alternative-text-color);
+}
+
+.project-info-name {
+    font-size: 64px;
+}
+
+.project-info__headline {
+    font-size: 24px;
+    color: var(--alternative-text-color);
+}
+
+.project-info {
+    font-size: 18px;
+}
+
+.project-info-close {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.project-info__picture {
+    width: 520px;
+    height: 370px;
+    padding-top: 143px;
+}
+
+.project-languages {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 16px;
+}
+
+.language {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.language img {
+    width: 20px;
+    height: 20px;
+}
+
 .other-people {
     display: flex;
     flex-direction: column;
