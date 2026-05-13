@@ -76,7 +76,9 @@ function renderLanguages(languages) {
 }
 
 function closeCard() {
-    console.log('noch nichts programmiert');
+    let info = document.getElementById('project-info')
+    info.innerHTML = "";
+
 }
 
 function switchCard() {
