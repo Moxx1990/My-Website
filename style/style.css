@@ -36,6 +36,86 @@ body {
     font-size: var(--font-size-h2);
 }
 
+.toggle {
+    padding-top: 24px;
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.toggle input[type="checkbox"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.toggle label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 2px;
+  background: #000000;
+  border: 2px solid #3DCFB6;
+  border-radius: 46px;
+}
+
+.toggle label span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+  width: 65px; 
+  height: 35px; 
+  text-align: center;
+  transition: color 0.25s ease;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.toggle .toggle-knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  width: 65px;
+  background: #3DCFB6;
+  border-radius: 100px;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+}
+
+.toggle input[type="checkbox"]:not(:checked) + label .lang-en {
+  color: #ffffff;
+}
+.toggle input[type="checkbox"]:not(:checked) + label .lang-de {
+  color: #3DCFB6;
+}
+
+.toggle input[type="checkbox"]:not(:checked) + label .toggle-knob {
+  transform: translateX(0);
+}
+
+.toggle input[type="checkbox"]:checked + label .lang-en {
+  color: #3DCFB6;
+}
+.toggle input[type="checkbox"]:checked + label .lang-de {
+  color: #ffffff;
+}
+
+.toggle input[type="checkbox"]:checked + label .toggle-knob {
+  transform: translateX(65px);
+}
+
+
 .introduction {
     display: flex;
     flex-wrap: wrap;
@@ -91,7 +171,7 @@ body {
     align-items: center;
     gap: 32px;
     width: max-content;
-    animation: scrollBanner 10s linear infinite;
+    animation: scrollBanner 15s linear infinite;
 }
 
 .banner__track span {
@@ -129,7 +209,7 @@ body {
 .about-me-image {
     width: 568px;
     height: 568px;
-    border-radius: 50%;
+    border-radius: 30px;
     overflow: hidden;
 }
 
@@ -171,7 +251,6 @@ body {
     height: 695px;
     background: radial-gradient(circle at -60%, var(--sub-bg-color) 30%, var(--main-bg-color) 50%);
     background-repeat: no-repeat;
-    
 }
 
 .skill-set__little-headline {
@@ -245,11 +324,6 @@ body {
     justify-content: space-between;
 }
 
-.project:hover {
-    background-color: #3DCFB610;
-    cursor: pointer;
-}
-
 .project-name {
     font-size: var(--font-size-2xl);
     color: var(--text-color);
@@ -265,7 +339,6 @@ body {
     flex-direction: column;
     align-items: center;
     height: 452px;
-
 }
 
 .other-people__headline {
@@ -295,11 +368,6 @@ body {
     background-color: var(--alternative-text-color);
     opacity: 1;
     transform: scale(1.2);
-}
-
-.dot:hover {
-    opacity: 1;
-    cursor: pointer;
 }
 
 .contact {

@@ -1,0 +1,41 @@
+/* 1. Das Elternelement braucht relative Positionierung */
+.header-category {
+    font-size: 20px;
+    padding: 24px;
+ position: relative;
+  cursor: pointer;
+  display: inline-block;
+  padding-bottom: 0; 
+  margin-bottom: 0;
+}
+
+.header-category::after {
+  content: '';
+  position: absolute;
+  
+  /* NEUER TRICK: Orientiert sich an der Schrifthöhe statt am Container-Rand */
+  bottom: 0.1em; /* Schiebt den Punkt von ganz unten ein Stückchen nach OBEN */
+  
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  width: 6px;
+  height: 6px;
+  background-color: #3DCFB6;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.header-category:hover::after {
+  /* WICHTIG: Das translateX(-50%) muss hier stehen bleiben */
+  transform: translateX(-50%) scale(1);
+}
+
+.project:hover {
+    background-color: #3DCFB610;
+    cursor: pointer;
+}
+
+.dot:hover {
+    opacity: 1;
+    cursor: pointer;
+}

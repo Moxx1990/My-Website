@@ -111,3 +111,28 @@ document.querySelectorAll('.dot').forEach((dot, index) => {
         // Slider wechseln
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const langToggle = document.getElementById("lang-toggle");
+
+    // 1. Prüfen, ob bereits eine Sprache gespeichert wurde
+    const savedLang = localStorage.getItem("selectedLanguage");
+    
+    // Falls "de" gespeichert ist, Checkbox aktivieren (da standardmäßig "EN" aktiv ist)
+    if (savedLang === "de") {
+        langToggle.checked = true;
+    }
+
+    // 2. Auf Änderungen des Switches reagieren
+    langToggle.addEventListener("change", () => {
+        if (langToggle.checked) {
+            localStorage.setItem("selectedLanguage", "de");
+            // Hier die URL zu deiner deutschen Seite eintragen:
+            window.location.href = "/de/"; 
+        } else {
+            localStorage.setItem("selectedLanguage", "en");
+            // Hier die URL zu deiner englischen Seite eintragen:
+            window.location.href = "/en/"; 
+        }
+    });
+});

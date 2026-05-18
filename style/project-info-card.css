@@ -89,7 +89,7 @@
     user-select: none;
 }
 
-.project-info__picture {
+.project-info__picture img {
     width: 520px;
     height: 370px;
     padding-top: 143px;

@@ -6,6 +6,7 @@
     /* Colors - Primary */
     --text-color: #FFFFFFCC;
     --alternative-text-color: #3DCFB6;
+    --inaktive-schrift: #555555;
 
      /* Typography - Font Size */
     --font-size-xs: 0.75rem; /* 12px */

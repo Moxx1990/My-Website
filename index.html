@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style/responsive.css">
     <link rel="stylesheet" href="style/mobile.css">
     <link rel="stylesheet" href="style/project-info-card.css">
+    <link rel="stylesheet" href="style/hover.css">
     
     <title>Maximilian Schmidt</title>
 </head>
@@ -17,13 +18,17 @@
     <div class="intro">
     <div class="header header-multi-bg">
         <div class="nav">
-            <div class="language-switcher">
-                <button id="de-btn">DE</button>
-                <button id="en-btn">EN</button>
+            <div class="toggle">
+                <input type="checkbox" id="lang-toggle"/>
+                <label for="lang-toggle">
+                    <div class="toggle-knob"></div>
+                    <span class="lang-en">EN</span>
+                    <span class="lang-de">DE</span>
+                </label>
             </div>
-            <div>About me</div>
-            <div>Skills</div>
-            <div>Projects</div>
+            <div class="header-category">About me</div>
+            <div class="header-category">Skills</div>
+            <div class="header-category">Projects</div>
         </div>
         <div>MS Maximilian Schmidt</div>
     </div>
@@ -66,7 +71,7 @@
 
     <div class="about-me">
         <div class="about-me-image">
-            <img src="img/aboutMe/aboutMe.jpg" alt="About Me">
+            <img src="img/aboutMe/profile.jpg" alt="About Me">
         </div>
         <div class="about-me-content">
             <div class="about-me__little-headline">Who I am</div>
