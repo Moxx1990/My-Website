@@ -30,7 +30,7 @@
             <div class="header-category">Skills</div>
             <div class="header-category">Projects</div>
         </div>
-        <div>MS Maximilian Schmidt</div>
+        <div class="logo">MS Maximilian Schmidt</div>
     </div>
 
     <div class="introduction introduction-multi-bg">
@@ -40,8 +40,12 @@
             <div style="font-size: 40px;">Frontend Developer</div>
             <div style="font-size: 128px;">Maximilian Schmidt</div>
             <div>
-                <button class="introduction__button">Check my work</button>
-                <button class="introduction__button">Contact me</button>
+                <button class="introduction__button">
+                    <span>Check my work</span>
+                </button>
+                <button class="introduction__button">
+                    <span>Contact me</span>
+                </button>
             </div>
             </div>
         <div>
@@ -98,14 +102,30 @@
             </div>
         </div>
         <div class="skills">
-            <div><img src="img/skillSet/html.svg" alt="HTML"> HTML</div>
-            <div><img src="img/skillSet/css.svg" alt="CSS"> CSS</div>
-            <div><img src="img/skillSet/js.svg" alt="JavaScript"> JavaScript</div>
-            <div><img src="img/skillSet/ts.svg" alt="Typescript"> Typescript</div>
-            <div><img src="img/skillSet/angular.svg" alt="Angular"> Angular</div>
-            <div><img src="img/skillSet/git.svg" alt="Git"> Git</div>
-            <div><img src="img/skillSet/api.svg" alt="REST-API"> REST-API</div>
-            <div><img src="img/skillSet/growth.svg" alt="Growth Mindset"> Growth mindset</div>
+            <div class="skills__icon"><img src="img/skillSet/html.svg" alt="HTML"> HTML</div>
+            <div class="skills__icon"><img src="img/skillSet/css.svg" alt="CSS"> CSS</div>
+            <div class="skills__icon"><img src="img/skillSet/js.svg" alt="JavaScript"> JavaScript</div>
+            <div class="skills__icon"><img src="img/skillSet/ts.svg" alt="Typescript"> Typescript</div>
+            <div class="skills__icon"><img src="img/skillSet/angular.svg" alt="Angular"> Angular</div>
+            <div class="skills__icon"><img src="img/skillSet/git.svg" alt="Git"> Git</div>
+            <div class="skills__icon"><img src="img/skillSet/api.svg" alt="REST-API"> REST-API</div>
+            <div class="skills__icon growth">
+                <img src="img/skillSet/growth.svg" alt="Growth Mindset"> 
+                Growth mindset
+                <div class="skill-tooltip">
+                    <p class="tooltip-text">I have a special interest in learning</p>
+                    <div class="tooltip-frameworks">
+                        <div class="framework">
+                            <img src="img/skillSet/react.svg" alt="React">
+                            <span>React</span>
+                        </div>
+                        <div class="framework">
+                            <img src="img/skillSet/vue.svg" alt="Vue Js">
+                            <span>Vue Js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -183,7 +203,9 @@
                 </label>
             </div>
 
-            <button type="submit">Say Hello ;)</button>
+            <button class="submit__button" type="submit">
+                <span>Say Hello ;)</span>
+            </button>
         </form>
     </div>
 

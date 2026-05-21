@@ -1,4 +1,3 @@
-/* 1. Das Elternelement braucht relative Positionierung */
 .header-category {
     font-size: 20px;
     padding: 24px;
@@ -12,10 +11,7 @@
 .header-category::after {
   content: '';
   position: absolute;
-  
-  /* NEUER TRICK: Orientiert sich an der Schrifthöhe statt am Container-Rand */
-  bottom: 0.1em; /* Schiebt den Punkt von ganz unten ein Stückchen nach OBEN */
-  
+  bottom: 0.1em;
   left: 50%;
   transform: translateX(-50%) scale(0);
   width: 6px;
@@ -26,8 +22,73 @@
 }
 
 .header-category:hover::after {
-  /* WICHTIG: Das translateX(-50%) muss hier stehen bleiben */
   transform: translateX(-50%) scale(1);
+}
+
+.logo:hover {
+    color: var(--alternative-text-color);
+    cursor: pointer;
+}
+
+.introduction__text:hover {
+    color: var(--alternative-text-color);
+    cursor: pointer;
+}
+.skills__icon:hover img {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.skills__icon.growth:hover {
+    color: var(--alternative-text-color);
+}
+
+.skills__icon.growth:hover .skill-tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.skills__icon.growth:hover img:first-of-type {
+    transform: scale(1.1);
+}
+
+.introduction__button:hover,
+.submit__button:hover {
+    border-color: var(--alternative-text-color);
+    color: var(--alternative-text-color);
+}
+
+.introduction__button:hover span, 
+.submit__button:hover span {
+    animation: scrollButton 3s linear infinite;
+}
+
+@keyframes scrollButton {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    47% {
+        transform: translateX(-150%);
+        opacity: 1;
+    }
+    48% {
+        transform: translateX(-150%);
+        opacity: 0;
+    }
+    49% {
+        transform: translateX(150%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(150%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .project:hover {
