@@ -12,6 +12,10 @@
     font-style: normal;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -169,6 +173,7 @@ body {
     overflow: hidden;
     white-space: nowrap;
     width: 180px;
+    text-decoration: none;
 }
 
 .introduction__button span {

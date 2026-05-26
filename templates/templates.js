@@ -24,14 +24,14 @@ function createCard(projectName, info, number, languages, link, github) {
                 </div>
                 
                 <div class="project-info-button-container">
-                    <div class="project__button"> 
-                        <a href="${github}">Github</a>
-                        <img src="img/projects/arrow_outward.svg"> 
-                    </div>
-                    <div class="project__button"> 
-                        <a href="${link}">Live Test</a>
-                        <img src="img/projects/arrow_outward.svg"> 
-                    </div>
+                    <a href="${github}" target="_blank" class="project__button"> 
+                        <span>Github</span>
+                        <img src="img/projects/arrow_outward.svg" alt="Arrow"> 
+                    </a>
+                    <a href="${link}" target="_blank" class="project__button"> 
+                        <span>Live Test</span>
+                        <img src="img/projects/arrow_outward.svg" alt="Arrow"> 
+                    </a>
                 </div>
             </div>
 

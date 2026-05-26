@@ -1,28 +1,34 @@
 .header-category {
     font-size: 20px;
     padding: 24px;
- position: relative;
-  cursor: pointer;
-  display: inline-block;
-  padding-bottom: 0; 
-  margin-bottom: 0;
+    padding-bottom: 8px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.2s ease;
+}
+
+.header-category:hover {
+    color: var(--alternative-text-color); 
 }
 
 .header-category::after {
-  content: '';
-  position: absolute;
-  bottom: 0.1em;
-  left: 50%;
-  transform: translateX(-50%) scale(0);
-  width: 6px;
-  height: 6px;
-  background-color: #3DCFB6;
-  border-radius: 50%;
-  transition: transform 0.2s ease-in-out;
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 6px;
+    height: 6px;
+    background-color: #3DCFB6;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out;
 }
 
 .header-category:hover::after {
-  transform: translateX(-50%) scale(1);
+    transform: translateX(-50%) scale(1);
 }
 
 .logo:hover {
@@ -94,6 +100,11 @@
 .project:hover {
     background-color: #3DCFB610;
     cursor: pointer;
+}
+
+.project__button:hover {
+    border-color: var(--alternative-text-color);
+    color: var(--alternative-text-color);
 }
 
 .dot:hover {
