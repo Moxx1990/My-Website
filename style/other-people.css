@@ -1,0 +1,40 @@
+.other-people {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 452px;
+}
+
+.other-people__headline {
+    font-size: var(--font-size-3xl);
+}
+
+.navigation__helper {
+    display: flex;
+    align-items: center;
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--alternative-text-color);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    opacity: 1;
+    cursor: pointer;
+}

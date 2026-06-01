@@ -1,0 +1,129 @@
+.skill-set {
+    display: flex;
+    gap: var(--spacing-5xl);
+    padding: var(--spacing-5xl);
+    width: 100%;
+    height: 695px;
+    background: radial-gradient(circle at -60%, var(--sub-bg-color) 30%, var(--main-bg-color) 50%);
+    background-repeat: no-repeat;
+}
+
+.skill-set__little-headline {
+    color: var(--alternative-text-color);
+    font-size: var(--font-size-lg);
+}
+
+.skill-set-description {
+    border: 1px solid var(--alternative-text-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-3xl);
+    background-color: #3DCFB610;
+}
+
+.skill-set__headline {
+    font-size: var(--font-size-6xl);
+    color: var(--alternative-text-color);
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: center;
+}
+
+.skills div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    height: 116px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.skills__icon.growth {
+    position: relative;
+    cursor: pointer;
+}
+
+.skill-tooltip {
+    position: absolute;
+    bottom: 110%; /* Platziert das Feld direkt ÜBER dem Icon */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px); /* Leicht nach unten versetzt für die Animation */
+    
+    background-color: #ffffff;
+    color: #3DCFB6; /* Deine grüne Akzentfarbe für den Text */
+    padding: 16px;
+    border-radius: 16px;
+    width: 220px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 100;
+    
+    /* Blendet das Feld standardmäßig aus */
+    opacity: 0;
+    pointer-events: none;
+    
+    /* Schicke, weiche Einblend-Animation */
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.skill-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Unten ansetzen */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent; /* Erzeugt das Dreieck */
+}
+
+.tooltip-text {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.tooltip-frameworks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.framework {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.framework img {
+    width: 32px !important; /* Verhindert, dass die inneren Icons riesig werden */
+    height: 32px !important;
+    margin-bottom: 4px;
+}
+
+.skills__icon:hover img {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.skills__icon.growth:hover {
+    color: var(--alternative-text-color);
+}
+
+.skills__icon.growth:hover .skill-tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.skills__icon.growth:hover img:first-of-type {
+    transform: scale(1.1);
+}
