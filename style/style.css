@@ -29,12 +29,14 @@ body {
     overflow-x: hidden;
 }
 
+.lets-talk__button:hover,
 .introduction__button:hover,
 .submit__button:hover {
     border-color: var(--alternative-text-color);
     color: var(--alternative-text-color);
 }
 
+.lets-talk__button:hover span,
 .introduction__button:hover span, 
 .submit__button:hover span {
     animation: scrollButton 3s linear infinite;

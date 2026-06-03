@@ -25,6 +25,26 @@
     color: var(--alternative-text-color);
 }
 
+.lets-talk__button {
+    background-color: transparent;
+    border-radius: 100px;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 122px;
+    height: 48px;
+    text-decoration: none;
+}
+
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -50,23 +70,18 @@
 
 .skill-tooltip {
     position: absolute;
-    bottom: 110%; /* Platziert das Feld direkt ÜBER dem Icon */
+    bottom: 110%;
     left: 50%;
-    transform: translateX(-50%) translateY(10px); /* Leicht nach unten versetzt für die Animation */
-    
+    transform: translateX(-50%) translateY(10px);
     background-color: #ffffff;
-    color: #3DCFB6; /* Deine grüne Akzentfarbe für den Text */
+    color: #3DCFB6;
     padding: 16px;
     border-radius: 16px;
     width: 220px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     z-index: 100;
-    
-    /* Blendet das Feld standardmäßig aus */
     opacity: 0;
     pointer-events: none;
-    
-    /* Schicke, weiche Einblend-Animation */
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
@@ -78,7 +93,7 @@
     transform: translateX(-50%);
     border-width: 8px;
     border-style: solid;
-    border-color: #ffffff transparent transparent transparent; /* Erzeugt das Dreieck */
+    border-color: #ffffff transparent transparent transparent;
 }
 
 .tooltip-text {
@@ -104,9 +119,24 @@
 }
 
 .framework img {
-    width: 32px !important; /* Verhindert, dass die inneren Icons riesig werden */
+    width: 32px !important;
     height: 32px !important;
     margin-bottom: 4px;
+}
+
+.skills__icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.skills__icon img {
+    width: 64px;
+    height: 64px;
+    transition: transform 0.25s ease;
 }
 
 .skills__icon:hover img {
