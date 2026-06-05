@@ -38,3 +38,82 @@
     opacity: 1;
     cursor: pointer;
 }
+
+.people__arrow-right {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.people__arrow-right:hover {
+    content: url("../img/colleagues/arrow_right_green.svg");
+    transform: scale(1.3);
+}
+
+.people__arrow-left {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.people__arrow-left:hover {
+    content: url("../img/colleagues/arrow_left_green.svg");
+    transform: scale(1.3);
+}
+
+/* ========================================================
+   REINES KARTEN-STYLING (TESTIMONIAL)
+   ======================================================== */
+.testimonial-card {
+    position: relative; /* Wichtig, damit das Anführungszeichen absolut positioniert werden kann */
+    background-color: #1E4E45; /* Das dunkle Grün aus deiner Farbpalette */
+    border: 1px solid var(--alternative-text-color); /* Deine grüne Akzentfarbe für den Rand */
+    border-radius: 30px; /* Abgerundete Ecken der Karte */
+    width: 100%;
+    max-width: 740px; /* Oder die Breite, die am besten in dein Layout passt */
+    padding: 64px 48px 48px 48px; /* Oben mehr Padding wegen der großen Anführungszeichen */
+    box-sizing: border-box;
+}
+
+/* Das große weiße Anführungszeichen, das links oben überlappt */
+.testimonial-card > img, 
+.quote-icon {
+    position: absolute;
+    top: -30px;  /* Schiebt das Icon nach oben aus der Karte heraus */
+    left: -20px; /* Schiebt das Icon nach links aus der Karte heraus */
+    width: 80px; /* Passt die Größe des SVGs an */
+    height: auto;
+}
+
+/* Der Zitat-Text im Inneren */
+.testimonial-text {
+    font-size: 24px;
+    line-height: 1.5;
+    color: var(--text-color); /* Weißer Text */
+    margin: 0 0 48px 0; /* Abstand nach unten zur Linie */
+}
+
+/* Der Fußbereich (Trennlinie + Name) */
+.testimonial-footer {
+    display: flex;
+    align-items: center;
+    gap: 24px; /* Abstand zwischen der Linie und dem Namen */
+    width: 100%;
+}
+
+/* Die feine horizontale Linie, die sich automatisch dehnt */
+.footer-line {
+    flex: 1; /* Nimmt den gesamten freien Platz links ein */
+    height: 1px;
+    background-color: var(--text-color);
+    opacity: 0.5; /* Leicht transparent, damit sie nicht zu dominant ist */
+}
+
+/* Der Name des Kollegen */
+.testimonial-author {
+    font-size: 18px;
+    color: var(--text-color);
+    white-space: nowrap; /* Verhindert einen Zeilenumbruch beim Namen */
+}

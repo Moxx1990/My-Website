@@ -73,7 +73,7 @@
 }
 
 .arrow-circle img {
-    animation: bounceArrow 2s infinite ease-in-out;
+    animation: bounceArrow 1s infinite ease-in-out;
 }
 
 @keyframes bounceArrow {

@@ -40,6 +40,67 @@
     color: var(--text-color);
 }
 
+.project img {
+    display: none; 
+    width: 23px;
+    height: 23px;
+    margin-left: var(--spacing-xs);
+}
+
+.project-image {
+    display: none;
+    position: absolute;
+    right: -400px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 295px;
+    height: 192px;
+    border-radius: var(--radius-xl);
+    z-index: 20;
+    pointer-events: none;
+}
+
+.project-container {
+    position: relative;
+    width: 880px;
+    display: block;
+}
+
+.project-container:hover .project-image {
+    display: block;
+}
+
+.project-container:hover::before {
+    display: block;
+    transform: translateY(-50%) translate(-15px, 15px); 
+}
+
+.project-container::before {
+    content: '';
+    display: none;
+    position: absolute;
+    width: 295px;
+    height: 192px;
+    border-radius: var(--radius-xl);
+    background-image: linear-gradient(
+        -45deg, 
+        var(--alternative-text-color) 12.5%, 
+        transparent 12.5%, 
+        transparent 50%, 
+        var(--alternative-text-color) 50%, 
+        var(--alternative-text-color) 62.5%, 
+        transparent 62.5%, 
+        transparent 100%
+    );
+    background-size: 8px 8px;
+    right: -430px;
+    top: 50%;
+    transform: translateY(-50%) translate(0, 0); 
+    z-index: 15;
+    transition: transform 0.3s ease-in-out;
+    pointer-events: none;
+}
+
 .project-skills {
     display: flex;
     gap: var(--spacing-sm);
@@ -48,6 +109,10 @@
 .project:hover {
     background-color: #3DCFB610;
     cursor: pointer;
+}
+
+.project:hover img {
+    display: inline; 
 }
 
 .project__button:hover {

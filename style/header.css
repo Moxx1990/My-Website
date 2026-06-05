@@ -141,12 +141,12 @@
 
 .logo:hover .logo-icon span {
     color: transparent;
-    -webkit-text-stroke: 1px var(--text-color);
+    -webkit-text-stroke: 1px var(--alternative-text-color);
 }
 
 .logo:hover .logo-text span {
     color: transparent;
-    -webkit-text-stroke: 1px var(--alternative-text-color);
+    -webkit-text-stroke: 1px var(--text-color);
 }
 
 .first-name {

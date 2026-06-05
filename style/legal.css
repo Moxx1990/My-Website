@@ -1,0 +1,9 @@
+.legal-notice-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 60px;
+    font-size: 18px;
+    color: var(--text-color);
+    max-width: 800px;
+}

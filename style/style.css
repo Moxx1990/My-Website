@@ -39,7 +39,7 @@ body {
 .lets-talk__button:hover span,
 .introduction__button:hover span, 
 .submit__button:hover span {
-    animation: scrollButton 3s linear infinite;
+    animation: scrollButton 2s linear infinite;
 }
 
 @keyframes scrollButton {

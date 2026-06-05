@@ -175,32 +175,51 @@
             <p>Explore a selection of my work here - Interact with projects to see my skill in action.</p>
         </div>
         <div class="project-list">
-            <div class="project" onclick="openProjectInfo('Join')">
-                <div class="project-name">Join</div>  
-                <div class="project-skills">Angular | Typescript | HTML | CSS | Firebase</div>
+            <div class="project-container">
+                <div class="project" onclick="openProjectInfo('Join')">
+                    <div class="project-name">Join <img src="img/projects/arrow_outward_white.svg" alt="Arrow"></div>  
+                    <div class="project-skills">Angular | Typescript | HTML | CSS | Firebase</div>
+                </div>
+                <img class="project-image" src="img/projects/Join.jpg" alt="Join">
             </div>
-            <div class="project" onclick="openProjectInfo('Bow of the Dead')">
-                <div class="project-name">Bow of the Dead</div>
-                <div class="project-skills">HTML | CSS | JavaScript</div>
+            <div class="project-container">
+                <div class="project" onclick="openProjectInfo('Bow of the Dead')">
+                    <div class="project-name">Bow of the Dead <img src="img/projects/arrow_outward_white.svg" alt="Arrow"></div>
+                    <div class="project-skills">HTML | CSS | JavaScript</div>
+                </div>
+                <img class="project-image" src="img/projects/Bow of the Dead.jpg" alt="Bow of the Dead">
             </div>
-            <div class="project" onclick="openProjectInfo('Pokédex')">
-                <div class="project-name">Pokédex</div>
-                <div class="project-skills">HTML | CSS | JavaScript</div>
+            <div class="project-container">
+                <div class="project" onclick="openProjectInfo('Pokédex')">
+                    <div class="project-name">Pokédex <img src="img/projects/arrow_outward_white.svg" alt="Arrow"></div>
+                    <div class="project-skills">HTML | CSS | JavaScript</div>
+                </div>
+                <img class="project-image" src="img/projects/Pokédex.jpg" alt="Pokédex">
             </div>
         </div>
     </div>
 
     <div class="other-people">
         <div class="other-people__headline">What my colleague say about me</div>
-        <div><img src="img/colleagues/quotes.svg"> Cards to swipe</div>
+        <div><img src="img/colleagues/quotes.svg"></div>
+        <div class="testimonial-card">
+            <img class="quote-icon" src="img/colleagues/quotes.svg" alt="Quotes">
+            <p class="testimonial-text">
+                Our project benefited enormously from Simon efficient way of working.
+            </p>
+            <div class="testimonial-footer">
+                <div class="footer-line"></div>
+                <span class="testimonial-author">T.Schulz - Frontend Developer</span>
+            </div>
+        </div>
         <div class="navigation__helper">
-            <img src="img/colleagues/arrow_back.svg" alt="Back" onclick="switchCard(-1)">
+            <img class="people__arrow-left" src="img/colleagues/arrow_back.svg" alt="Back" onclick="switchCard(-1)">
             <div class="dots">
                 <span class="dot active"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
             </div>
-            <img src="img/colleagues/arrow_forward.svg" alt="Forward" onclick="switchCard(+1)">
+            <img class="people__arrow-right" src="img/colleagues/arrow_forward.svg" alt="Forward" onclick="switchCard(+1)">
         </div>
     </div>
 
@@ -251,9 +270,17 @@
 
     <div class="footer">
         <div class="footer-me">
-            Logo 
-            Web Developer 
-            Waldmühlen
+            <div class="logo">
+                <div class="logo-icon">
+                    <span class="char-m">M</span>
+                    <span class="char-s">S</span>
+                </div>
+    
+                <div class="logo-text">
+                    <span class="first-name">Maximilian</span>
+                    <span class="last-name">Schmidt</span>
+                </div>
+            </div>
         </div>
         <div class="footer-copyright">
             C Maximilian Schmidt 2026
