@@ -1,12 +1,55 @@
 function openProjectInfo(projectName) {
-    const info = getProjectInfo(projectName);
-    const number = getProjectNumber(projectName);
-    const languages = getProjectLanguages(projectName);
-    const link = getProjectLink(projectName);
-    const github = getProjectGithub(projectName);
-    console.log(info, number, languages, link, github);
-    document.getElementById('project-info').innerHTML = createCard(projectName, info, number, languages, link, github);
+    const { info, number, languages, link, github } = getProjectData(projectName);
+    createCard(projectName, info, number, languages, link, github);
+}
 
+function getProjectData(projectName) {
+    return {
+        info: getProjectInfo(projectName),
+        number: getProjectNumber(projectName),
+        languages: getProjectLanguages(projectName),
+        link: getProjectLink(projectName),
+        github: getProjectGithub(projectName)
+    };
+}
+
+function createCard(projectName, info, number, languages, link, github) {
+    createCardStructure(projectName, info, number, languages, link, github);
+    createProjectCardLeftSide(number, projectName, info, languages, link, github);
+    createProjectCardRightSide(projectName);
+    createProjectCardHeaderandInfo(number, projectName);
+    createProjectCardContent(info, languages);
+    createProjectCardButton(github, link);
+}
+
+function createCardStructure(projectName, info, number, languages, link, github) {
+    const infoContainer = document.getElementById('project-info');
+    infoContainer.innerHTML = createCardStructureTemplate(projectName, info, number, languages, link, github);
+}
+
+function createProjectCardLeftSide(number, projectName, info, languages, link, github) {
+    const leftSideContainer = document.getElementById('project-info-card-left-side');
+    leftSideContainer.innerHTML = createProjectCardLeftSideTemplate(number, projectName, info, languages, link, github);
+}
+
+function createProjectCardHeaderandInfo(number, projectName) {
+    const headerContainer = document.getElementById('project-card_header');
+    headerContainer.innerHTML = createProjectCardHeaderandInfoTemplate(number, projectName);
+}
+
+function createProjectCardContent(info, languages) {
+    const contentContainer = document.getElementById('project-card-content');
+    contentContainer.innerHTML = createProjectCardContentTemplate(info, languages);
+}
+
+function createProjectCardButton(github, link) {
+    const buttonContainer = document.getElementById('project-info-button-container');
+    buttonContainer.innerHTML = createProjectCardButtonTemplate(github, link);
+}
+
+function createProjectCardRightSide(projectName) {
+    const rightSideContainer = document.getElementById('project-info-card-right-side');
+    rightSideContainer.innerHTML = createProjectCardRightSideTemplate(projectName);
 }
 
 function renderLanguages(languages) {
@@ -21,7 +64,6 @@ function renderLanguages(languages) {
 function closeCard() {
     let info = document.getElementById('project-info')
     info.innerHTML = "";
-
 }
 
 function switchCard() {
@@ -57,24 +99,16 @@ document.querySelectorAll('.dot').forEach((dot, index) => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const langToggle = document.getElementById("lang-toggle");
-
-    // 1. Prüfen, ob bereits eine Sprache gespeichert wurde
     const savedLang = localStorage.getItem("selectedLanguage");
-    
-    // Falls "de" gespeichert ist, Checkbox aktivieren (da standardmäßig "EN" aktiv ist)
     if (savedLang === "de") {
         langToggle.checked = true;
     }
-
-    // 2. Auf Änderungen des Switches reagieren
     langToggle.addEventListener("change", () => {
         if (langToggle.checked) {
             localStorage.setItem("selectedLanguage", "de");
-            // Hier die URL zu deiner deutschen Seite eintragen:
             window.location.href = "/de/"; 
         } else {
             localStorage.setItem("selectedLanguage", "en");
-            // Hier die URL zu deiner englischen Seite eintragen:
             window.location.href = "/en/"; 
         }
     });

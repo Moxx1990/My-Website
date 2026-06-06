@@ -63,57 +63,49 @@
     transform: scale(1.3);
 }
 
-/* ========================================================
-   REINES KARTEN-STYLING (TESTIMONIAL)
-   ======================================================== */
 .testimonial-card {
-    position: relative; /* Wichtig, damit das Anführungszeichen absolut positioniert werden kann */
-    background-color: #1E4E45; /* Das dunkle Grün aus deiner Farbpalette */
-    border: 1px solid var(--alternative-text-color); /* Deine grüne Akzentfarbe für den Rand */
-    border-radius: 30px; /* Abgerundete Ecken der Karte */
+    position: relative; 
+    background-color: #1E4E45; 
+    border: 1px solid var(--alternative-text-color); 
+    border-radius: 30px; 
     width: 100%;
-    max-width: 740px; /* Oder die Breite, die am besten in dein Layout passt */
-    padding: 64px 48px 48px 48px; /* Oben mehr Padding wegen der großen Anführungszeichen */
+    max-width: 740px;
+    padding: 64px 48px 48px 48px;
     box-sizing: border-box;
 }
 
-/* Das große weiße Anführungszeichen, das links oben überlappt */
 .testimonial-card > img, 
 .quote-icon {
     position: absolute;
-    top: -30px;  /* Schiebt das Icon nach oben aus der Karte heraus */
-    left: -20px; /* Schiebt das Icon nach links aus der Karte heraus */
-    width: 80px; /* Passt die Größe des SVGs an */
+    top: -30px;
+    left: -20px; 
+    width: 80px; 
     height: auto;
 }
 
-/* Der Zitat-Text im Inneren */
 .testimonial-text {
     font-size: 24px;
     line-height: 1.5;
-    color: var(--text-color); /* Weißer Text */
-    margin: 0 0 48px 0; /* Abstand nach unten zur Linie */
+    color: var(--text-color);
+    margin: 0 0 48px 0;
 }
 
-/* Der Fußbereich (Trennlinie + Name) */
 .testimonial-footer {
     display: flex;
     align-items: center;
-    gap: 24px; /* Abstand zwischen der Linie und dem Namen */
+    gap: 24px; 
     width: 100%;
 }
 
-/* Die feine horizontale Linie, die sich automatisch dehnt */
 .footer-line {
-    flex: 1; /* Nimmt den gesamten freien Platz links ein */
+    flex: 1;
     height: 1px;
     background-color: var(--text-color);
-    opacity: 0.5; /* Leicht transparent, damit sie nicht zu dominant ist */
+    opacity: 0.5; /
 }
 
-/* Der Name des Kollegen */
 .testimonial-author {
     font-size: 18px;
     color: var(--text-color);
-    white-space: nowrap; /* Verhindert einen Zeilenumbruch beim Namen */
+    white-space: nowrap;
 }
