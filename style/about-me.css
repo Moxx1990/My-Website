@@ -79,3 +79,9 @@
     margin-top: 32px;
     margin-bottom: 32px;
 }
+
+.about-me__text {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+}

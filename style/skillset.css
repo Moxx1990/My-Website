@@ -4,25 +4,53 @@
     padding: var(--spacing-5xl);
     width: 100%;
     height: 695px;
-    background: radial-gradient(circle at -60%, var(--sub-bg-color) 30%, var(--main-bg-color) 50%);
+    background: 
+        radial-gradient(circle at left, #08463B80 0%, #08463B4D 10%, transparent 30%),
+        url('/img/background/backgourndskillset.jpg');        
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 .skill-set__little-headline {
     color: var(--alternative-text-color);
-    font-size: var(--font-size-lg);
+    font-family: 'karla';
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    padding-bottom: 20px;
 }
 
 .skill-set-description {
     border: 1px solid var(--alternative-text-color);
     border-radius: var(--radius-lg);
-    padding: var(--spacing-3xl);
     background-color: #3DCFB610;
+    width: 520px;
+    height: 503px;
+    padding: var(--spacing-xl);
 }
 
 .skill-set__headline {
-    font-size: var(--font-size-6xl);
+    font-size: 64px;
+    font-weight: 700;
     color: var(--alternative-text-color);
+    margin: 0px;
+}
+
+.skill-set__text {
+    font-family: 'karla';
+    font-size: var(--font-size-lg);
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.skills-highlight {
+    color: var(--alternative-text-color);
+    font-weight: bold;
+    font-size: var(--font-size-2xl);
+}
+
+.skill-highlight__text {
+    font-weight: bold;
+    font-size: var(--font-size-2xl);
 }
 
 .lets-talk__button {
@@ -30,6 +58,8 @@
     border-radius: 100px;
     border: 1px solid var(--text-color);
     color: var(--text-color);
+    font-family: 'karla';
+    font-weight: 400;
     font-size: var(--font-size-lg);
     cursor: pointer;
     transition: all 0.3s ease;
@@ -40,7 +70,6 @@
     justify-content: center;
     overflow: hidden;
     white-space: nowrap;
-    width: 122px;
     height: 48px;
     text-decoration: none;
 }
@@ -50,6 +79,7 @@
     flex-wrap: wrap;
     align-content: flex-start;
     align-items: center;
+    padding-top: var(--spacing-2xl);
 }
 
 .skills div {
@@ -58,9 +88,10 @@
     align-items: center;
     width: 100px;
     height: 116px;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: var(--font-size-lg);
     padding: 10px;
+    padding-right: 72px;
+    padding-bottom: 72px;
 }
 
 .skills__icon.growth {
@@ -87,7 +118,7 @@
 .skill-tooltip::after {
     content: '';
     position: absolute;
-    top: 100%; /* Unten ansetzen */
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     border-width: 8px;
