@@ -54,18 +54,28 @@
 
 .about-me__little-headline {
     color: var(--alternative-text-color);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-2xl);
+    font-family: 'karla', sans-serif;
+    font-weight: 500;
+    margin-top: var(--spacing-xl);
 }
 
 .about-me-description {
     border: 1px solid var(--alternative-text-color);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-3xl);
+    border-radius: var(--radius-3xl);
     width: 540px;
     height: 568px;
+    background-color: #3DCFB61A;
+    font-family: 'karla', sans-serif;
+    font-size: var(--font-size-lg);
+    padding-left: var(--spacing-xl);
+    padding-right: var(--spacing-xl);
 }
 
 .about-me__headline {
-    font-size: var(--font-size-6xl);
+    font-size: 64px;
+    font-weight: 700;
     color: var(--alternative-text-color);
+    margin-top: 32px;
+    margin-bottom: 32px;
 }

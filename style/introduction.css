@@ -102,6 +102,8 @@
 
 .introduction__text {
     font-size: var(--font-size-lg);
+    font-family: 'karla', sans-serif;
+    font-weight: 400;
     color: var(--text-color);
     text-decoration: none;
     writing-mode: vertical-rl; 
@@ -119,7 +121,7 @@
 .social-icons {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 12px;
     margin-bottom: 16px;
 }
 
@@ -132,8 +134,8 @@
 }
 
 .social-icons img {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     transition: filter 0.3s ease, transform 0.3s ease;
 }
 
@@ -172,17 +174,21 @@
     border-radius: 100px;
     border: 1px solid var(--text-color);
     color: var(--text-color);
-    font-size: var(--font-size-lg);
     cursor: pointer;
     transition: all 0.3s ease;
-    padding: var(--spacing-lg);
+    height: 48px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     white-space: nowrap;
-    width: 180px;
     text-decoration: none;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: var(--font-size-lg);
+    font-family: 'karla', sans-serif;
+    font-weight: 400;
+    margin-right: 10px;
 }
 
 .introduction__button span {
@@ -212,14 +218,13 @@
 }
 
 .banner__track span {
-    font-family:'karla', sans-serif;
     display: flex;
     align-items: center;
     gap: 56px;
     font-size: 32px;
+    font-family: 'karla', sans-serif;
     color: var(--alternative-text-color);
     font-weight: 400;
-    text-transform: uppercase;
 }
 
 .banner__track span::after {
