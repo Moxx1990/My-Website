@@ -16,7 +16,7 @@
 }
 
 .project-info-card-left-side {
-    padding-top: 91px;
+    padding-top: 50px;
     padding-left: 80px;
     width: 480px;
     margin-right: 40px;
@@ -27,6 +27,7 @@
 }
 
 .project-number {
+    font-family: 'karla';
     font-size: 128px;
     font-weight: 700;
     color: var(--alternative-text-color);
@@ -34,6 +35,7 @@
 
 .project-info-name {
     font-size: 64px;
+    font-weight: 700;
 }
 
 .project-card-content{
@@ -42,11 +44,16 @@
 
 .project-info__headline {
     font-size: 24px;
+    font-weight: 700;
     color: var(--alternative-text-color);
+    padding-bottom: 20px;
 }
 
 .project-info {
+    font-family: 'karla';
     font-size: 18px;
+    font-weight: 400;
+    padding-bottom: 20px;
 }
 
 .project-languages {
@@ -57,9 +64,12 @@
 }
 
 .language {
+    font-family: 'karla';
+    font-size: var(--font-size-base);
+    font-weight: 400;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
 }
 
 .language img {
@@ -88,6 +98,15 @@
     margin-right: 32px;
 }
 
+.project__button img {
+    transform-origin: top right;
+    transition: transform 0.25s ease-in-out;
+}
+
+.project__button:hover img {
+    transform: scale(1.25) translate(3px, -2px);
+}
+
 .project__button a {
     color: var(--text-color);
     padding-right: 4px;
@@ -99,6 +118,14 @@
     left: 1120px;
     cursor: pointer;
     user-select: none;
+}
+
+.project-info-close img {
+}
+
+.project-info-close:hover img {
+    transform: translate(-5px, -5px);
+    content: url(/img/projects/close_hover.svg);
 }
 
 .project-info__picture img {
@@ -115,7 +142,17 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    font-family: 'karla';
+    font-weight: 400;
     font-size: 18px;
     color: var(--alternative-text-color);
     cursor: pointer;
+}
+
+.next-project__button:hover {
+    color: var(--text-color);
+}
+
+.next-project__button:hover img {
+    transform: scale(1.2) translateX(6px);
 }
