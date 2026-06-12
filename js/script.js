@@ -1,15 +1,22 @@
+let currentProjectName = 'Join';
+
 function openProjectInfo(projectName) {
+    currentProjectName = projectName;
     const { info, number, languages, link, github } = getProjectData(projectName);
     createCard(projectName, info, number, languages, link, github);
+    const infoContainer = document.getElementById('project-info');
+    infoContainer.classList.add('active');
+    document.body.classList.add('no-scroll');
 }
 
 function getProjectData(projectName) {
+    const project = projectsData[projectName];
     return {
-        info: getProjectInfo(projectName),
-        number: getProjectNumber(projectName),
-        languages: getProjectLanguages(projectName),
-        link: getProjectLink(projectName),
-        github: getProjectGithub(projectName)
+        info: project?.info || '',
+        number: project?.number || '',
+        languages: project?.languages || [],
+        link: project?.link || '#',
+        github: project?.github || '#'
     };
 }
 
@@ -52,22 +59,19 @@ function createProjectCardRightSide(projectName) {
     rightSideContainer.innerHTML = createProjectCardRightSideTemplate(projectName);
 }
 
-function renderLanguages(languages) {
-    return languages.map(language => `
-        <div class="language">
-            <img src="img/projects/${language}.svg" alt="${language}">
-            <span>${language}</span>
-        </div>
-    `).join('');
-}
-
 function closeCard() {
-    let info = document.getElementById('project-info')
-    info.innerHTML = "";
+    const infoContainer = document.getElementById('project-info');
+    infoContainer.innerHTML = "";
+    infoContainer.classList.remove('active');
+    document.body.classList.remove('no-scroll');
 }
 
 function switchCard() {
-    console.log('noch nichts programmiert');
+    const projectKeys = Object.keys(projectsData);
+    const currentIndex = projectKeys.indexOf(currentProjectName);
+    const nextIndex = (currentIndex + 1) % projectKeys.length;
+    const nextProjectName = projectKeys[nextIndex];
+    openProjectInfo(nextProjectName);
 }
 
 function getFormData() {
@@ -93,11 +97,16 @@ async function sendEmail(event) {
 
 document.querySelectorAll('.dot').forEach((dot, index) => {
     dot.addEventListener('click', () => {
-        // Slider wechseln
     });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    const infoContainer = document.getElementById('project-info');
+    infoContainer.addEventListener('click', (event) => {
+        if (event.target === infoContainer) {
+            closeCard();
+        }
+    });
     const langToggle = document.getElementById("lang-toggle");
     const savedLang = localStorage.getItem("selectedLanguage");
     if (savedLang === "de") {

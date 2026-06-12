@@ -35,7 +35,7 @@ function createProjectCardContentTemplate(info, languages) {
         <div class="project-info__headline">
             What is this project about?
         </div>
-        <div class="project-info">
+        <div class="project-card-content-text">
             ${info}
         </div>
         <div class="project-languages">
@@ -66,4 +66,13 @@ function createProjectCardRightSideTemplate(projectName) {
         <div class="next-project__button" onclick="switchCard()">
             Next project <img src="img/projects/arrow_forward.svg">
         </div>`
+}
+
+function renderLanguages(languages) {
+    return languages.map(language => `
+        <div class="language">
+            <img src="img/projects/${language}.svg" alt="${language}">
+            <span>${language}</span>
+        </div>
+    `).join('');
 }
