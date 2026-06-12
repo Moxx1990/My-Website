@@ -1,5 +1,6 @@
 .contact {
     display: flex;
+    justify-content: space-between;
     height: 541px;
     padding-left: 96px;
 }
@@ -7,6 +8,40 @@
 .contact-me-info{
     display: flex;
     flex-direction: column;
+    width: 600px;
+}
+
+.contact-me_little-headline {
+    font-family: 'karla';
+    font-size: var(--font-size-2xl);
+    color: var(--alternative-text-color);
+    font-weight: 500;
+}
+
+.contact-me__headline {
+    font-size: 64px;
+    color: var(--alternative-text-color);
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.contact-me-solve {
+    font-size: var(--font-size-2xl);
+    color: var(--alternative-text-color);
+    font-weight: 700;
+    padding-bottom: 16px;
+}
+
+.contact-me__text {
+    font-family: 'karla';
+    font-size: var(--font-size-base);
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+.contact-me-talk {
+    color: var(--alternative-text-color);
+    font-weight: 700;
 }
 
 .contact-form {
@@ -24,6 +59,8 @@
     margin-top: -1px; 
     padding-top: 24px;
     padding-bottom: 24px;
+    margin-left: -10px;
+    padding-left: 30px;
 }
 
 .contact-form label {
@@ -169,4 +206,19 @@
     display: inline-block;
     width: 100%;
     text-align: center;
+}
+
+.error-message {
+    color: #ff4d4d;
+    font-family: 'karla';
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    margin-top: 8px;
+    display: block;
+}
+
+.checkbox-error {
+    margin-top: -12px;
+    margin-bottom: 24px;
+    padding-left: 30px;
 }

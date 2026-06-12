@@ -74,23 +74,49 @@ function switchCard() {
     openProjectInfo(nextProjectName);
 }
 
-function getFormData() {
-    return {
-        name: name.value,
-        email: email.value,
-        message: help.value
-    };
+function checkName() {
+    const field = document.getElementById('name');
+    const isValid = field.value.trim() !== "";
+    document.getElementById('name-error').innerText = isValid ? "" : "Please enter your name.";
+    return isValid;
+}
+
+function checkEmail() {
+    const field = document.getElementById('email');
+    const value = field.value.trim();
+    let message = "";
+    if (value === "") message = "Please enter your email.";
+    else if (!value.includes('@')) message = "Please enter a valid email.";
+    document.getElementById('email-error').innerText = message;
+    return message === "";
+}
+
+function checkHelp() {
+    const field = document.getElementById('help');
+    const isValid = field.value.trim() !== "";
+    document.getElementById('help-error').innerText = isValid ? "" : "Please tell me how I can help.";
+    return isValid;
+}
+
+function checkConsent() {
+    const field = document.getElementById('consent');
+    const isValid = field.checked;
+    document.getElementById('consent-error').innerText = isValid ? "" : "You must accept the privacy policy.";
+    return isValid;
 }
 
 async function sendEmail(event) {
     event.preventDefault();
+    
+    // Führt alle Funktionen aus und speichert, ob alle true waren
+    const isFormValid = checkName() & checkEmail() & checkHelp() & checkConsent();
+    if (!isFormValid) return;
 
     const response = await fetch('/sites/submit.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(getFormData())
     });
-
     const result = await response.json();
     alert(result.success ? 'Email sent!' : result.error);
 }
@@ -107,6 +133,14 @@ document.addEventListener("DOMContentLoaded", () => {
             closeCard();
         }
     });
+
+    ['name', 'email', 'help'].forEach(id => {
+        const field = document.getElementById(id);
+        const func = id === 'name' ? checkName : id === 'email' ? checkEmail : checkHelp;
+        field.addEventListener('input', func);
+        field.addEventListener('blur', func);
+    });
+
     const langToggle = document.getElementById("lang-toggle");
     const savedLang = localStorage.getItem("selectedLanguage");
     if (savedLang === "de") {

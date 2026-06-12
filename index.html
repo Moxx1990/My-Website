@@ -151,11 +151,13 @@
                     </p>
                     <p>Feel free to contact me, I look forward to expanding on my previous knowledge.</p>
                 </div>
+
                 <a href="#contact" class="lets-talk__button">
                     <span>Let's talk</span>
                 </a>
             </div>
         </div>
+
         <div class="skills">
             <div class="skills__icon">
                 <img src="img/skillSet/html.svg" alt="HTML">
@@ -163,42 +165,49 @@
                     HTML
                 </p>
             </div>
+
             <div class="skills__icon">
                 <img src="img/skillSet/css.svg" alt="CSS">
                 <p>
                     CSS
                 </p>
             </div>
+
             <div class="skills__icon">
                 <img src="img/skillSet/js.svg" alt="JavaScript">
                 <p>
                     JavaScript
                 </p>
             </div>
+
             <div class="skills__icon">
                 <img src="img/skillSet/ts.svg" alt="Typescript">
                 <p>
                     Typescript
                 </p>
             </div>
+
             <div class="skills__icon">
                 <img src="img/skillSet/angular.svg" alt="Angular">
                 <p>
                     Angular
                 </p>
             </div>
+
             <div class="skills__icon">
                 <img src="img/skillSet/git.svg" alt="Git">
                 <p>
                     Git
                 </p>
             </div>
+
             <div class="skills__icon">
                 <img src="img/skillSet/api.svg" alt="REST-API">
                 <p>
                     REST-API
                 </p>
             </div>
+
             <div class="skills__icon growth">
                 <img src="img/skillSet/growth.svg" alt="Growth Mindset"> 
                 <p>Growth mindset</p>
@@ -209,6 +218,7 @@
                             <img src="img/skillSet/React.svg" alt="React">
                             <span>React</span>
                         </div>
+
                         <div class="framework">
                             <img src="img/skillSet/Vue Js.svg" alt="SQL">
                             <span>Vue Js</span>
@@ -229,26 +239,32 @@
 
             <p class="projects__text">Explore a selection of my work here - Interact with projects to see my skill in action.</p>
         </div>
+
         <div class="project-list">
             <div class="project-container">
                 <div class="project" onclick="openProjectInfo('Join')">
                     <div class="project-name">Join <img src="img/projects/arrow_outward_white.svg" alt="Arrow"></div>  
                     <div class="project-skills">Angular | Typescript | HTML | CSS | Firebase</div>
                 </div>
+
                 <img class="project-image" src="img/projects/Join.jpg" alt="Join">
             </div>
+
             <div class="project-container">
                 <div class="project" onclick="openProjectInfo('Bow of the Dead')">
                     <div class="project-name">Bow of the Dead <img src="img/projects/arrow_outward_white.svg" alt="Arrow"></div>
                     <div class="project-skills">HTML | CSS | JavaScript</div>
                 </div>
+
                 <img class="project-image" src="img/projects/Bow of the Dead.jpg" alt="Bow of the Dead">
             </div>
+
             <div class="project-container">
                 <div class="project" onclick="openProjectInfo('Pokédex')">
                     <div class="project-name">Pokédex <img src="img/projects/arrow_outward_white.svg" alt="Arrow"></div>
                     <div class="project-skills">HTML | CSS | JavaScript</div>
                 </div>
+
                 <img class="project-image" src="img/projects/Pokédex.jpg" alt="Pokédex">
             </div>
         </div>
@@ -256,6 +272,7 @@
 
     <div class="other-people">
         <div class="other-people__headline">What my colleague say about me</div>
+
         <div class="testimonial-card">
             <img class="quote-icon" src="img/colleagues/quotes.svg" alt="Quotes">
             <p class="testimonial-text">
@@ -266,6 +283,7 @@
                 <span class="testimonial-author">T.Schulz - Frontend Developer</span>
             </div>
         </div>
+
         <div class="navigation__helper">
             <img class="people__arrow-left" src="img/colleagues/arrow_back.svg" alt="Back" onclick="switchCard(-1)">
             <div class="dots">
@@ -273,53 +291,65 @@
                 <span class="dot"></span>
                 <span class="dot"></span>
             </div>
+
             <img class="people__arrow-right" src="img/colleagues/arrow_forward.svg" alt="Forward" onclick="switchCard(+1)">
         </div>
     </div>
 
     <div class="contact" id="contact">
         <div class="contact-me-info">
-            <p>Contact me</p>
+            <span class="contact-me_little-headline">
+                Contact me
+            </span>
 
-            <p>Let's work together</p>
+            <span class="contact-me__headline">
+                Let's work together
+            </span>
 
-            <p>Got a problem to solve? </p>
+            <span class="contact-me-solve">
+                Got a problem to solve? 
+            </span>
 
-            <p>Beschreibe, dass leute dich Kontaktieren sollen, an was ich interessiert bin, zeige was du für einen Mehrwert bieten kannst.</p>
-
-            <p>Need a frontend developer? Let's talk!</p>
-
+            <span class="contact-me__text">
+                I am interested in opportunities as a frontend developer. I enjoy creating high-quality solutions that help projects succeed. 
+                Through a reliable, detail-oriented, and results-driven approach, I aim to deliver real value and contribute positively to every team I work with.
+                If you are looking for someone who is motivated, professional, and committed to achieving excellent results, I would be happy to discuss how I can support your project. Feel free to get in touch.
+                <p></p>
+                Need a frontend developer?
+                <span class="contact-me-talk">
+                    Let's talk!
+                </span>
+            </span>
         </div>
-       <form class="contact-form" onsubmit="sendEmail(event)">
-    
-            <div class="form-group">
-                <label for="name">What's your name?</label>
-                <input type="text" id="name" name="name" placeholder="Your name goes here">
-            </div>
 
-            <div class="form-group">
-                <label for="email">What's your email?</label>
-                <input type="email" id="email" name="email" placeholder="youremail@email.com">
-            </div>
+       <form class="contact-form" onsubmit="sendEmail(event)" novalidate>
+    <div class="form-group">
+        <label for="name">What's your name?</label>
+        <input type="text" id="name" name="name" placeholder="Your name goes here">
+        <div id="name-error" class="error-message"></div> </div>
 
-            <div class="form-group">
-                <label for="help">How can I help you?</label>
-                <textarea id="help" name="help" placeholder="Hello Max, I am interested in..."></textarea>
-            </div>
+    <div class="form-group">
+        <label for="email">What's your email?</label>
+        <input type="email" id="email" name="email" placeholder="youremail@email.com">
+        <div id="email-error" class="error-message"></div> </div>
 
-            <div class="contact-form__input">
-                <input type="checkbox" id="consent" name="consent" class="custom-checkbox" required>
-                <label class="accept-container">
-                    I've read the 
-                    <a class="privacy-policy__link" href="sites/legal.html" target="_blank">privacy policy</a>
-                    and agree to the processing of my data as outlined.
-                </label>
-            </div>
+    <div class="form-group">
+        <label for="help">How can I help you?</label>
+        <textarea id="help" name="help" placeholder="Hello Max, I am interested in..."></textarea>
+        <div id="help-error" class="error-message"></div> </div>
 
-            <button class="submit__button" type="submit">
-                <span>Say Hello ;)</span>
-            </button>
-        </form>
+    <div class="contact-form__input">
+        <input type="checkbox" id="consent" name="consent" class="custom-checkbox">
+        <label class="accept-container">
+            I've read the 
+            <a class="privacy-policy__link" href="sites/legal.html" target="_blank">privacy policy</a>
+            and agree to the processing of my data as outlined.
+        </label>
+    </div>
+    <div id="consent-error" class="error-message checkbox-error"></div> <button class="submit__button" type="submit">
+        <span>Say Hello ;)</span>
+    </button>
+</form>
     </div>
 
     <div class="footer">
