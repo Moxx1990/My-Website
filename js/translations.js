@@ -1,3 +1,14 @@
+/**
+ * @typedef {Object<string, string>} LanguagePack
+ * A dictionary containing all UI strings, localized text blocks, 
+ * and HTML-formatted components for a single language.
+ */
+
+/**
+ * Multi-language translation data store supporting English (en) and German (de) 
+ * for the entire portfolio application interface.
+ * @type {{ en: LanguagePack, de: LanguagePack }}
+ */
 const translations = {
     en: {
         navAbout: "About me",

@@ -1,3 +1,16 @@
+/**
+ * @typedef {Object} Project
+ * @property {string} number - The sequential display number of the project (e.g., "01").
+ * @property {string} info - A brief description of the project, its core functionality, and tech approach.
+ * @property {string[]} languages - An array of technologies, frameworks, and languages used in the project.
+ * @property {string} link - The live deployment URL where the project is hosted.
+ * @property {string} github - The URL pointing to the project's repository on GitHub.
+ */
+
+/**
+ * A collection of featured portfolio projects with their metadata, technical details, and deployment links.
+ * @type {Object<string, Project>}
+ */
 const projectsData = {
     'Join': {
         number: "01",
