@@ -21,6 +21,7 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .introduction-content {
@@ -200,13 +201,16 @@
 .banner {
     position: absolute;
     bottom: 60px; 
-    width: 100%;
+    left: 0;
+    right: 0; 
+    width: 100%; 
     overflow: hidden;
     background: #FFFFFF0A;
     padding: 24px 0;
     transform: rotate(-2deg);
     white-space: nowrap;
     z-index: 1;
+    box-sizing: border-box;
 }
 
 .banner__track {
