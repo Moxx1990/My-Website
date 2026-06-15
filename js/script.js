@@ -168,6 +168,44 @@ async function sendEmail(event) {
     }
 }
 
+function updateLanguage(lang) {
+    const elements = document.querySelectorAll("[data-translate]");
+    elements.forEach(element => {
+        const key = element.getAttribute("data-translate");
+        if (translations[lang] && translations[lang][key]) {
+            if (key === "formConsent" || key === "skillsNeed") {
+                if (key === "formConsent") {
+                    element.innerHTML = lang === "de" 
+                        ? 'Ich habe die <a class="privacy-policy__link" href="sites/legal.html" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.'
+                        : 'I\'ve read the <a class="privacy-policy__link" href="sites/legal.html" target="_blank">privacy policy</a> and agree to the processing of my data as outlined.';
+                } else if (key === "skillsNeed") {
+                    element.innerHTML = translations[lang][key];
+                }
+                return;
+            }
+            element.textContent = translations[lang][key];
+        }
+    });
+
+    updatePlaceholders(lang);
+}
+
+function updatePlaceholders(lang) {
+    const nameField = document.getElementById('name');
+    const emailField = document.getElementById('email');
+    const helpField = document.getElementById('help');
+
+    if (nameField && !nameField.classList.contains('input-error')) {
+        nameField.placeholder = lang === "de" ? "Dein Name hier..." : "Your name goes here";
+    }
+    if (emailField && !emailField.classList.contains('input-error')) {
+        emailField.placeholder = "youremail@email.com";
+    }
+    if (helpField && !helpField.classList.contains('input-error')) {
+        helpField.placeholder = lang === "de" ? "Hallo Max, ich interessiere mich für..." : "Hello Max, I am interested in...";
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     renderTestimonial();
     const infoContainer = document.getElementById('project-info');
@@ -190,10 +228,12 @@ document.addEventListener("DOMContentLoaded", () => {
         consentField.addEventListener('change', checkConsent);
     }
     const langToggle = document.getElementById("lang-toggle");
-    const savedLang = localStorage.getItem("selectedLanguage");
-    if (savedLang === "de") langToggle.checked = true;
+    let currentLang = localStorage.getItem("selectedLanguage") || "en";
+    langToggle.checked = (currentLang === "de");
+    updateLanguage(currentLang);
     langToggle.addEventListener("change", () => {
-        localStorage.setItem("selectedLanguage", langToggle.checked ? "de" : "en");
-        window.location.href = langToggle.checked ? "/de/" : "/en/";
+        currentLang = langToggle.checked ? "de" : "en";
+        localStorage.setItem("selectedLanguage", currentLang);
+        updateLanguage(currentLang);
     });
 });

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/translations.js"></script>
     <script src="js/script.js"></script>
     <script src="js/project-info.js"></script>
     <script src="templates/templates.js"></script>
@@ -35,19 +36,39 @@
                     <span class="lang-de">DE</span>
                 </label>
             </div>
-            <a href="#about-me" class="header-category">About me</a>
-            <a href="#skills" class="header-category">Skills</a>
-            <a href="#projects" class="header-category">Projects</a>
+
+            <a href="#about-me" class="header-category" data-translate="navAbout">
+                About me
+            </a>
+
+            <a href="#skills" class="header-category" data-translate="navSkills">
+                Skills
+            </a>
+
+            <a href="#projects" class="header-category" data-translate="navProjects">
+                Projects
+            </a>
         </div>
+
         <div class="logo">
             <div class="logo-icon">
-                <span class="char-m">M</span>
-                <span class="char-s">S</span>
+                <span class="char-m">
+                    M
+                </span>
+
+                <span class="char-s">
+                    S
+                </span>
             </div>
     
             <div class="logo-text">
-                <span class="first-name">Maximilian</span>
-                <span class="last-name">Schmidt</span>
+                <span class="first-name">
+                    Maximilian
+                </span>
+
+                <span class="last-name">
+                    Schmidt
+                </span>
             </div>
         </div>
     </div>
@@ -60,18 +81,31 @@
                 <img src="img/aboutMe/arrow.svg" alt="Scroll down">
             </div>
         </a>
+
         <div class="vertical-line-left"></div>
+
     </div>
 
     <div class="introduction-content">
-        <div class="intro-headline-sub">Frontend Developer</div>
-        <div class="intro-headline-main">Maximilian Schmidt</div>
+        <div class="intro-headline-sub" data-translate="introSub">
+            Frontend Developer
+        </div>
+
+        <div class="intro-headline-main">
+            Maximilian Schmidt
+        </div>
+
         <div class="intro-buttons">
             <a href="#projects" class="introduction__button">
-                <span>Check my work</span>
+                <span data-translate="introCheck">
+                    Check my work
+                </span>
             </a>
+
             <a href="#contact" class="introduction__button">
-                <span>Contact me</span>
+                <span data-translate="introContact">
+                    Contact me
+                </span>
             </a>
         </div>
     </div>
@@ -91,16 +125,45 @@
 
     <div class="banner">
         <div class="banner__track">
-            <span>Available for work</span>
-            <span>Frontend Developer</span>
-            <span>Based in Waldmühlen</span>
-            <span>Open to work</span>
-            <span>Available for remote work</span>
-            <span>Available for work</span>
-            <span>Frontend Developer</span>
-            <span>Based in Waldmühlen</span>
-            <span>Open to work</span>
-            <span>Available for remote work</span>
+            <span>
+                Available for work
+            </span>
+
+            <span>
+                Frontend Developer
+            </span>
+
+            <span>
+                Based in Waldmühlen
+            </span>
+
+            <span>
+                Open to work
+            </span>
+
+            <span>
+                Available for remote work
+            </span>
+
+            <span>
+                Available for work
+            </span>
+
+            <span>
+                Frontend Developer
+            </span>
+
+            <span>
+                Based in Waldmühlen
+            </span>
+
+            <span>
+                Open to work
+            </span>
+
+            <span>
+                Available for remote work
+            </span>
         </div>
     </div>
     </div>
@@ -109,26 +172,34 @@
         <div class="about-me-image">
             <img src="img/aboutMe/profile.jpg" alt="About Me">
         </div>
+
         <div class="about-me-content">
-            <div class="about-me__little-headline">Who I am</div>
+            <div class="about-me__little-headline" data-translate="aboutWho">Who I am</div>
             <div class="about-me-description">
-                <p class="about-me__headline">About me</p>
-                <p>Hey there, I'm Maximilian Schmidt! I love creating beautiful and functional websites and applications from nothing. I am passionate about coding because every project gives me the opportunity to learn something new, improve my skills and seeing how technology can make people's lives easier and more efficient.</p>
+                <p class="about-me__headline" data-translate="aboutHeadline">
+                    About me
+                </p>
+
+                <p data-translate="aboutText1">
+                    Hey there, I'm Maximilian Schmidt! I love creating beautiful and functional websites and applications from nothing. I am passionate about coding because every project gives me the opportunity to learn something new, improve my skills and seeing how technology can make people's lives easier and more efficient.
+                </p>
+
                 <p class="about-me__text">
                     <img src="img/aboutMe/location.svg" alt="Location"> 
-                    <span>
+                    <span data-translate="aboutTextLoc">
                         I'm from Waldmühlen, Germany. I am open to work remotely or on-site.
                     </span>
                 </p>
+
                 <p class="about-me__text">
                     <img src="img/aboutMe/mind.svg" alt="Mind">
-                    <span> 
+                    <span data-translate="aboutTextMind"> 
                         I am enthusiastic about lerning new technologies and continuously improving my skills.
                     </span>
                 </p>
                 <p class="about-me__text">
                     <img src="img/aboutMe/check.svg" alt="Check"> 
-                    <span> 
+                    <span data-translate="aboutTextCheck"> 
                         I approach problems with a combination of analytical thinking, creativity, and persistence. I enjoy breaking down complex challenges into manageable steps to find the most efficient outcome, viewing each obstacle as an opportunity to learn and continuously refine my skills.
                     </span>
                 </p>
@@ -138,22 +209,29 @@
 
     <div class="skill-set" id="skills">
         <div class="skill-set-info">
-            <div class="skill-set__little-headline">Technologies</div>
+            <div class="skill-set__little-headline" data-translate="skillsTitle">Technologies</div>
             <div class="skill-set-description">
-                <p class="skill-set__headline">Skill Set</p>
+                <p class="skill-set__headline" data-translate="skillsHeadline">Skill Set</p>
                 <div class="skill-set__text">
-                    <p>
+                    <p data-translate="skillsText1">
                         I am a frontend developer focused on building structured, scalable, and responsive web applications. With a solid foundation in HTML, CSS, and JavaScript, I leverage TypeScript and Angular to create clean, robust code. I am experienced in integrating REST APIs for dynamic data flow and use Git for efficient version control and collaboration.
                     </p>
-                    <p class="skill-highlight__text">
+                    <p class="skill-highlight__text" data-translate="skillsNeed">
                         You need 
-                        <span class="skills-highlight">another skill</span>?
+                        <span class="skills-highlight">
+                            another skill
+                        </span>
+                        ?
                     </p>
-                    <p>Feel free to contact me, I look forward to expanding on my previous knowledge.</p>
+                    <p data-translate="skillsText2">
+                        Feel free to contact me, I look forward to expanding on my previous knowledge.
+                    </p>
                 </div>
 
                 <a href="#contact" class="lets-talk__button">
-                    <span>Let's talk</span>
+                    <span data-translate="skillsTalk">
+                        Let's talk
+                    </span>
                 </a>
             </div>
         </div>
@@ -210,18 +288,26 @@
 
             <div class="skills__icon growth">
                 <img src="img/skillSet/growth.svg" alt="Growth Mindset"> 
-                <p>Growth mindset</p>
+
+                <p>
+                    Growth mindset
+                </p>
+
                 <div class="skill-tooltip">
                     <span class="tooltip-text">I have a special interest in learning</span>
                     <div class="tooltip-frameworks">
                         <div class="framework">
                             <img src="img/skillSet/React.svg" alt="React">
-                            <span>React</span>
+                            <span>
+                                React
+                            </span>
                         </div>
 
                         <div class="framework">
                             <img src="img/skillSet/Vue Js.svg" alt="SQL">
-                            <span>Vue Js</span>
+                            <span>
+                                Vue Js
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -233,11 +319,17 @@
 
     <div class="projects" id="projects">
         <div>
-            <p class="projects__little-headline">Portfolio</p>
+            <p class="projects__little-headline" data-translate="portfolioSub">
+                Portfolio
+            </p>
 
-            <p class="projects__headline">Feature Projects</p>
+            <p class="projects__headline"data-translate="portfolioHeadline">
+                Feature Projects
+            </p>
 
-            <p class="projects__text">Explore a selection of my work here - Interact with projects to see my skill in action.</p>
+            <p class="projects__text" data-translate="portfolioText">
+                Explore a selection of my work here - Interact with projects to see my skill in action.
+            </p>
         </div>
 
         <div class="project-list">
@@ -271,7 +363,9 @@
     </div>
 
   <div class="other-people">
-    <div class="other-people__headline">What my colleagues say about me</div>
+    <div class="other-people__headline" data-translate="colleaguesHeadline">
+        What my colleagues say about me
+    </div>
 
     <div class="carousel-wrapper">
         <img class="fixed-quote-icon" src="img/colleagues/quotes.svg" alt="Quotes">
@@ -296,78 +390,95 @@
 
     <div class="navigation__helper">
         <img class="people__arrow-left" src="img/colleagues/arrow_back.svg" alt="Back" onclick="switchTestimonial(-1)">
+
         <div class="dots">
             <span class="dot active"></span>
             <span class="dot"></span>
             <span class="dot"></span>
         </div>
+
         <img class="people__arrow-right" src="img/colleagues/arrow_forward.svg" alt="Forward" onclick="switchTestimonial(1)">
     </div>
 </div>
 
     <div class="contact" id="contact">
         <div class="contact-me-info">
-            <span class="contact-me_little-headline">
+            <span class="contact-me_little-headline" data-translate="contactSub">
                 Contact me
             </span>
 
-            <span class="contact-me__headline">
+            <span class="contact-me__headline" data-translate="contactHeadline">
                 Let's work together
             </span>
 
-            <span class="contact-me-solve">
+            <span class="contact-me-solve" data-translate="contactSolve">
                 Got a problem to solve? 
             </span>
 
             <span class="contact-me__text">
-                I am interested in opportunities as a frontend developer. I enjoy creating high-quality solutions that help projects succeed. 
-                Through a reliable, detail-oriented, and results-driven approach, I aim to deliver real value and contribute positively to every team I work with.
-                If you are looking for someone who is motivated, professional, and committed to achieving excellent results, I would be happy to discuss how I can support your project. Feel free to get in touch.
+                <span data-translate="contactText">
+                    I am interested in opportunities as a frontend developer. I enjoy creating high-quality solutions that help projects succeed. 
+                    Through a reliable, detail-oriented, and results-driven approach, I aim to deliver real value and contribute positively to every team I work with.
+                    If you are looking for someone who is motivated, professional, and committed to achieving excellent results, I would be happy to discuss how I can support your project. Feel free to get in touch.
+                </span>
+
                 <p></p>
-                Need a frontend developer?
-                <span class="contact-me-talk">
+
+                <span data-translate="contactNeed">
+                    Need a frontend developer?
+                </span>
+
+                <span class="contact-me-talk" data-translate="contactTalk">
                     Let's talk!
                 </span>
             </span>
         </div>
 
-<form class="contact-form" onsubmit="sendEmail(event)" novalidate>
-    <div id="form-content">
-        <div class="form-group">
-            <label for="name">What's your name?</label>
-            <input type="text" id="name" name="name" placeholder="Your name goes here">
-        </div>
+    <form class="contact-form" onsubmit="sendEmail(event)" novalidate>
+        <div id="form-content">
+            <div class="form-group">
+                <label for="name" data-translate="formName">
+                    What's your name?
+                </label>
+                <input type="text" id="name" name="name" placeholder="Your name goes here">
+            </div>
 
-        <div class="form-group">
-            <label for="email">What's your email?</label>
-            <input type="email" id="email" name="email" placeholder="youremail@email.com">
-        </div>
+            <div class="form-group">
+                <label for="email" data-translate="formEmail">
+                    What's your email?
+                </label>
+                <input type="email" id="email" name="email" placeholder="youremail@email.com">
+            </div>
 
-        <div class="form-group">
-            <label for="help">How can I help you?</label>
-            <textarea id="help" name="help" placeholder="Hello Max, I am interested in..."></textarea>
-        </div>
+            <div class="form-group">
+                <label for="help" data-translate="formHelp">
+                    How can I help you?
+                </label>
+                <textarea id="help" name="help" placeholder="Hello Max, I am interested in..."></textarea>
+            </div>
 
-        <div class="contact-form__input">
-            <input type="checkbox" id="consent" name="consent" class="custom-checkbox">
-            <label class="accept-container">
-                I've read the 
-                <a class="privacy-policy__link" href="sites/legal.html" target="_blank">privacy policy</a>
-                and agree to the processing of my data as outlined.
-            </label>
-        </div>
+            <div class="contact-form__input">
+                <input type="checkbox" id="consent" name="consent" class="custom-checkbox">
+                <label class="accept-container">
+                    <span data-translate="formConsent">
+                        I've read the 
+                        <a class="privacy-policy__link" href="sites/legal.html" target="_blank">privacy policy</a>
+                        and agree to the processing of my data as outlined.
+                    </span>
+                </label>
+            </div>
         <div id="consent-error" class="error-message checkbox-error"></div> 
         
         <button class="submit__button" type="submit">
-            <span>Say Hello ;)</span>
+            <span data-translate="formBtn">Say Hello ;)</span>
         </button>
-    </div>
+        </div>
 
-    <div id="success-message" class="d-none success-box">
-        <h3>Thank you!</h3>
-        <p>Your message has been sent successfully. I will get back to you as soon as possible.</p>
-    </div>
-</form>
+        <div id="success-message" class="d-none success-box">
+            <h3>Thank you!</h3>
+            <p>Your message has been sent successfully. I will get back to you as soon as possible.</p>
+        </div>
+    </form>
     </div>
 
     <div class="footer">
@@ -384,9 +495,11 @@
                 </div>
             </div>
         </div>
+
         <div class="footer-copyright">
             C Maximilian Schmidt 2026
         </div>
+
         <div class="footer-links-container">
             <a class="footer-link" href="https://github.com/Moxx1990" target="_blank"> Github</a>
             <a class="footer-link" href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
@@ -394,5 +507,6 @@
             <a class="footer-link" href="sites/legal.html" target="_blank">Legal Notice</a>
         </div>
     </div>
+
 </body>
 </html>
