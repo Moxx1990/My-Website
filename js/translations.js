@@ -33,7 +33,22 @@ const translations = {
         formHelp: "How can I help you?",
         formConsent: "I've read the privacy policy and agree to the processing of my data as outlined.",
         formPrivacyLink: "privacy policy",
-        formBtn: "Say Hello ;)"
+        formBtn: "Say Hello ;)",
+        legalTitle: "Legal Notice",
+        legalImprintTitle: "Imprint",
+        exploringTitle: "Exploring the Board",
+        legalTermsTitle: "Acceptance of terms",
+        legalTermsText: 'By accessing and using <span class="text-white">Portfolio</span>(Product), you acknowledge and agree to the following terms and conditions, and any policies, guidelines, or amendments thereto that may be presented to you from time to time. We, the listed students, may update or change the terms and conditions from time to time without notice.',
+        legalScopeTitle: "Scope and ownership of the product",
+        legalScopeText: '<span class="text-white">Portfolio</span> has been developed as part of a student group project in a web development bootcamp at the <span class="text-white">Developer Akademie GmbH</span>. It has an educational purpose and is not intended for extensive personal & business usage. As such, we cannot guarantee consistent availability, reliability, accuracy, or any other aspect of quality regarding this Product.\n\nThe design of <span class="text-white">Portfolio</span> is owned by the <span class="text-white">Developer Akademie GmbH</span>. Unauthorized use, reproduction, modification, distribution, or replication of the design is strictly prohibited.',
+        legalProprietaryTitle: "Proprietary rights",
+        legalProprietaryText: 'Aside from the design owned by <span class="text-white">Developer Akademie GmbH</span>, we, the listed students, retain all proprietary rights in <span class="text-white">Portfolio</span>, including any associated copyrighted material, trademarks, and other proprietary information.',
+        legalUseTitle: "Use of the product",
+        legalUseText: '<span class="text-white">Portfolio</span> is intended to be used for lawful purposes only, in accordance with all applicable laws and regulations. Any use of <span class="text-white">Portfolio</span> for illegal activities, or to harass, harm, threaten, or intimidate another person, is strictly prohibited. You are solely responsible for your interactions with other users of <span class="text-white">Portfolio</span>.',
+        legalLiabilityTitle: "Disclaimer of warranties and limitation of liability",
+        legalLiabilityText: '<span class="text-white">Portfolio</span> is provided \"as is\" without warranty of any kind, whether express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. In no event will we, the listed students, or the <span class="text-white">Developer Akademie GmbH</span>, be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data, or other intangible losses, even if we have been advised of the possibility of such damages, arising out of or in connection with the use or performance of Portfolio.',
+        legalIndemnityTitle: "Indemnity",
+        legalIndemnityText: 'You agree to indemnify, defend and hold harmless us, the listed students, the <span class="text-white">Developer Akademie GmbH</span>, and our affiliates, partners, officers, directors, agents, and employees, from and against any claim, demand, loss, damage, cost, or liability (including reasonable legal fees) arising out of or relating to your use of <span class="text-white">Portfolio</span> and/or your breach of this Legal Notice.<p></p> For any questions or notices, please contact us at schmidt-max@gmx.de\n\nDate: July 26, 2025'
     },
     de: {
         navAbout: "Über mich",
@@ -69,6 +84,21 @@ const translations = {
         formHelp: "Wie kann ich dir helfen?",
         formConsent: "Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten zu.",
         formPrivacyLink: "Datenschutzerklärung",
-        formBtn: "Sag Hallo ;)"
+        formBtn: "Sag Hallo ;)",
+        legalTitle: "Impressum & Rechtliche Hinweise",
+        legalImprintTitle: "Impressum",
+        exploringTitle: "Projektbeteiligte",
+        legalTermsTitle: "Anerkennung der Bedingungen",
+        legalTermsText: 'Durch den Zugriff auf und die Nutzung von <span class="text-white">Portfolio</span> (Produkt) erkennen Sie die folgenden Bedingungen und Richtlinien an, die Ihnen von Zeit zu Zeit vorgelegt werden können. Wir, die aufgeführten Studenten, können die Bedingungen von Zeit zu Zeit ohne vorherige Ankündigung aktualisieren oder ändern.',
+        legalScopeTitle: "Umfang und Eigentum des Produkts",
+        legalScopeText: '<span class="text-white">Portfolio</span> wurde im Rahmen eines studentischen Gruppenprojekts in einem Web-Development-Bootcamp der <span class="text-white">Developer Akademie GmbH</span> entwickelt. Es dient ausschließlich Ausbildungszwecken und ist nicht für eine weitreichende persönliche oder geschäftliche Nutzung gedacht. Daher können wir keine ständige Verfügbarkeit, Zuverlässigkeit, Genauigkeit oder andere Qualitätsaspekte dieses Produkts garantieren.\n\nDas Design von <span class="text-white">Portfolio</span> ist Eigentum der <span class="text-white">Developer Akademie GmbH</span>. Die unbefugte Nutzung, Vervielfältigung, Modifikation, Verteilung oder Replikation des Designs ist strengstens untersagt.',
+        legalProprietaryTitle: "Eigentumsrechte",
+        legalProprietaryText: 'Abgesehen von dem Design im Eigentum der <span class="text-white">Developer Akademie GmbH</span> behalten wir, die aufgeführten Studenten, alle Eigentumsrechte an <span class="text-white">Portfolio</span>, einschließlich aller damit verbundenen urheberrechtlich geschützten Materialien, Marken und anderen geschützten Informationen.',
+        legalUseTitle: "Nutzung des Produkts",
+        legalUseText: '<span class="text-white">Portfolio</span> darf nur für rechtmäßige Zwecke in Übereinstimmung mit allen geltenden Gesetzen und Vorschriften verwendet werden. Jede Nutzung von <span class="text-white">Portfolio</span> für illegale Aktivitäten oder zur Belästigung, Schädigung, Bedrohung oder Einschüchterung anderer Personen ist strengstens untersagt. Sie sind allein verantwortlich für Ihre Interaktionen mit anderen Nutzern von <span class="text-white">Portfolio</span>.',
+        legalLiabilityTitle: "Gewährleistungsausschluss und Haftungsbeschränkung",
+        legalLiabilityText: '<span class="text-white">Portfolio</span> wird im vorliegenden Zustand ("as is") ohne Mängelgewähr bereitgestellt, weder ausdrücklich noch stillschweigend. In keinem Fall haften wir, die aufgeführten Studenten, oder die <span class="text-white">Developer Akademie GmbH</span> für direkte, indirekte, zufällige, besondere, Folgeschäden oder exemplarische Schäden, einschließlich, aber nicht beschränkt auf Schäden aus entgangenem Gewinn, Geschäftswert, Nutzung, Daten oder anderen immateriellen Verlusten, die aus oder im Zusammenhang mit der Nutzung oder Leistung von Portfolio entstehen.',
+        legalIndemnityTitle: "Freistellung",
+        legalIndemnityText: 'Sie erklären sich damit einverstanden, uns, die aufgeführten Studenten, die <span class="text-white">Developer Akademie GmbH</span> und unsere Partner, leitenden Angestellten, Direktoren, Agenten und Mitarbeiter von allen Ansprüchen, Forderungen, Verlusten, Schäden, Kosten oder Haftungen (einschließlich angemessener Anwaltskosten) freizustellen, zu verteidigen und schadlos zu halten, die sich aus Ihrer Nutzung von <span class="text-white">Portfolio</span> und/oder Ihrem Verstoß gegen diese rechtlichen Hinweise ergeben.<p></p> Für Fragen oder Mitteilungen kontaktieren Sie uns bitte unter schmidt-max@gmx.de\n\nDatum: 26. Juli 2025'
     }
 };

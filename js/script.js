@@ -176,17 +176,20 @@ function updateLanguage(lang) {
             if (key === "formConsent" || key === "skillsNeed") {
                 if (key === "formConsent") {
                     element.innerHTML = lang === "de" 
-                        ? 'Ich habe die <a class="privacy-policy__link" href="sites/legal.html" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.'
-                        : 'I\'ve read the <a class="privacy-policy__link" href="sites/legal.html" target="_blank">privacy policy</a> and agree to the processing of my data as outlined.';
+                        ? 'Ich habe die <a class="privacy-policy__link" href="legal.html">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu.'
+                        : 'I\'ve read the <a class="privacy-policy__link" href="legal.html">privacy policy</a> and agree to the processing of my data as outlined.';
                 } else if (key === "skillsNeed") {
                     element.innerHTML = translations[lang][key];
                 }
                 return;
             }
-            element.textContent = translations[lang][key];
+            if (key.startsWith('legal')) {
+                element.innerHTML = translations[lang][key].replace(/\n/g, '<br>');
+            } else {
+                element.textContent = translations[lang][key];
+            }
         }
     });
-
     updatePlaceholders(lang);
 }
 
@@ -194,7 +197,6 @@ function updatePlaceholders(lang) {
     const nameField = document.getElementById('name');
     const emailField = document.getElementById('email');
     const helpField = document.getElementById('help');
-
     if (nameField && !nameField.classList.contains('input-error')) {
         nameField.placeholder = lang === "de" ? "Dein Name hier..." : "Your name goes here";
     }
@@ -207,20 +209,26 @@ function updatePlaceholders(lang) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    renderTestimonial();
+    if (document.getElementById('testimonial-belt')) {
+        renderTestimonial();
+    }
     const infoContainer = document.getElementById('project-info');
-    infoContainer.addEventListener('click', (event) => {
-        if (event.target === infoContainer) closeCard();
-    });
+    if (infoContainer) {
+        infoContainer.addEventListener('click', (event) => {
+            if (event.target === infoContainer) closeCard();
+        });
+    }
     ['name', 'email', 'help'].forEach(id => {
         const field = document.getElementById(id);
-        if (id === 'email') {
-            field.addEventListener('input', () => checkEmail(false));
-            field.addEventListener('blur', () => checkEmail(true));
-        } else {
-            const func = id === 'name' ? checkName : checkHelp;
-            field.addEventListener('input', func);
-            field.addEventListener('blur', func);
+        if (field) {
+            if (id === 'email') {
+                field.addEventListener('input', () => checkEmail(false));
+                field.addEventListener('blur', () => checkEmail(true));
+            } else {
+                const func = id === 'name' ? checkName : checkHelp;
+                field.addEventListener('input', func);
+                field.addEventListener('blur', func);
+            }
         }
     });
     const consentField = document.getElementById('consent');
@@ -228,12 +236,15 @@ document.addEventListener("DOMContentLoaded", () => {
         consentField.addEventListener('change', checkConsent);
     }
     const langToggle = document.getElementById("lang-toggle");
-    let currentLang = localStorage.getItem("selectedLanguage") || "en";
-    langToggle.checked = (currentLang === "de");
-    updateLanguage(currentLang);
-    langToggle.addEventListener("change", () => {
-        currentLang = langToggle.checked ? "de" : "en";
-        localStorage.setItem("selectedLanguage", currentLang);
+    if (langToggle) {
+        let currentLang = localStorage.getItem("selectedLanguage") || "en";
+        langToggle.checked = (currentLang === "de");
         updateLanguage(currentLang);
-    });
+
+        langToggle.addEventListener("change", () => {
+            currentLang = langToggle.checked ? "de" : "en";
+            localStorage.setItem("selectedLanguage", currentLang);
+            updateLanguage(currentLang);
+        });
+    }
 });
