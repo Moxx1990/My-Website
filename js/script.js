@@ -1,4 +1,6 @@
 let currentProjectName = 'Join';
+let currentTestimonialIndex = 1;
+let isTransitioningTestimonial = false;
 
 function openProjectInfo(projectName) {
     currentProjectName = projectName;
@@ -74,85 +76,124 @@ function switchCard() {
     openProjectInfo(nextProjectName);
 }
 
+function renderTestimonial() {
+    const belt = document.getElementById('testimonial-belt');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const dots = document.querySelectorAll('.dot');
+    const offset = currentTestimonialIndex * -780;
+    belt.style.transform = `translateX(${offset}px)`;
+    cards.forEach((card, i) => {
+        card.classList.toggle('focused', i === currentTestimonialIndex);
+    });
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentTestimonialIndex);
+    });
+}
+
+function switchTestimonial(direction) {
+    const cards = document.querySelectorAll('.testimonial-card');
+    currentTestimonialIndex = (currentTestimonialIndex + direction + cards.length) % cards.length;
+    renderTestimonial();
+}
+
 function checkName() {
     const field = document.getElementById('name');
     const isValid = field.value.trim() !== "";
-    document.getElementById('name-error').innerText = isValid ? "" : "Please enter your name.";
+    field.classList.toggle('input-error', !isValid);
+    field.placeholder = isValid ? "Your name goes here" : "Oops! It seems your name is missing";
     return isValid;
 }
 
-function checkEmail() {
+function checkEmail(isBlurSetting = false) {
     const field = document.getElementById('email');
     const value = field.value.trim();
-    let message = "";
-    if (value === "") message = "Please enter your email.";
-    else if (!value.includes('@')) message = "Please enter a valid email.";
-    document.getElementById('email-error').innerText = message;
-    return message === "";
+    let isValid = value !== "";
+    if (!isValid) {
+        field.placeholder = "Please enter your email.";
+    } else if (isBlurSetting && !value.includes('@')) {
+        field.value = "";
+        field.placeholder = "Hoplla! Your email is required";
+        isValid = false;
+    }
+    field.classList.toggle('input-error', !isValid);
+    if (isValid) field.placeholder = "youremail@email.com";
+    return isValid;
 }
 
 function checkHelp() {
     const field = document.getElementById('help');
     const isValid = field.value.trim() !== "";
-    document.getElementById('help-error').innerText = isValid ? "" : "Please tell me how I can help.";
+    field.classList.toggle('input-error', !isValid);
+    field.placeholder = isValid ? "Hello Max, I am interested in..." : "Please tell me how I can help.";
     return isValid;
 }
 
 function checkConsent() {
     const field = document.getElementById('consent');
     const isValid = field.checked;
-    document.getElementById('consent-error').innerText = isValid ? "" : "You must accept the privacy policy.";
+    document.getElementById('consent-error').innerText = isValid ? "" : "Please accept the privacy policy.";
     return isValid;
 }
 
 async function sendEmail(event) {
     event.preventDefault();
-    
-    // Führt alle Funktionen aus und speichert, ob alle true waren
-    const isFormValid = checkName() & checkEmail() & checkHelp() & checkConsent();
+    const isFormValid = checkName() & checkEmail(true) & checkHelp() & checkConsent();
     if (!isFormValid) return;
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('help').value
+    };
 
-    const response = await fetch('/sites/submit.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(getFormData())
-    });
-    const result = await response.json();
-    alert(result.success ? 'Email sent!' : result.error);
+    try {
+        const response = await fetch('sites/submit.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+        const result = await response.json();
+        if (result.success) {
+            document.getElementById('name').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('help').value = "";
+            document.getElementById('consent').checked = false;
+            document.getElementById('form-content').classList.add('d-none');
+            document.getElementById('success-message').classList.remove('d-none');
+        } else {
+            alert(result.error || 'Mail delivery failed');
+        }
+    } catch (error) {
+        console.error('Error sending email:', error);
+        alert('An error occurred. Please try again later.');
+    }
 }
 
-document.querySelectorAll('.dot').forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-    });
-});
-
 document.addEventListener("DOMContentLoaded", () => {
+    renderTestimonial();
     const infoContainer = document.getElementById('project-info');
     infoContainer.addEventListener('click', (event) => {
-        if (event.target === infoContainer) {
-            closeCard();
-        }
+        if (event.target === infoContainer) closeCard();
     });
-
     ['name', 'email', 'help'].forEach(id => {
         const field = document.getElementById(id);
-        const func = id === 'name' ? checkName : id === 'email' ? checkEmail : checkHelp;
-        field.addEventListener('input', func);
-        field.addEventListener('blur', func);
+        if (id === 'email') {
+            field.addEventListener('input', () => checkEmail(false));
+            field.addEventListener('blur', () => checkEmail(true));
+        } else {
+            const func = id === 'name' ? checkName : checkHelp;
+            field.addEventListener('input', func);
+            field.addEventListener('blur', func);
+        }
     });
-
+    const consentField = document.getElementById('consent');
+    if (consentField) {
+        consentField.addEventListener('change', checkConsent);
+    }
     const langToggle = document.getElementById("lang-toggle");
     const savedLang = localStorage.getItem("selectedLanguage");
-    if (savedLang === "de") {
-        langToggle.checked = true;
-    }
+    if (savedLang === "de") langToggle.checked = true;
     langToggle.addEventListener("change", () => {
-        if (langToggle.checked) {
-            localStorage.setItem("selectedLanguage", "de");
-            window.location.href = "/de/"; 
-        } else {
-            localStorage.setItem("selectedLanguage", "en");
-            window.location.href = "/en/"; 
-        }
+        localStorage.setItem("selectedLanguage", langToggle.checked ? "de" : "en");
+        window.location.href = langToggle.checked ? "/de/" : "/en/";
     });
 });

@@ -2,7 +2,9 @@
     height: 126px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding-left: 96px;
+    padding-right: 96px;
 }
 
 .footer-me {
