@@ -71,8 +71,128 @@
     display: none;
 }
 
+.contact {
+    padding-left: var(--spacing-2xl);
+}
+
+.contact-me-info {
+
+    padding-right: 50px;
+}
+
+.contact-me__headline {
+    font-size: 50px;
+}
+
+.contact-me-solve {
+    font-size: var(--font-size-xl);
+}
+
+.contact-me__text {
+    font-size: var(--font-size-base);
+}
+
+.contact-form {
+    padding-right: 50px;
+}
 }
 
 @media (min-width: 769px ) and (max-width: 1023px) {
+
+.header {
+    padding-left: var(--spacing-2xl);
+    padding-right: var(--spacing-2xl);
+}
+
+.intro-headline-sub {
+    font-size: var(--font-size-3xl);
+}
+
+.intro-headline-main {
+    font-size: 80px;
+}
+
+.about-me {
+    padding-left: var(--spacing-2xl);
+    padding-right: var(--spacing-2xl);
+
+}
+
+.about-me-image {
+    max-width: 405px;
+    width: auto;
+}
+
+.about-me-description {
+    max-width: 450px;
+    height: auto;
+    padding-bottom: 20px;
+    font-size: var(--font-size-base);
+}
+
+.about-me__headline {
+    font-size: 50px;
+}
+
+.skill-set {
+    gap: var(--spacing-2xl);
+}
+
+.skill-set-description {
+    width: 450px;
+}
+
+.skill-set__headline {
+    font-size: 50px;
+}
+
+.skill-set__text {
+    font-size: var(--font-size-base);
+}
+
+.skill-highlight__text {
+    font-size: var(--font-size-xl);
+}
+
+.skills__icon {
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-base);
+    padding-bottom: var(--spacing-2xl);
+    padding-right: var(--spacing-2xl);
+    width: 90px;
+}
+
+.project-container:hover .project-image {
+   display: none;
+}
+
+.project-container:hover::before {
+    display: none;
+}
+
+.contact {
+    padding-left: var(--spacing-2xl);
+}
+
+.contact-me-info {
+
+    padding-right: 50px;
+}
+
+.contact-me__headline {
+    font-size: 50px;
+}
+
+.contact-me-solve {
+    font-size: var(--font-size-xl);
+}
+
+.contact-me__text {
+    font-size: var(--font-size-base);
+}
+
+.contact-form {
+    padding-right: 50px;
+}
 
 }
