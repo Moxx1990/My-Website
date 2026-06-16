@@ -21,10 +21,9 @@
 
 .skill-set-description {
     border: 1px solid var(--alternative-text-color);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-3xl);
     background-color: #3DCFB610;
     width: 520px;
-    height: 503px;
     padding: var(--spacing-xl);
 }
 
@@ -82,6 +81,7 @@
     align-content: flex-start;
     align-items: center;
     padding-top: var(--spacing-2xl);
+    padding-right: var(--spacing-3xl);
 }
 
 .skills__icon.growth {
@@ -154,7 +154,6 @@
     flex-direction: column;
     align-items: center;
     gap: 8px;
-    font-size: 18px;
     font-weight: 400;
     width: 100px;
     height: 116px;

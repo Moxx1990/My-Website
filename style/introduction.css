@@ -12,7 +12,7 @@
 
 .introduction-multi-bg {
     width: 100%;
-    height: 802px;
+    height: calc(100vh - 98px);
     background-image: url('/img/background/backgroundintro.jpg');
     background-size: cover;
     background-repeat: no-repeat;
