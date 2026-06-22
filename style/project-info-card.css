@@ -151,10 +151,15 @@ body.no-scroll {
     content: url(/img/projects/close_hover.svg);
 }
 
+.project-info__picture {
+    padding-top: 143px; 
+}
+
 .project-info__picture img {
     width: 520px;
     height: 370px;
-    padding-top: 143px;
+    border-radius: 30px;
+    object-fit: cover;
 }
 
 .next-project__button {

@@ -132,3 +132,7 @@
     border-color: var(--alternative-text-color);
     color: var(--alternative-text-color);
 }
+
+.green__span {
+    color: var(--alternative-text-color);
+}

@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: column;
     width: 600px;
+    padding-right: var(--spacing-2xl);
 }
 
 .contact-me_little-headline {
@@ -50,6 +51,7 @@
     flex-direction: column;
     max-width: 600px;
     width: 100%;
+    padding-right: var(--spacing-2xl);
 }
 
 .form-group {
@@ -62,6 +64,17 @@
     padding-bottom: 24px;
     margin-left: -10px;
     padding-left: 30px;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.submit__button {
+    display: flex;
+    align-items: center;
+    align-self: center;
 }
 
 .contact-form label {
@@ -116,8 +129,8 @@
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    margin-top: 24px;
-    margin-bottom: 24px;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-xs);
 }
 
 .contact-form__input .custom-checkbox {
@@ -201,6 +214,15 @@
     height: 48px;
     padding-left: 24px;
     padding-right: 24px;
+}
+
+.contact-form button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: var(--text-color-muted, #888);
+    color: var(--text-color-muted, #888);
+    background-color: transparent !important;
+    pointer-events: none;
 }
 
 .contact-form .submit__button {

@@ -112,15 +112,24 @@
     </div>
 
     <div class="intro-right-bar">
-        <a href="mailto:schmidt-max@gmx.de" class="introduction__text">schmidt-max@gmx.de</a>
+        <a href="mailto:schmidt-max@gmx.de" class="introduction__text">
+            schmidt-max@gmx.de
+        </a>
+
         <div class="social-icons">
+            <a href="mailto:schmidt-max@gmx.de" class="social-icons-email">
+                <img src="img/aboutMe/mail.svg" alt="EMail">
+            </a>
+
             <a href="https://github.com/Moxx1990" target="_blank">
                 <img src="img/aboutMe/github.svg" alt="GitHub">
             </a>
+
             <a href="https://linkedin.com" target="_blank">
                 <img src="img/aboutMe/linkedin.svg" alt="LinkedIn">
             </a>
         </div>
+
         <div class="vertical-line-right"></div>
     </div>
 
@@ -337,7 +346,17 @@
             <div class="project-container">
                 <div class="project" onclick="openProjectInfo('Join')">
                     <div class="project-name">Join <img src="img/projects/arrow_outward_white.svg" alt="Arrow"></div>  
-                    <div class="project-skills">Angular | Typescript | HTML | CSS | Firebase</div>
+                    <div class="project-skills">
+                        Angular 
+                        <span class="green__span">|</span> 
+                        Typescript
+                        <span class="green__span">|</span> 
+                        HTML 
+                        <span class="green__span">|</span> 
+                        CSS 
+                        <span class="green__span">|</span>  
+                        Firebase
+                    </div>
                 </div>
 
                 <img class="project-image" src="img/projects/Join.jpg" alt="Join">
@@ -346,7 +365,13 @@
             <div class="project-container">
                 <div class="project" onclick="openProjectInfo('Bow of the Dead')">
                     <div class="project-name">Bow of the Dead <img src="img/projects/arrow_outward_white.svg" alt="Arrow"></div>
-                    <div class="project-skills">HTML | CSS | JavaScript</div>
+                    <div class="project-skills">
+                        HTML 
+                        <span class="green__span">|</span> 
+                        CSS 
+                        <span class="green__span">|</span>  
+                        JavaScript
+                    </div>
                 </div>
 
                 <img class="project-image" src="img/projects/Bow of the Dead.jpg" alt="Bow of the Dead">
@@ -355,7 +380,13 @@
             <div class="project-container">
                 <div class="project" onclick="openProjectInfo('Pokédex')">
                     <div class="project-name">Pokédex <img src="img/projects/arrow_outward_white.svg" alt="Arrow"></div>
-                    <div class="project-skills">HTML | CSS | JavaScript</div>
+                    <div class="project-skills">
+                        HTML 
+                        <span class="green__span">|</span> 
+                        CSS 
+                        <span class="green__span">|</span> 
+                        JavaScript
+                    </div>
                 </div>
 
                 <img class="project-image" src="img/projects/Pokédex.jpg" alt="Pokédex">
@@ -435,57 +466,44 @@
             </span>
         </div>
 
-    <form class="contact-form" onsubmit="sendEmail(event)" novalidate>
-        <div id="form-content">
-            <div class="form-group">
-                <label for="name" data-translate="formName">
-                    What's your name?
-                </label>
-                <input type="text" id="name" name="name" placeholder="Your name goes here">
-            </div>
+        <form class="contact-form" onsubmit="sendEmail(event)" novalidate>
+            <div class="form-content"> 
+                <div class="form-group">
+                    <label for="name" data-translate="formName">What's your name?</label>
+                    <input type="text" id="name" name="name" placeholder="Your name goes here">
+                </div>
 
-            <div class="form-group">
-                <label for="email" data-translate="formEmail">
-                    What's your email?
-                </label>
-                <input type="email" id="email" name="email" placeholder="youremail@email.com">
-            </div>
+                <div class="form-group">
+                    <label for="email" data-translate="formEmail">What's your email?</label>
+                    <input type="email" id="email" name="email" placeholder="youremail@email.com">
+                </div>
 
-            <div class="form-group">
-                <label for="help" data-translate="formHelp">
-                    How can I help you?
-                </label>
-                <textarea id="help" name="help" placeholder="Hello Max, I am interested in..."></textarea>
-            </div>
+                <div class="form-group">
+                    <label for="help" data-translate="formHelp">How can I help you?</label>
+                    <textarea id="help" name="help" placeholder="Hello Max, I am interested in..."></textarea>
+                </div>
 
-            <div class="contact-form__input">
-                <input type="checkbox" id="consent" name="consent" class="custom-checkbox">
-                <label class="accept-container">
-                    <span data-translate="formConsentStart">
-                        I've read the
-                    </span>
-
-                    <a class="privacy-policy__link" href="sites/legal.html" target="_blank" data-translate="formPrivacyLink">
-                        privacy policy
-                    </a>
-
-                    <span data-translate="formConsentEnd">
-                        and agree to the processing of my data as outlined.
-                    </span>
-                </label>
-            </div>
-        <div id="consent-error" class="error-message checkbox-error"></div> 
+                <div class="contact-form__input">
+                    <input type="checkbox" id="consent" name="consent" class="custom-checkbox">
+                    <label class="accept-container">
+                        <span data-translate="formConsentStart">I've read the</span>
+                        <a class="privacy-policy__link" href="sites/legal.html" target="_blank" data-translate="formPrivacyLink">privacy policy</a>
+                        <span data-translate="formConsentEnd">and agree to the processing of my data as outlined.</span>
+                    </label>
+                </div>
+                
+                <div id="consent-error" class="error-message checkbox-error"></div> 
         
-        <button class="submit__button" type="submit">
-            <span data-translate="formBtn">Say Hello ;)</span>
-        </button>
-        </div>
+                <button class="submit__button" type="submit">
+                    <span data-translate="formBtn">Say Hello ;)</span>
+                </button>
+            </div> 
 
-        <div id="success-message" class="d-none success-box">
-            <h3>Thank you!</h3>
-            <p>Your message has been sent successfully. I will get back to you as soon as possible.</p>
-        </div>
-    </form>
+            <div id="success-message" class="d-none success-box">
+                <h3>Thank you!</h3>
+                <p>Your message has been sent successfully. I will get back to you as soon as possible.</p>
+            </div>
+        </form>
     </div>
 
     <div class="footer">

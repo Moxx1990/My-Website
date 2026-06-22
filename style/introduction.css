@@ -126,6 +126,10 @@
     margin-bottom: 16px;
 }
 
+.social-icons-email img {
+    display: none;
+}
+
 .social-icons a {
     position: relative;
     display: flex;

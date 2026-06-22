@@ -150,19 +150,21 @@ function switchCard() {
 
 /**
  * Re-calculates positions and updates styles of the testimonial horizontal belt slider container, 
- * focus card classes, and active indicator dots based on the current indexing.
+ * focus card classes, and active indicator dots based on responsive viewport width benchmarks.
  * @returns {void}
  */
 function renderTestimonial() {
-    const belt = document.getElementById('testimonial-belt');
-    const cards = document.querySelectorAll('.testimonial-card');
-    const dots = document.querySelectorAll('.dot');
-    const offset = currentTestimonialIndex * -780;
-    belt.style.transform = `translateX(${offset}px)`;
-    cards.forEach((card, i) => {
+    const width = window.innerWidth;
+    const isTargetQuery = width >= 769 && width <= 1023;
+    const offset = isTargetQuery 
+        ? (currentTestimonialIndex * -560) - ((currentTestimonialIndex - 1) * 110)
+        : currentTestimonialIndex * -780;
+
+    document.getElementById('testimonial-belt').style.transform = `translateX(${offset}px)`;
+    document.querySelectorAll('.testimonial-card').forEach((card, i) => {
         card.classList.toggle('focused', i === currentTestimonialIndex);
     });
-    dots.forEach((dot, i) => {
+    document.querySelectorAll('.dot').forEach((dot, i) => {
         dot.classList.toggle('active', i === currentTestimonialIndex);
     });
 }
@@ -237,6 +239,27 @@ function checkConsent() {
     const isValid = field.checked;
     document.getElementById('consent-error').innerText = isValid ? "" : "Please accept the privacy policy.";
     return isValid;
+}
+
+/**
+ * Real-time helper to check if all inputs possess content and consent is checked.
+ * @returns {boolean} True if structurally complete, otherwise false.
+ */
+function isFormFilled() {
+    const name = document.getElementById('name')?.value.trim();
+    const email = document.getElementById('email')?.value.trim();
+    const help = document.getElementById('help')?.value.trim();
+    const consent = document.getElementById('consent')?.checked;
+    return !!(name && email && help && consent);
+}
+
+/**
+ * Toggles the disabled attribute state on the submit button based on current form fullness.
+ * @returns {void}
+ */
+function toggleSubmitButtonState() {
+    const btn = document.querySelector('.submit__button');
+    if (btn) btn.disabled = !isFormFilled();
 }
 
 /**
@@ -359,14 +382,14 @@ function updatePlaceholders(lang) {
 function initFieldListeners(id) {
     const field = document.getElementById(id);
     if (!field) return;
-    if (id === 'email') {
-        field.addEventListener('input', () => checkEmail(false));
-        field.addEventListener('blur', () => checkEmail(true));
-    } else {
-        const func = id === 'name' ? checkName : checkHelp;
-        field.addEventListener('input', func);
-        field.addEventListener('blur', func);
-    }
+    const func = id === 'email' ? () => checkEmail(false) : (id === 'name' ? checkName : checkHelp);
+    const blurFunc = id === 'email' ? () => checkEmail(true) : func;
+    
+    field.addEventListener('input', () => {
+        func();
+        toggleSubmitButtonState();
+    });
+    field.addEventListener('blur', blurFunc);
 }
 
 /**
@@ -393,12 +416,14 @@ function initLanguageToggle() {
  */
 document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById('testimonial-belt')) renderTestimonial();
-    
     const infoContainer = document.getElementById('project-info');
     infoContainer?.addEventListener('click', (e) => e.target === infoContainer && closeCard());
-
     ['name', 'email', 'help'].forEach(initFieldListeners);
-    document.getElementById('consent')?.addEventListener('change', checkConsent);
-    
+
+    document.getElementById('consent')?.addEventListener('change', () => {
+        checkConsent();
+        toggleSubmitButtonState();
+    });
     initLanguageToggle();
+    toggleSubmitButtonState();
 });
