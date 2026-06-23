@@ -7,71 +7,68 @@
     <script src="js/script.js"></script>
     <script src="js/project-info.js"></script>
     <script src="templates/templates.js"></script>
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/variables.css">
-    <link rel="stylesheet" href="style/header.css">
-    <link rel="stylesheet" href="style/introduction.css">
-    <link rel="stylesheet" href="style/about-me.css">
-    <link rel="stylesheet" href="style/skillset.css">
-    <link rel="stylesheet" href="style/projects.css">
-    <link rel="stylesheet" href="style/other-people.css">
-    <link rel="stylesheet" href="style/contact-me.css">
-    <link rel="stylesheet" href="style/footer.css">
-    <link rel="stylesheet" href="style/responsive.css">
-    <link rel="stylesheet" href="style/mobile.css">
-    <link rel="stylesheet" href="style/project-info-card.css">
+    
+    <link rel="stylesheet" href="css/root/style.css">
+    <link rel="stylesheet" href="css/root/variables.css">
+    <link rel="stylesheet" href="css/root/header.css">
+    <link rel="stylesheet" href="css/root/footer.css">
+    <link rel="stylesheet" href="css/style/introduction.css">
+    <link rel="stylesheet" href="css/style/about-me.css">
+    <link rel="stylesheet" href="css/style/skillset.css">
+    <link rel="stylesheet" href="css/style/projects.css">
+    <link rel="stylesheet" href="css/style/other-people.css">
+    <link rel="stylesheet" href="css/style/contact-me.css">
+    <link rel="stylesheet" href="css/style/project-info-card.css">
+    <link rel="stylesheet" href="css/responsive/responsive.css">
+    <link rel="stylesheet" href="css/responsive/mobile-landscape.css">
+    <link rel="stylesheet" href="css/responsive/mobile.css">
     
     <title>Maximilian Schmidt</title>
 </head>
 <body>
 
     <div class="intro">
-    <div class="header header-multi-bg">
-        <div class="nav">
-            <div class="toggle">
-                <input type="checkbox" id="lang-toggle"/>
-                <label for="lang-toggle">
-                    <div class="toggle-knob"></div>
-                    <span class="lang-en">EN</span>
-                    <span class="lang-de">DE</span>
-                </label>
-            </div>
-
-            <a href="#about-me" class="header-category" data-translate="navAbout">
-                About me
-            </a>
-
-            <a href="#skills" class="header-category" data-translate="navSkills">
-                Skills
-            </a>
-
-            <a href="#projects" class="header-category" data-translate="navProjects">
-                Projects
-            </a>
+<div class="header header-multi-bg">
+    <div class="logo">
+        <div class="logo-icon">
+            <span class="char-m">M</span>
+            <span class="char-s">S</span>
         </div>
+        <div class="logo-text">
+            <span class="first-name">Maximilian</span>
+            <span class="last-name">Schmidt</span>
+        </div>
+    </div>
 
-        <div class="logo">
-            <div class="logo-icon">
-                <span class="char-m">
-                    M
-                </span>
-
-                <span class="char-s">
-                    S
-                </span>
+    <div class="nav">
+        <div class="menu-container">
+            <div class="burger-icon" id="burger-trigger">
+                <img src="img/mobile/menu.svg" id="burger-img">
             </div>
-    
-            <div class="logo-text">
-                <span class="first-name">
-                    Maximilian
-                </span>
+            
+            <div class="nav-links" id="mobile-menu">
+                <a href="#about-me" class="header-category" data-translate="navAbout">
+                    About me
+                </a>
+                <a href="#skills" class="header-category" data-translate="navSkills">
+                    Skills
+                </a>
+                <a href="#projects" class="header-category" data-translate="navProjects">
+                    Projects
+                </a>
 
-                <span class="last-name">
-                    Schmidt
-                </span>
+                <div class="toggle">
+                    <input type="checkbox" id="lang-toggle"/>
+                    <label for="lang-toggle">
+                        <div class="toggle-knob"></div>
+                        <span class="lang-en">EN</span>
+                        <span class="lang-de">DE</span>
+                    </label>
+                </div>
             </div>
         </div>
     </div>
+</div>
     </div>
 
     <div class="introduction introduction-multi-bg">
@@ -404,18 +401,41 @@
 
         <div class="testimonial-container" id="testimonial-belt">
             <div class="testimonial-card">
-                <p class="testimonial-text">Our project benefited enormously from Max's efficient way of working.</p>
-                <div class="testimonial-footer"><div class="footer-line"></div><span class="testimonial-author">T.Schulz - Frontend Developer</span></div>
+                <p class="testimonial-text">
+                    Our project benefited enormously from Max's efficient way of working.
+                </p>
+
+                <div class="testimonial-footer">
+                    <div class="footer-line"></div>
+                    <span class="testimonial-author">
+                        T.Schulz - Frontend Developer
+                    </span>
+                </div>
             </div>
 
             <div class="testimonial-card">
-                <p class="testimonial-text">Max has proven to be a reliable group partner. His technical skills and proactive approach were crucial.</p>
-                <div class="testimonial-footer"><div class="footer-line"></div><span class="testimonial-author">H.Janisch - Team Partner</span></div>
+                <p class="testimonial-text">
+                    Max has proven to be a reliable group partner. His technical skills and proactive approach were crucial.
+                </p>
+
+                <div class="testimonial-footer">
+                    <div class="footer-line"></div>
+                    <span class="testimonial-author">
+                        H.Janisch - Team Partner
+                    </span>
+                </div>
             </div>
 
             <div class="testimonial-card">
-                <p class="testimonial-text">I had the good fortune of working on a project. He always stayed calm, cool, and collected.</p>
-                <div class="testimonial-footer"><div class="footer-line"></div><span class="testimonial-author">A. Müller - Team Partner</span></div>
+                <p class="testimonial-text">
+                    I had the good fortune of working on a project. He always stayed calm, cool, and collected.
+                </p>
+                <div class="testimonial-footer">
+                    <div class="footer-line"></div>
+                    <span class="testimonial-author">
+                        A. Müller - Team Partner
+                    </span>
+                </div>
             </div>
         </div>
     </div>
@@ -469,39 +489,61 @@
         <form class="contact-form" onsubmit="sendEmail(event)" novalidate>
             <div class="form-content"> 
                 <div class="form-group">
-                    <label for="name" data-translate="formName">What's your name?</label>
+                    <label for="name" data-translate="formName">
+                        What's your name?
+                    </label>
+
                     <input type="text" id="name" name="name" placeholder="Your name goes here">
                 </div>
 
                 <div class="form-group">
-                    <label for="email" data-translate="formEmail">What's your email?</label>
+                    <label for="email" data-translate="formEmail">
+                        What's your email?
+                    </label>
+
                     <input type="email" id="email" name="email" placeholder="youremail@email.com">
                 </div>
 
                 <div class="form-group">
-                    <label for="help" data-translate="formHelp">How can I help you?</label>
+                    <label for="help" data-translate="formHelp">
+                        How can I help you?
+                    </label>
+
                     <textarea id="help" name="help" placeholder="Hello Max, I am interested in..."></textarea>
                 </div>
 
                 <div class="contact-form__input">
                     <input type="checkbox" id="consent" name="consent" class="custom-checkbox">
                     <label class="accept-container">
-                        <span data-translate="formConsentStart">I've read the</span>
-                        <a class="privacy-policy__link" href="sites/legal.html" target="_blank" data-translate="formPrivacyLink">privacy policy</a>
-                        <span data-translate="formConsentEnd">and agree to the processing of my data as outlined.</span>
+                        <span data-translate="formConsentStart">
+                            I've read the
+                        </span>
+                        <a class="privacy-policy__link" href="sites/legal.html" target="_blank" data-translate="formPrivacyLink">
+                            privacy policy
+                        </a>
+                        <span data-translate="formConsentEnd">
+                            and agree to the processing of my data as outlined.
+                        </span>
                     </label>
                 </div>
                 
                 <div id="consent-error" class="error-message checkbox-error"></div> 
         
                 <button class="submit__button" type="submit">
-                    <span data-translate="formBtn">Say Hello ;)</span>
+                    <span data-translate="formBtn">
+                        Say Hello ;)
+                    </span>
                 </button>
             </div> 
 
             <div id="success-message" class="d-none success-box">
-                <h3>Thank you!</h3>
-                <p>Your message has been sent successfully. I will get back to you as soon as possible.</p>
+                <h3>
+                    Thank you!
+                </h3>
+
+                <p>
+                    Your message has been sent successfully. I will get back to you as soon as possible.
+                </p>
             </div>
         </form>
     </div>

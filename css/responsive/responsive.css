@@ -140,7 +140,8 @@
 
 .header-category {
     font-size: var(--font-size-lg);
-    padding: var(--spacing-sm);
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
 }
 
 .intro-headline-sub {

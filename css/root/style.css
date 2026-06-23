@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'fira';
-    src: url(../fonts/Fira_Code/FiraCode-VariableFont_wght.ttf) format('truetype');
+    src: url(/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf) format('truetype');
     font-weight: 100 900;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'karla';
-    src: url(../fonts/Karla/Karla-VariableFont_wght.ttf) format('truetype');
+    src: url(/fonts/Karla/Karla-VariableFont_wght.ttf) format('truetype');
     font-weight: 100 900;
     font-style: normal;
 }

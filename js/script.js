@@ -149,17 +149,28 @@ function switchCard() {
 }
 
 /**
- * Re-calculates positions and updates styles of the testimonial horizontal belt slider container, 
- * focus card classes, and active indicator dots based on responsive viewport width benchmarks.
+ * Calculates the horizontal translation offset based on the window viewport width.
+ * @param {number} width - The current window inner width in pixels.
+ * @returns {number} The calculated CSS translateX pixel offset value.
+ */
+function calculateTestimonialOffset(width) {
+    if (width >= 769 && width <= 1023) {
+        const positions = [80, -560, -1200]; 
+        return positions[currentTestimonialIndex] || 0;
+    }
+    if (width >= 479 && width <= 768) {
+        const positions = [70, -330, -730]; 
+        return positions[currentTestimonialIndex] || 0;
+    }
+    return currentTestimonialIndex * -780;
+}
+
+/**
+ * Re-calculates positions and updates styles of the testimonial horizontal belt slider container.
  * @returns {void}
  */
 function renderTestimonial() {
-    const width = window.innerWidth;
-    const isTargetQuery = width >= 769 && width <= 1023;
-    const offset = isTargetQuery 
-        ? (currentTestimonialIndex * -560) - ((currentTestimonialIndex - 1) * 110)
-        : currentTestimonialIndex * -780;
-
+    const offset = calculateTestimonialOffset(window.innerWidth);
     document.getElementById('testimonial-belt').style.transform = `translateX(${offset}px)`;
     document.querySelectorAll('.testimonial-card').forEach((card, i) => {
         card.classList.toggle('focused', i === currentTestimonialIndex);
@@ -411,6 +422,64 @@ function initLanguageToggle() {
 }
 
 /**
+ * Closes the mobile navigation menu, restoring window scroll and burger icon state.
+ * @param {HTMLElement} menu - The navigation links container element.
+ * @param {HTMLElement} burgerImg - The native image asset inside the burger button wrapper.
+ * @returns {void}
+ */
+function closeMobileMenu(menu, burgerImg) {
+    menu.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+    if (burgerImg) burgerImg.style.opacity = '1';
+}
+
+/**
+ * Sets up the click listener on the burger button to toggle menu visibility.
+ * @param {HTMLElement} burger - The burger trigger element.
+ * @param {HTMLElement} menu - The mobile links container.
+ * @param {HTMLElement} burgerImg - The icon inside the burger wrapper.
+ * @returns {void}
+ */
+function setupBurgerClick(burger, menu, burgerImg) {
+    burger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = menu.classList.toggle('active');
+        document.body.classList.toggle('no-scroll', isOpen);
+        if (burgerImg) burgerImg.style.opacity = isOpen ? '0' : '1';
+    });
+}
+
+/**
+ * Sets up a global click listener to close the menu when clicking outside or on a link.
+ * @param {HTMLElement} burger - The burger trigger element.
+ * @param {HTMLElement} menu - The mobile links container.
+ * @param {HTMLElement} burgerImg - The icon inside the burger wrapper.
+ * @returns {void}
+ */
+function setupOutsideClick(burger, menu, burgerImg) {
+    document.addEventListener('click', (e) => {
+        const isLink = e.target.classList.contains('header-category');
+        const isOutside = !menu.contains(e.target) && !burger.contains(e.target);
+        if ((isLink || isOutside) && menu.classList.contains('active')) {
+            closeMobileMenu(menu, burgerImg);
+        }
+    });
+}
+
+/**
+ * Handles initialization and global click events for the mobile slide-out navigation layout.
+ * @returns {void}
+ */
+function initMobileNavigation() {
+    const burger = document.getElementById('burger-trigger');
+    const menu = document.getElementById('mobile-menu');
+    const burgerImg = document.getElementById('burger-img');
+    if (!burger || !menu) return;
+    setupBurgerClick(burger, menu, burgerImg);
+    setupOutsideClick(burger, menu, burgerImg);
+}
+
+/**
  * Sets up global event listeners for testimonials, modal close hooks, and forms.
  * @returns {void}
  */
@@ -426,4 +495,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     initLanguageToggle();
     toggleSubmitButtonState();
+    initMobileNavigation();
 });
