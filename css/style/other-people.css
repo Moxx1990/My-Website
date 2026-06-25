@@ -51,7 +51,7 @@
 }
 
 .people__arrow-right:hover {
-    content: url("../img/colleagues/arrow_right_green.svg");
+    content: url("/img/colleagues/arrow_right_green.svg");
     transform: scale(1.3);
 }
 
@@ -63,19 +63,18 @@
 }
 
 .people__arrow-left:hover {
-    content: url("../img/colleagues/arrow_left_green.svg");
+    content: url("/img/colleagues/arrow_left_green.svg");
     transform: scale(1.3);
 }
 
 .carousel-wrapper {
     position: relative;
     width: 100%;
-    max-width: 740px; /* Breite genau einer Karte */
+    max-width: 740px;
     height: 380px;
     margin-bottom: 32px;
 }
 
-/* Das fixe Zitat links oberhalb der mittleren Karte */
 .fixed-quote-icon {
     position: absolute;
     top: -30px;
@@ -86,10 +85,9 @@
     pointer-events: none;
 }
 
-/* Der "Gürtel", der alle Karten hält und sich bewegt */
 .testimonial-container {
     display: flex;
-    gap: 40px; /* Abstand zwischen den Karten */
+    gap: 40px; 
     position: absolute;
     top: 0;
     left: 0;
@@ -98,18 +96,22 @@
 }
 
 .testimonial-card {
+    font-size: var(--font-size-lg);
+    font-family: 'karla';
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #1E4E45; 
     border: 1px solid var(--alternative-text-color); 
     border-radius: 30px; 
-    width: 740px; /* Feste Breite für die Berechnung */
+    width: 740px;
     min-width: 740px;
     padding: 64px 48px 48px 48px;
     box-sizing: border-box;
-    opacity: 0.3; /* Inaktive Karten sind blasser (wie auf deinem Bild) */
+    opacity: 0.3; 
     transition: opacity 0.5s ease-in-out;
 }
 
-/* Nur die Karte im Fokus bekommt volle Deckkraft */
 .testimonial-card.focused {
     opacity: 1;
 }

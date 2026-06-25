@@ -117,7 +117,7 @@
 
 .about-me-description, 
 .skill-set-description {
-    width: 358px;
+    width: 340px;
     height: 100%;
     font-size: var(--font-size-base); 
     padding-left: var(--spacing-xl);  
@@ -165,7 +165,7 @@
 
 .projects {
     width: 360px;
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-lg);
 }
 
 .projects__little-headline {
@@ -225,6 +225,9 @@
 .testimonial-card {
     width: 360px;
     min-width: 360px;
+    padding-top: 100px;
+    padding-left: 32px;
+    padding-bottom: 16px;
 }
 
 .fixed-quote-icon {
