@@ -71,7 +71,7 @@
     position: relative;
     width: 100%;
     max-width: 740px;
-    height: 380px;
+    height: 300px;
     margin-bottom: 32px;
 }
 
@@ -103,7 +103,8 @@
     justify-content: space-between;
     background-color: #1E4E45; 
     border: 1px solid var(--alternative-text-color); 
-    border-radius: 30px; 
+    border-radius: 30px;
+    height: 270px; 
     width: 740px;
     min-width: 740px;
     padding: 64px 48px 48px 48px;
@@ -114,4 +115,22 @@
 
 .testimonial-card.focused {
     opacity: 1;
+}
+
+.testimonial-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.testimonial-author {
+    display: inline-flex;
+    align-items: center;
+    gap: 1em; 
+}
+
+.testimonial-author::before {
+    content: "";
+    width: 20em;
+    height: 1px;
+    background-color: var(--text-color);
 }
