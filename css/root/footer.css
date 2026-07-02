@@ -14,6 +14,12 @@
     flex-direction: column;
 }
 
+.footer-left-side {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
 .footer-copyright {
     color: var(--alternative-text-color);
     font-size: var(--font-size-lg);
@@ -22,12 +28,13 @@
 .footer-links-container {
     display: flex;
     flex-direction: column;
+    gap: var(--spacing-sm);
 }
 
 .footer a {
     color: var(--text-color);
     text-decoration: none;
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
     transition: all 0.3s ease;
     padding-left: 14px;
     text-decoration: none;
@@ -54,4 +61,12 @@
 
 .footer-link:hover::after {
     transform: translateY(-50%) scale(1);
+}
+
+.footer-mobile {
+    display: none;
+    text-align: center;
+    padding: var(--spacing-lg);
+    color: var(--alternative-text-color);
+    font-size: var(--font-size-lg);
 }

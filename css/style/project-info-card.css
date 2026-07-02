@@ -141,7 +141,7 @@ body.no-scroll {
 .project-info-close {
     position: absolute;
     top: 56px;
-    left: 1120px;
+    right: 80px;
     cursor: pointer;
     user-select: none;
 }
