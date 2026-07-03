@@ -263,8 +263,7 @@
 }
 
 .contact {
-    padding-left: var(--spacing-md);
-    padding-right: var(--spacing-md);
+    padding-inline: var(--spacing-md);
     flex-direction: column;
     height: auto;
     padding-bottom: var(--spacing-xl);
@@ -316,8 +315,7 @@
 }
 
 .footer {
-    padding-left: var(--spacing-xs);
-    padding-right: var(--spacing-xs);
+    padding-inline: var(--spacing-md);
     padding-bottom: 0px;
 }
 
@@ -339,9 +337,8 @@
 }
 
 .project-info-card .project-info-card-left-side {
-    padding-top: var(--spacing-xl);
+    padding-block: var(--spacing-xl) var(--spacing-4xl);
     padding-left: var(--spacing-md);
-    padding-bottom: var(--spacing-4xl);
     width: auto;
     margin-right: 0px;
 }
@@ -351,8 +348,7 @@
 }
 
 .project-info-card .project-info-card-right-side {
-    padding-left: var(--spacing-xs);
-    padding-right: var(--spacing-xs);
+    padding-inline: var(--spacing-xs);
     width: auto;
 }
 

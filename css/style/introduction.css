@@ -245,33 +245,3 @@
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
 }
-
-.legal-notice-page {
-    height: auto !important;
-    min-height: 100vh;
-    padding-top: 120px;
-    padding-bottom: 80px;
-}
-
-.legal-main-headline {
-    color: var(--text-color);
-    margin-bottom: 40px;
-}
-
-.legal-section h2 {
-    color: var(--text-color);
-    margin-top: 24px;
-    margin-bottom: 12px;
-}
-
-.legal-section p, 
-.legal-section {
-    color: var(--alternative-text-color);
-    font-size: var(--font-size-base);
-    font-weight: 400;
-    line-height: 1.6;
-}
-
-.text-white {
-    color: var(--text-color) !important;
-}

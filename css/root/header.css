@@ -206,7 +206,7 @@
 
 .nav-links {
     display: flex;
-    flex-direction: row-reverse; /* Dreht die Reihe um, damit der Toggle wieder vorne steht */
+    flex-direction: row-reverse;
     align-items: center;
     gap: 32px;
 }
