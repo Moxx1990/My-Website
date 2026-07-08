@@ -5,9 +5,7 @@
     padding-left: var(--spacing-5xl);
     width: 100%;
     height: 695px;
-    background: 
-        radial-gradient(circle at left, #08463B80 0%, #08463B4D 10%, transparent 30%),
-        url('/img/background/backgroundndskillset.jpg');        
+    background: radial-gradient(circle at left, #08463B 0%, #0a241f 15%, #121212 40%);   
     background-size: cover;
     background-repeat: no-repeat;
 }
