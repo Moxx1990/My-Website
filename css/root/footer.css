@@ -1,4 +1,5 @@
 .footer {
+    max-width: 1440px;
     height: 126px;
     display: flex;
     align-items: center;

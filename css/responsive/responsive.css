@@ -248,11 +248,14 @@
 }
 
 .contact-me-info {
+    width: 90%;
     padding-bottom: var(--spacing-2xl);
 }
 
 .contact-form {
     padding-right: 50px;
+    width: 90%;
+    max-width: none;
 }
 
 .footer {
