@@ -1,6 +1,6 @@
 @media (min-width: 1024px ) and (max-width: 1280px) {
 
-.header {
+.navigation {
     padding-left: var(--spacing-2xl);
     padding-right: var(--spacing-2xl);
 }
@@ -40,7 +40,7 @@
 }
 
 .skill-set-description {
-    width: 450px;
+    max-width: 450px;
 }
 
 .skill-set__headline {
@@ -53,6 +53,10 @@
 
 .skill-highlight__text {
     font-size: var(--font-size-xl);
+}
+
+.skills {
+    padding-right: var(--spacing-3xl);
 }
 
 .skills__icon {
@@ -133,7 +137,7 @@
 
 @media (min-width: 769px ) and (max-width: 1023px) {
 
-.header {
+.navigation {
     padding-left: var(--spacing-xl);
     padding-right: var(--spacing-xl);
 }
@@ -170,10 +174,23 @@
     font-size: 50px;
 }
 
+.about-me-description {
+   max-width: none;
+}
+
 .skill-set {
+    width: 80%;
     gap: var(--spacing-2xl);
     flex-direction: column;
     height: 100%;
+}
+
+.skills {
+    padding-right: var(--spacing-xs);
+}
+
+.skill-set-description {
+    max-width: none;
 }
 
 .skills__icon {
@@ -185,7 +202,6 @@
 }
 
 .project-container {
-    width: auto;
     min-width: 550px;
 }
 

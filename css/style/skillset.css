@@ -1,13 +1,19 @@
-.skill-set {
+.skill-set-container {
     display: flex;
     gap: var(--spacing-5xl);
     padding-top: var(--spacing-5xl);
     padding-left: var(--spacing-5xl);
+    padding-bottom: var(--spacing-3xl);
     width: 100%;
-    height: 695px;
     background: radial-gradient(circle at left, #08463B 0%, #0a241f 15%, #121212 40%);   
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.skill-set {
+    display: flex;
+    max-width: 1440px;
+    gap: var(--spacing-5xl);
 }
 
 .skill-set__little-headline {
@@ -22,7 +28,8 @@
     border: 1px solid var(--alternative-text-color);
     border-radius: var(--radius-3xl);
     background-color: #3DCFB610;
-    width: 520px;
+    max-width: 520px;
+    min-width: 380px;
     padding: var(--spacing-xl);
 }
 
@@ -80,7 +87,7 @@
     align-content: flex-start;
     align-items: center;
     padding-top: var(--spacing-2xl);
-    padding-right: var(--spacing-3xl);
+    padding-right: var(--spacing-xl);
 }
 
 .skills__icon.growth {

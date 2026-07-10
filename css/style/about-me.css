@@ -1,5 +1,7 @@
 .about-me {
+    max-width: 1440px;
     display: flex;
+    justify-content: space-between;
     gap: var(--spacing-5xl);
     padding: var(--spacing-5xl);
 }
@@ -63,8 +65,7 @@
 .about-me-description {
     border: 1px solid var(--alternative-text-color);
     border-radius: var(--radius-3xl);
-    width: 540px;
-    height: 568px;
+    max-width: 540px;
     background-color: #3DCFB61A;
     font-family: 'karla', sans-serif;
     font-size: var(--font-size-lg);

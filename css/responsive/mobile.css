@@ -1,6 +1,6 @@
 @media (max-width: 478px) {
 
-.header {
+.navigation {
     padding-left: var(--spacing-xl);
     padding-right: var(--spacing-xl);
     flex-direction: row;
@@ -65,9 +65,11 @@
 
 .introduction-multi-bg {
     display: block;
-    padding-top: 100px;
-    height: 650px;
+}
 
+.introduction-container {
+    display: block;
+    padding-top: var(--spacing-6xl);
 }
 
 .intro-headline-sub {
@@ -122,7 +124,7 @@
 }
 
 .about-me-image {
-    width: 100%;
+    width: 95%;
     height: 100%;
 }
 

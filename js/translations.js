@@ -21,7 +21,7 @@ const translations = {
         aboutHeadline: "About me",
         aboutText1: "Hey there, I'm Maximilian Schmidt! I love creating beautiful and functional websites and applications from nothing. I am passionate about coding because every project gives me the opportunity to learn something new, improve my skills and seeing how technology can make people's lives easier and more efficient.",
         aboutTextLoc: "I'm from Waldmühlen, Germany. I am open to work remotely or on-site.",
-        aboutTextMind: "I am enthusiastic about lerning new technologies and continuously improving my skills.",
+        aboutTextMind: "I am enthusiastic about learning new technologies and continuously improving my skills.",
         aboutTextCheck: "I approach problems with a combination of analytical thinking, creativity, and persistence. I enjoy breaking down complex challenges into manageable steps to find the most efficient outcome, viewing each obstacle as an opportunity to learn and continuously refine my skills.",
         skillsTitle: "Technologies",
         skillsHeadline: "Skill Set",

@@ -1,16 +1,21 @@
 .header {
     height: 98px;
+}
+
+.header-multi-bg {
+    background: linear-gradient(177deg, var(--main-bg-color) 50%, var(--sub-bg-color) 100%);
+    background-repeat: no-repeat;
+}
+
+.navigation {
+    height: 98px;
+    max-width: 1440px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row-reverse;
     padding-left: var(--spacing-5xl);
     padding-right: var(--spacing-5xl);
-}
-
-.header-multi-bg {
-    background: linear-gradient(177deg, var(--main-bg-color) 50%, var(--sub-bg-color) 100%);
-    background-repeat: no-repeat;
 }
 
 .nav {

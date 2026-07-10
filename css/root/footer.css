@@ -70,3 +70,8 @@
     color: var(--alternative-text-color);
     font-size: var(--font-size-lg);
 }
+
+.footer .footer-logo-link {
+    text-decoration: none;
+    padding: 0;
+}

@@ -12,7 +12,7 @@
 .legal-notice-page {
     height: auto !important;
     min-height: 100vh;
-    padding-bottom: 80px;
+    padding-bottom: 0px;
 }
 
 .legal-main-headline {
@@ -105,10 +105,6 @@
     margin-bottom: var(--spacing-md);
     color: var(--alternative-text-color);
     font-size: var(--font-size-lg);
-}
-
-.legal-notice-page {
-    padding-bottom: 0px;
 }
 
 .legal-main-headline {

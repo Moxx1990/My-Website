@@ -10,6 +10,16 @@
     display: block; 
 }
 
+.introduction-container {
+    max-width: 1440px;
+    width: 100%;           /* Wichtig, damit er sich bis 1440px dehnt */
+    height: 100%;          /* Nimmt die volle Höhe des Eltern-Elements ein */
+    position: relative;    /* DAS HIER IST NEU: Richtet die absolute-Elemente an diesem Container aus */
+    display: flex;         /* Hält den Inhalt zentriert */
+    justify-content: center;
+    align-items: center;
+}
+
 .introduction-multi-bg {
     width: 100%;
     height: calc(100vh - 98px);
