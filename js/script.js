@@ -63,24 +63,24 @@ function checkName() {
 }
 
 /**
- * Validates the syntax of the contact form's Email field.
- * Handles structural requirements based on the blur state of the input focus cycle.
- * @param {boolean} [isBlurSetting=false] - If set to true, strict structural format rule checks (like the presence of '@') are actively assessed.
- * @returns {boolean} True if input data passes active validation state thresholds, false otherwise.
+ * Validates the syntax of the contact form's Email field in real-time.
+ * @returns {boolean} True if input data is a valid email, false otherwise.
  */
-function checkEmail(isBlurSetting = false) {
+function checkEmail() {
     const field = document.getElementById('email');
     const value = field.value.trim();
-    let isValid = value !== "";
-    if (!isValid) {
-        field.placeholder = "Please enter your email.";
-    } else if (isBlurSetting && !value.includes('@')) {
-        field.value = "";
-        field.placeholder = "Hoppla! Your email is required";
-        isValid = false;
+    const emailRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isValid = value !== "" && emailRegEx.test(value);
+    if (!isValid && value !== "") {
+        field.style.borderColor = "red";
+        field.style.borderWidth = "2px";
+        field.placeholder = "Hoppla! Das ist keine gültige E-Mail";
+    } else {
+        field.style.borderColor = ""; 
+        field.style.borderWidth = "";
+        field.placeholder = "youremail@email.com";
     }
     field.classList.toggle('input-error', !isValid);
-    if (isValid) field.placeholder = "youremail@email.com";
     return isValid;
 }
 
@@ -110,15 +110,18 @@ function checkConsent() {
 }
 
 /**
- * Real-time helper to check if all inputs possess content and consent is checked.
- * @returns {boolean} True if structurally complete, otherwise false.
+ * Real-time helper to check if all inputs possess content AND email is valid.
+ * @returns {boolean} True if structurally complete and valid, otherwise false.
  */
 function isFormFilled() {
     const name = document.getElementById('name')?.value.trim();
     const email = document.getElementById('email')?.value.trim();
     const help = document.getElementById('help')?.value.trim();
     const consent = document.getElementById('consent')?.checked;
-    return !!(name && email && help && consent);
+    const emailRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isEmailValid = email && emailRegEx.test(email);
+    
+    return !!(name && isEmailValid && help && consent);
 }
 
 /**
@@ -181,9 +184,12 @@ async function executeEmailSubmit() {
  */
 async function sendEmail(event) {
     event.preventDefault();
-    const isValid = checkName() & checkEmail(true) & checkHelp() & checkConsent();
-    if (!isValid) return;
-    
+    const isNameValid = checkName();
+    const isEmailValid = checkEmail();
+    const isHelpValid = checkHelp();
+    const isConsentValid = checkConsent();
+    const isFormValid = isNameValid && isEmailValid && isHelpValid && isConsentValid;
+    if (!isFormValid) return;
     const success = await executeEmailSubmit();
     if (success) resetContactForm();
     else alert('Mail delivery failed or an error occurred.');
@@ -243,21 +249,18 @@ function updatePlaceholders(lang) {
 }
 
 /**
- * Attaches event listeners to the contact form input fields for validation.
+ * Attaches event listeners for strict real-time input event validation.
  * @param {string} id - The DOM element ID of the input field.
  * @returns {void}
  */
 function initFieldListeners(id) {
     const field = document.getElementById(id);
     if (!field) return;
-    const func = id === 'email' ? () => checkEmail(false) : (id === 'name' ? checkName : checkHelp);
-    const blurFunc = id === 'email' ? () => checkEmail(true) : func;
-    
+    const validationFunc = id === 'email' ? checkEmail : (id === 'name' ? checkName : checkHelp);
     field.addEventListener('input', () => {
-        func();
+        validationFunc();
         toggleSubmitButtonState();
     });
-    field.addEventListener('blur', blurFunc);
 }
 
 /**
@@ -291,14 +294,15 @@ function closeMobileMenu(menu, burgerImg) {
 }
 
 /**
- * Sets up the click listener on the burger button to toggle menu visibility.
+ * Sets up the click/touch listener on the burger button to toggle menu visibility.
  * @param {HTMLElement} burger - The burger trigger element.
  * @param {HTMLElement} menu - The mobile links container.
  * @param {HTMLElement} burgerImg - The icon inside the burger wrapper.
  * @returns {void}
  */
 function setupBurgerClick(burger, menu, burgerImg) {
-    burger.addEventListener('click', (e) => {
+    burger.addEventListener('pointerdown', (e) => {
+        e.preventDefault();
         e.stopPropagation();
         const isOpen = menu.classList.toggle('active');
         document.body.classList.toggle('no-scroll', isOpen);
@@ -307,17 +311,34 @@ function setupBurgerClick(burger, menu, burgerImg) {
 }
 
 /**
- * Sets up a global click listener to close the menu when clicking outside or on a link.
+ * Sets up direct click event listeners on the anchor links inside the mobile menu.
+ * @param {HTMLElement} menu - The mobile links container.
+ * @param {HTMLElement} burgerImg - The icon inside the burger wrapper.
+ * @returns {void}
+ */
+function setupAnchorLinkClicks(menu, burgerImg) {
+    const anchorLinks = menu.querySelectorAll('.header-category');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            setTimeout(() => {
+                closeMobileMenu(menu, burgerImg);
+            }, 50);
+        });
+    });
+}
+
+/**
+ * Sets up a global listener to close the menu when clicking/tapping outside.
  * @param {HTMLElement} burger - The burger trigger element.
  * @param {HTMLElement} menu - The mobile links container.
  * @param {HTMLElement} burgerImg - The icon inside the burger wrapper.
  * @returns {void}
  */
 function setupOutsideClick(burger, menu, burgerImg) {
-    document.addEventListener('click', (e) => {
-        const isLink = e.target.classList.contains('header-category');
+    document.addEventListener('pointerdown', (e) => {
+        const isMenuLink = e.target.closest('#mobile-menu a');
         const isOutside = !menu.contains(e.target) && !burger.contains(e.target);
-        if ((isLink || isOutside) && menu.classList.contains('active')) {
+        if ((isMenuLink || isOutside) && menu.classList.contains('active')) {
             closeMobileMenu(menu, burgerImg);
         }
     });
@@ -332,7 +353,9 @@ function initMobileNavigation() {
     const menu = document.getElementById('mobile-menu');
     const burgerImg = document.getElementById('burger-img');
     if (!burger || !menu) return;
+    
     setupBurgerClick(burger, menu, burgerImg);
+    setupAnchorLinkClicks(menu, burgerImg); // Zuerst die direkten Klicks zuweisen!
     setupOutsideClick(burger, menu, burgerImg);
 }
 

@@ -1,13 +1,12 @@
 .skill-set-container {
-    display: flex;
-    gap: var(--spacing-5xl);
     padding-top: var(--spacing-5xl);
-    padding-left: var(--spacing-5xl);
     padding-bottom: var(--spacing-3xl);
     width: 100%;
     background: radial-gradient(circle at left, #08463B 0%, #0a241f 15%, #121212 40%);   
     background-size: cover;
     background-repeat: no-repeat;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .skill-set {
@@ -17,6 +16,7 @@
     box-sizing: border-box;
     display: flex;
     gap: var(--spacing-5xl);
+    padding-left: var(--spacing-5xl); 
 }
 
 .skill-set__little-headline {
