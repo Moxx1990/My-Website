@@ -123,6 +123,7 @@
     padding-right: var(--spacing-xl);
     padding-top: 24px;
     padding-bottom: 27px;
+    min-width: auto;
 }
 
 .skill-set__little-headline {
@@ -308,6 +309,7 @@
 .footer-mobile {
     display: block;
     text-align: center;
+    padding-top: var(--spacing-5xl);
     color: var(--alternative-text-color);
     font-size: var(--font-size-lg);
 }

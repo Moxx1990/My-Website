@@ -1,5 +1,8 @@
 .header {
     height: 98px;
+    width: 100%;            
+    display: flex;      
+    justify-content: center;
 }
 
 .header-multi-bg {
@@ -9,13 +12,16 @@
 
 .navigation {
     height: 98px;
+    width: 100%;
     max-width: 1440px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row-reverse;
     padding-left: var(--spacing-5xl);
     padding-right: var(--spacing-5xl);
+    box-sizing: border-box;
 }
 
 .nav {

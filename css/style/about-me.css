@@ -1,5 +1,8 @@
 .about-me {
+    width: 100%;
     max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     gap: var(--spacing-5xl);

@@ -178,8 +178,12 @@
    max-width: none;
 }
 
+.skill-set-container {
+    padding-left: var(--spacing-sm);
+}
+
 .skill-set {
-    width: 80%;
+    width: 90%;
     gap: var(--spacing-2xl);
     flex-direction: column;
     height: 100%;

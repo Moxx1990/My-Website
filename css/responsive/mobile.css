@@ -138,6 +138,7 @@
     height: 100%;
     font-size: var(--font-size-base); 
     padding: 24px var(--spacing-sm) 27px var(--spacing-md);
+    min-width: auto;
 }
 
 .skill-set__little-headline {
@@ -157,6 +158,10 @@
 .skill-highlight__text,
 .skills-highlight {
     font-size: 20px;
+}
+
+.skill-set-container {
+    padding: 0px;
 }
 
 .skill-set {
@@ -328,6 +333,7 @@
 .footer-mobile {
     display: block;
     text-align: center;
+    padding-top: var(--spacing-5xl);
     color: var(--alternative-text-color);
     font-size: var(--font-size-lg);
 }
