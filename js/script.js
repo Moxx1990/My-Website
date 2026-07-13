@@ -378,6 +378,5 @@ document.addEventListener("DOMContentLoaded", () => {
     initMobileNavigation();
     AOS.init({
         duration: 800,
-        once: true,
     });
 });
