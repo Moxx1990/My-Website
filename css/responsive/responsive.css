@@ -263,6 +263,7 @@
 }
 
 .footer {
+    padding-top: var(--spacing-5xl);
     padding-left: var(--spacing-2xl);
     padding-right: var(--spacing-2xl);
 }

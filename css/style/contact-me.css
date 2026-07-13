@@ -8,6 +8,7 @@
     height: 541px;
     padding-top: var(--spacing-5xl);
     padding-left: var(--spacing-5xl);
+    padding-bottom: var(--spacing-5xl);
 }
 
 .contact-me-info{

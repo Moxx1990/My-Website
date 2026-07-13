@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: var(--spacing-6xl);
+    padding-top: 200px;
     padding-left: var(--spacing-5xl);
     padding-right: var(--spacing-5xl);
     padding-bottom: var(--spacing-5xl);

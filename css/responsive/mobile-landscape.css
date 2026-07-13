@@ -291,6 +291,7 @@
 }
 
 .footer {
+    padding-top: var(--spacing-2xl);
     padding-left: var(--spacing-2xl);
     padding-right: var(--spacing-2xl);
     padding-bottom: 0px;
