@@ -336,7 +336,7 @@
 .project-info-card {
     flex-direction: column-reverse;
     max-width: 95% !important;
-    height: auto !important;
+    height: 850px !important;
 }
 
 .project-info-card .project-info-card-left-side {
@@ -370,7 +370,7 @@
 }
 
 .project-info-card .project-info__picture {
-    padding-top: 95px;
+    padding-top: 0px;
     display: flex;
     justify-content: center;
 }
@@ -383,7 +383,7 @@
 
 .project-info-card .next-project__button {
     position: absolute;
-    bottom: -195px;
+    top: 790px;
     left: auto;
     right: 0px;
     padding-right: 30px;
@@ -398,6 +398,8 @@
 }
 
 .project-info-button-container {
+    position: relative;
+    bottom: 0;
     justify-content: center;
 }
 }

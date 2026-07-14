@@ -133,6 +133,9 @@
     padding-right: 30px;
 }
 
+.project-info-button-container {
+    bottom: 50px;
+}
 }
 
 @media (min-width: 769px ) and (max-width: 1023px) {
@@ -271,7 +274,7 @@
 .project-info-card {
     flex-direction: column-reverse;
     max-width: 750px !important;
-    height: auto !important;
+    height: 800px !important;
 }
 
 .project-info-card .project-info-card-left-side {
@@ -311,7 +314,7 @@
 
 .project-info-card .next-project__button {
     position: absolute;
-    top: 750px;
+    top: 720px;
     left: 550px;
     padding-right: 30px;
 }

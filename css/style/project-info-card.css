@@ -105,6 +105,8 @@ body.no-scroll {
 
 .project-info-button-container {
     display: flex;
+    position: absolute;
+    bottom: 30px;
 }
 
 .project__button {
@@ -147,7 +149,7 @@ body.no-scroll {
 }
 
 .project-info-close:hover img {
-    transform: translate(-5px, -5px);
+    transform: translate(5px, -5px);
     content: url(/img/projects/close_hover.svg);
 }
 
