@@ -154,7 +154,7 @@ function resetContactForm() {
     document.getElementById('email').value = "";
     document.getElementById('help').value = "";
     document.getElementById('consent').checked = false;
-    document.getElementById('form-content').classList.add('d-none');
+    document.querySelector('.form-content').classList.add('d-none');
     document.getElementById('success-message').classList.remove('d-none');
 }
 

@@ -6,13 +6,8 @@ header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json; charset=utf-8");
 
-// ------------------------------------------------------------
-// WICHTIG:
-// Deine eigene Adresse in Zeile 15 setzen!
-// ------------------------------------------------------------
-
-// >>> DEINE EMAIL HIER EINTRAGEN <<<
-$siteEmail = "schmidt-max@gmx.de";
+$empfaengerEmail = "schmidt-max@gmx.de";
+$absenderSystemEmail = "no-reply@schmidtmaximilian.com"; 
 
 switch ($_SERVER['REQUEST_METHOD']) {
 
@@ -49,10 +44,10 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $safeEmail = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
         $safeMessage = nl2br(htmlspecialchars($userMessage, ENT_QUOTES, 'UTF-8'));
 
-        // Empfängeradresse (nutzt die oben definierte Mail)
-        $recipient = $siteEmail; 
+        // Betreff der E-Mail
         $subject = 'Website Contact Form';
 
+        // Inhalt der E-Mail (HTML-Format)
         $mailBody = "
             <strong>Name:</strong> {$safeName}<br>
             <strong>Email:</strong> {$safeEmail}<br><br>
@@ -60,21 +55,21 @@ switch ($_SERVER['REQUEST_METHOD']) {
             {$safeMessage}
         ";
 
-        // Mail headers
+        // Mail headers (Sorgt für die richtige Zustellung)
         $headers = [];
         $headers[] = 'MIME-Version: 1.0';
         $headers[] = 'Content-type: text/html; charset=utf-8';
-        $headers[] = 'From: Website Kontakt <' . $siteEmail . '>'; 
-        $headers[] = 'Reply-To: ' . $email;
-        $headers[] = 'Return-Path: ' . $siteEmail; 
+        $headers[] = 'From: Website Kontakt <' . $absenderSystemEmail . '>'; 
+        $headers[] = 'Reply-To: ' . $email; // Wenn du in GMX auf "Antworten" klickst, schreibst du dem Kunden direkt!
+        $headers[] = 'Return-Path: ' . $absenderSystemEmail; 
 
         // Send mail
         $success = mail(
-            $recipient,
+            $empfaengerEmail,
             $subject,
             $mailBody,
             implode("\r\n", $headers),
-            '-f ' . $siteEmail 
+            '-f ' . $absenderSystemEmail 
         );
 
         if ($success) {
