@@ -1,0 +1,44 @@
+@media (max-height: 741px) {
+
+.introduction-container {
+    padding-top: var(--spacing-lg);
+}
+
+.vertical-line-left {
+    height: 210px;
+}
+
+.vertical-line-right {
+    height: 150px;
+}
+
+.project-info-card {
+    height: 650px !important;
+}
+
+.project-info-card .project-info__picture img {
+    height: 140px;
+    width: 65%;
+}
+
+.project-info-card .project-number {
+    font-size: 50px;
+}
+
+.project-info-card .project-info-name {
+    font-size: var(--font-size-2xl);
+}
+
+.project-info__headline {
+    font-size: var(--font-size-lg);
+}
+
+.project-card-content-text {
+    font-size: var(--font-size-sm);
+}
+
+.project-info-card .next-project__button {
+    top: 590px;
+}
+
+}

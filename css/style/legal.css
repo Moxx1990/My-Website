@@ -8,6 +8,7 @@
     font-size: 18px;
     color: var(--text-color);
     width: 90%;
+    max-width: 1440px;
 }
 
 .legal-notice-content a{
@@ -93,7 +94,7 @@
 
 .footer {
     padding-bottom: var(--spacing-3xl);
-    padding-top: 0px;
+    padding-top: 80px;
 }
 
 @media (min-width: 769px ) and (max-width: 1023px) {

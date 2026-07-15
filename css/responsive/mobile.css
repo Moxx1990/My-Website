@@ -87,11 +87,11 @@
 }
 
 .vertical-line-left {
-    height: 210px;
+    height: 310px;
 }
 
 .vertical-line-right {
-    height: 150px;
+    height: 250px;
 }
 
 .social-icons-email img {
@@ -99,11 +99,11 @@
 }
 
 .banner {
-    padding: 12px 0;
+    padding: 6px 0;
 }
 
 .banner__track span {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .about-me {
