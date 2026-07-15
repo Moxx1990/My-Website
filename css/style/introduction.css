@@ -229,29 +229,39 @@
 
 .banner__track {
     display: flex;
-    align-items: center;
-    gap: 32px;
     width: max-content;
-    animation: scrollBanner 15s linear infinite;
+    animation: scrollBanner 25s linear infinite; 
 }
 
-.banner__track span {
+.banner__group {
     display: flex;
     align-items: center;
-    gap: 56px;
+    gap: 56px;  
+    padding-right: 56px; 
+    flex-shrink: 0;  
+}
+
+.banner__group span {
+    display: flex;
+    align-items: center;
+    gap: 56px; 
     font-size: 32px;
     font-family: 'karla', sans-serif;
     color: var(--alternative-text-color);
     font-weight: 400;
 }
 
-.banner__track span::after {
+.banner__group span::after {
     content: "•";
     font-size: 32px;
     color: var(--alternative-text-color);
 }
 
 @keyframes scrollBanner {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    0% { 
+        transform: translateX(0); 
+    }
+    100% { 
+        transform: translateX(-50%); 
+    }
 }

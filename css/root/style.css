@@ -12,8 +12,12 @@
     font-style: normal;
 }
 
-html {
+html, body {
     scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
 }
 
 body {
@@ -26,6 +30,11 @@ body {
     margin-left: auto;
     margin-right: auto;
     overflow-x: hidden;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: var(--text-color);
 }
 
 .d-none {
