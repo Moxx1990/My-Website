@@ -67,20 +67,16 @@ function checkName() {
  * @returns {boolean} True if input data is a valid email, false otherwise.
  */
 function checkEmail() {
-    const field = document.getElementById('email');
-    const value = field.value.trim();
-    const emailRegEx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const isValid = value !== "" && emailRegEx.test(value);
-    if (!isValid && value !== "") {
-        field.style.borderColor = "red";
-        field.style.borderWidth = "2px";
-        field.placeholder = "Hoppla! Das ist keine gültige E-Mail";
-    } else {
-        field.style.borderColor = ""; 
-        field.style.borderWidth = "";
-        field.placeholder = "youremail@email.com";
+    const f = document.getElementById('email'), v = f.value.trim();
+    const isValid = v !== "" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    let err = document.getElementById('email-err');
+    if (!err) {
+        err = Object.assign(document.createElement('span'), {id: 'email-err', className: 'field-error-message'});
+        f.parentNode.appendChild(err);
     }
-    field.classList.toggle('input-error', !isValid);
+    f.classList.toggle('input-error', !isValid);
+    err.innerText = isValid ? "" : (v === "" ? "E-Mail is required." : "Invalid E-mail.");
+    err.style.display = isValid ? "none" : "block";
     return isValid;
 }
 
@@ -257,10 +253,8 @@ function initFieldListeners(id) {
     const field = document.getElementById(id);
     if (!field) return;
     const validationFunc = id === 'email' ? checkEmail : (id === 'name' ? checkName : checkHelp);
-    field.addEventListener('input', () => {
-        validationFunc();
-        toggleSubmitButtonState();
-    });
+    field.addEventListener('blur', () => { validationFunc(); toggleSubmitButtonState(); });
+    field.addEventListener('input', toggleSubmitButtonState);
 }
 
 /**
@@ -355,7 +349,7 @@ function initMobileNavigation() {
     if (!burger || !menu) return;
     
     setupBurgerClick(burger, menu, burgerImg);
-    setupAnchorLinkClicks(menu, burgerImg); // Zuerst die direkten Klicks zuweisen!
+    setupAnchorLinkClicks(menu, burgerImg);
     setupOutsideClick(burger, menu, burgerImg);
 }
 
@@ -367,6 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById('testimonial-belt')) renderTestimonial();
     const infoContainer = document.getElementById('project-info');
     infoContainer?.addEventListener('click', (e) => e.target === infoContainer && closeCard());
+    
     ['name', 'email', 'help'].forEach(initFieldListeners);
 
     document.getElementById('consent')?.addEventListener('change', () => {

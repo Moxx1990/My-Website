@@ -69,6 +69,19 @@
     padding-bottom: 24px;
     margin-left: -10px;
     padding-left: 30px;
+    position: relative;
+}
+
+.field-error-message {
+    position: absolute;
+    bottom: 4px;
+    left: 30px; 
+    color: #EC7B7BCC;
+    font-family: 'karla';
+    font-size: 13px;
+    font-weight: 500;
+    pointer-events: none;
+    display: none;
 }
 
 .form-content {
