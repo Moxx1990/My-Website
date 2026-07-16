@@ -41,17 +41,32 @@ body {
     display: none !important;
 }
 
-.lets-talk__button:hover,
-.introduction__button:hover,
-.submit__button:hover {
-    border-color: var(--alternative-text-color);
-    color: var(--alternative-text-color);
+@media (min-width: 769px) {
+    .lets-talk__button:hover,
+    .introduction__button:hover,
+    .submit__button:hover {
+        border-color: var(--alternative-text-color);
+        color: var(--alternative-text-color);
+    }
+
+    .lets-talk__button:hover span,
+    .introduction__button:hover span, 
+    .submit__button:hover span {
+        animation: scrollButton 2s linear infinite;
+    }
 }
 
-.lets-talk__button:hover span,
-.introduction__button:hover span, 
-.submit__button:hover span {
-    animation: scrollButton 2s linear infinite;
+@media (max-width: 768px) {
+    .lets-talk__button,
+    .introduction__button {
+        border-color: var(--alternative-text-color) !important;
+        color: var(--alternative-text-color) !important;
+    }
+
+    .lets-talk__button span,
+    .introduction__button span {
+        animation: scrollButton 2s linear infinite;
+    }
 }
 
 @keyframes scrollButton {

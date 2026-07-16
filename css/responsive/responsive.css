@@ -198,6 +198,7 @@
     gap: var(--spacing-2xl);
     flex-direction: column;
     height: 100%;
+    padding-left: 0px;
 }
 
 .skills {
@@ -224,6 +225,10 @@
 .project {
     width: auto;
     min-width: 550px;
+}
+
+.projects {
+    padding-inline: var(--spacing-2xl);
 }
 
 .projects__text {
