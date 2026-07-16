@@ -26,35 +26,18 @@ function calculateTestimonialOffset(width) {
  * Re-calculates positions and updates styles of the testimonial horizontal belt slider container.
  * @returns {void}
  */
-/**
- * Berechnet die genaue Verschiebung des Sliders und zentriert die aktive Karte.
- */
 function renderTestimonial() {
-    const belt = document.getElementById('testimonial-belt');
+    const belt = document.getElementById('testimonial-belt'), wrapper = document.querySelector('.carousel-wrapper');
     const cards = document.querySelectorAll('.testimonial-card');
-    const wrapper = document.querySelector('.carousel-wrapper');
-    if (!belt || cards.length === 0 || !wrapper) return;
-    const cardWidth = cards[0].getBoundingClientRect().width;
-    const wrapperWidth = wrapper.getBoundingClientRect().width;
-    const computedStyle = window.getComputedStyle(belt);
-    const gapValue = parseFloat(computedStyle.gap) || 0; 
-    const cardStyle = window.getComputedStyle(cards[0]);
-    const marginRight = parseFloat(cardStyle.marginRight) || 0;
-    const spacing = gapValue || marginRight || 0;
-    let centerOffset = (wrapperWidth / 2) - (cardWidth / 2);
-    const wrapperStyle = window.getComputedStyle(wrapper);
-    const paddingLeft = parseFloat(wrapperStyle.paddingLeft) || 0;
-    if (paddingLeft > 0) {
-        centerOffset = ((wrapperWidth - (paddingLeft * 2)) / 2) - (cardWidth / 2) + paddingLeft;
-    }
-    const offset = (currentTestimonialIndex * (cardWidth + spacing)) - centerOffset;
+    if (!belt || !cards.length || !wrapper) return;
+    const wW = wrapper.getBoundingClientRect().width, cW = cards[0].getBoundingClientRect().width;
+    const pad = parseFloat(window.getComputedStyle(wrapper).paddingLeft) || 0;
+    const gap = parseFloat(window.getComputedStyle(belt).gap) || parseFloat(window.getComputedStyle(cards[0]).marginRight) || 0;
+    const cOffset = pad > 0 ? ((wW - (pad * 2)) / 2) - (cW / 2) + pad : (wW / 2) - (cW / 2);
+    const offset = (currentTestimonialIndex * (cW + gap)) - cOffset;
     belt.style.transform = `translateX(-${offset}px)`;
-    cards.forEach((card, i) => {
-        card.classList.toggle('focused', i === currentTestimonialIndex);
-    });
-    document.querySelectorAll('.dot').forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentTestimonialIndex);
-    });
+    cards.forEach((c, i) => c.classList.toggle('focused', i === currentTestimonialIndex));
+    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentTestimonialIndex));
 }
 
 /**
