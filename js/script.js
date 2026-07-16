@@ -26,10 +26,27 @@ function calculateTestimonialOffset(width) {
  * Re-calculates positions and updates styles of the testimonial horizontal belt slider container.
  * @returns {void}
  */
+/**
+ * Berechnet die genaue Verschiebung des Sliders und zentriert die aktive Karte.
+ */
 function renderTestimonial() {
-    const offset = calculateTestimonialOffset(window.innerWidth);
-    document.getElementById('testimonial-belt').style.transform = `translateX(${offset}px)`;
-    document.querySelectorAll('.testimonial-card').forEach((card, i) => {
+    const belt = document.getElementById('testimonial-belt');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const wrapper = document.querySelector('.carousel-wrapper');
+    if (!belt || cards.length === 0 || !wrapper) return;
+    const cardWidth = cards[0].getBoundingClientRect().width;
+    const wrapperWidth = wrapper.getBoundingClientRect().width;
+    const computedStyle = window.getComputedStyle(belt);
+    const gapValue = parseFloat(computedStyle.gap) || 0; 
+    
+    const cardStyle = window.getComputedStyle(cards[0]);
+    const marginRight = parseFloat(cardStyle.marginRight) || 0;
+    const spacing = gapValue || marginRight || 0;
+    const centerOffset = (wrapperWidth / 2) - (cardWidth / 2);
+    const offset = (currentTestimonialIndex * (cardWidth + spacing)) - centerOffset;
+    
+    belt.style.transform = `translateX(-${offset}px)`;
+    cards.forEach((card, i) => {
         card.classList.toggle('focused', i === currentTestimonialIndex);
     });
     document.querySelectorAll('.dot').forEach((dot, i) => {
@@ -44,9 +61,17 @@ function renderTestimonial() {
  * @returns {void}
  */
 function switchTestimonial(direction) {
+    if (isTransitioningTestimonial) return;
     const cards = document.querySelectorAll('.testimonial-card');
-    currentTestimonialIndex = (currentTestimonialIndex + direction + cards.length) % cards.length;
-    renderTestimonial();
+    const newIndex = currentTestimonialIndex + direction;
+    if (newIndex >= 0 && newIndex < cards.length) {
+        isTransitioningTestimonial = true;
+        currentTestimonialIndex = newIndex;
+        renderTestimonial();
+        setTimeout(() => {
+            isTransitioningTestimonial = false;
+        }, 300);
+    }
 }
 
 /**
@@ -374,4 +399,12 @@ document.addEventListener("DOMContentLoaded", () => {
     AOS.init({
         duration: 1000,
     });
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    renderTestimonial();
+});
+
+window.addEventListener('resize', () => {
+    renderTestimonial();
 });

@@ -1,3 +1,11 @@
+@media (min-width: 1440px) {
+    
+    .navigation {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
 @media (min-width: 1024px ) and (max-width: 1280px) {
 
 .navigation {
@@ -194,6 +202,7 @@
 
 .skills {
     padding-right: var(--spacing-xs);
+    justify-content: center;
 }
 
 .skill-set-description {
@@ -233,13 +242,10 @@
     padding-bottom: var(--spacing-lg);
 }
 
-.testimonial-container {
-    transform: translateX(-560px);
-}
-
 .testimonial-card {
     width: 600px;
-    min-width: 600px;
+    max-width: calc(100vw - 80px);
+    min-width: unset;
 }
 
 .fixed-quote-icon {

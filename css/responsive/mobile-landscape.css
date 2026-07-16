@@ -152,6 +152,7 @@
 
 .skills {
     padding-right: var(--spacing-xs);
+    justify-content: center;
 }
 
 .skills__icon {
@@ -207,22 +208,19 @@
 }
 
 .other-people__headline {
+    width: 90%;
     padding-bottom: var(--spacing-lg);
     font-size: var(--spacing-lg);
 }
 
-.testimonial-container {
-    transform: translateX(-330px);
-}
-
 .testimonial-card {
     width: 360px;
-    min-width: 360px;
+    max-width: calc(100vw - 48px);
+    min-width: unset;
     padding-top: 50px;
     padding-left: 32px;
     padding-bottom: 20px;
 }
-
 .fixed-quote-icon {
     width: 67px;
     top: -2px;
