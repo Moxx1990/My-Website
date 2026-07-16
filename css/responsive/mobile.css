@@ -11,6 +11,10 @@
     padding: var(--spacing-sm);
 }
 
+.logo-text {
+    display: none;
+}
+
 .burger-icon {
     display: flex;
     width: 30px;
@@ -84,6 +88,14 @@
 
 .introduction__text {
     display: none;
+}
+
+.intro-left-bar {
+    padding-left: var(--spacing-xl);
+}
+
+.intro-right-bar {
+    padding-right: var(--spacing-xl);
 }
 
 .vertical-line-left {

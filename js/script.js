@@ -355,7 +355,7 @@ function setupAnchorLinkClicks(menu, burgerImg) {
  */
 function setupOutsideClick(burger, menu, burgerImg) {
     document.addEventListener('pointerdown', (e) => {
-        const isMenuLink = e.target.closest('#mobile-menu a');
+        const isMenuLink = e.target.closest('.mobile-menu a');
         const isOutside = !menu.contains(e.target) && !burger.contains(e.target);
         if ((isMenuLink || isOutside) && menu.classList.contains('active')) {
             closeMobileMenu(menu, burgerImg);
@@ -369,7 +369,7 @@ function setupOutsideClick(burger, menu, burgerImg) {
  */
 function initMobileNavigation() {
     const burger = document.getElementById('burger-trigger');
-    const menu = document.getElementById('mobile-menu');
+    const menu = document.querySelector('.mobile-menu');
     const burgerImg = document.getElementById('burger-img');
     if (!burger || !menu) return;
     

@@ -6,6 +6,10 @@
     flex-direction: row;
 }
 
+.logo-text {
+    display: none;
+}
+
 .header-category {
     font-size: var(--font-size-lg);
     padding: var(--spacing-sm);
@@ -67,6 +71,14 @@
 
 .introduction__text {
     display: none;
+}
+
+.intro-left-bar {
+    padding-left: var(--spacing-xl);
+}
+
+.intro-right-bar {
+    padding-right: var(--spacing-xl);
 }
 
 .vertical-line-left {

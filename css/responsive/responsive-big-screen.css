@@ -1,0 +1,25 @@
+@media (min-width: 1440px) {
+    
+    .navigation,
+    .about-me,
+    .skill-set, 
+    .projects, 
+    .contact,
+    .footer {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .intro-left-bar {
+        padding-left: 0px;
+    }
+
+    .intro-right-bar {
+        padding-right: 0px;
+    }
+
+    .contact-form {
+        padding-right: 0px;
+    }
+    
+}
