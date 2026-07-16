@@ -225,14 +225,36 @@
     font-size: var(--spacing-lg);
 }
 
+.carousel-wrapper {
+        width: 100%;
+        overflow: visible;
+        padding: 0 40px; 
+        box-sizing: border-box;
+    }
+
+#testimonial-belt {
+        display: flex;
+        gap: 16px;
+        width: max-content; 
+        transition: transform 0.3s ease-out;
+    }
+
 .testimonial-card {
-    width: 360px;
-    max-width: calc(100vw - 48px);
-    min-width: unset;
-    padding-top: 50px;
-    padding-left: 32px;
-    padding-bottom: 20px;
-}
+        width: calc(100vw - 80px) !important;
+        flex-shrink: 0;
+        box-sizing: border-box;
+        transform: scaleY(0.85); 
+        opacity: 0.7; 
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+                    opacity 0.4s ease;
+        transform-origin: center center; 
+    }
+
+    .testimonial-card.focused {
+        transform: scaleY(1);
+        opacity: 1;     
+    }
+    
 .fixed-quote-icon {
     width: 67px;
     top: -2px;

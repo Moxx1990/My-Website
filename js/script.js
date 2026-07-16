@@ -38,13 +38,16 @@ function renderTestimonial() {
     const wrapperWidth = wrapper.getBoundingClientRect().width;
     const computedStyle = window.getComputedStyle(belt);
     const gapValue = parseFloat(computedStyle.gap) || 0; 
-    
     const cardStyle = window.getComputedStyle(cards[0]);
     const marginRight = parseFloat(cardStyle.marginRight) || 0;
     const spacing = gapValue || marginRight || 0;
-    const centerOffset = (wrapperWidth / 2) - (cardWidth / 2);
+    let centerOffset = (wrapperWidth / 2) - (cardWidth / 2);
+    const wrapperStyle = window.getComputedStyle(wrapper);
+    const paddingLeft = parseFloat(wrapperStyle.paddingLeft) || 0;
+    if (paddingLeft > 0) {
+        centerOffset = ((wrapperWidth - (paddingLeft * 2)) / 2) - (cardWidth / 2) + paddingLeft;
+    }
     const offset = (currentTestimonialIndex * (cardWidth + spacing)) - centerOffset;
-    
     belt.style.transform = `translateX(-${offset}px)`;
     cards.forEach((card, i) => {
         card.classList.toggle('focused', i === currentTestimonialIndex);

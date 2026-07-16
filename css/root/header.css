@@ -164,16 +164,16 @@
 }
 
 .first-name {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-3xl);
     position: relative;
-    top: 10px;
+    top: 16px;
 }
 
 .last-name {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-3xl);
     font-weight: 600;
     position: relative;
-    top: -2px;
+    top: -4px;
 }
 
 .header-category {
