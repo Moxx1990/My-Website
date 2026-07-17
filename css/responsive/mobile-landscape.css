@@ -6,7 +6,7 @@
     flex-direction: row;
 }
 
-.logo-text {
+.navigation .logo-text {
     display: none;
 }
 
@@ -325,8 +325,8 @@
 
 .footer {
     padding-top: var(--spacing-2xl);
-    padding-left: var(--spacing-2xl);
-    padding-right: var(--spacing-2xl);
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
     padding-bottom: 0px;
 }
 

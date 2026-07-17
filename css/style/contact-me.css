@@ -5,10 +5,8 @@
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
-    height: 541px;
     padding-top: var(--spacing-5xl);
     padding-left: var(--spacing-5xl);
-    padding-bottom: var(--spacing-5xl);
 }
 
 .contact-me-info{
@@ -65,8 +63,8 @@
     border-top: 1px solid var(--alternative-text-color);
     border-bottom: 1px solid var(--alternative-text-color);
     margin-top: -1px; 
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: 26px;
+    padding-bottom: 30px;
     margin-left: -10px;
     padding-left: 30px;
     position: relative;
@@ -74,11 +72,11 @@
 
 .field-error-message {
     position: absolute;
-    bottom: 4px;
+    bottom: 6px;
     left: 30px; 
     color: #EC7B7BCC;
     font-family: 'karla';
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 500;
     pointer-events: none;
     display: none;

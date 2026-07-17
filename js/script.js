@@ -62,58 +62,67 @@ function switchTestimonial(direction) {
 }
 
 /**
+ * Retrieves the currently selected language from LocalStorage.
+ * @returns {string} "de" or "en"
+ */
+function getCurrentLang() {
+    return localStorage.getItem("selectedLanguage") || "en";
+}
+
+/**
  * Validates that the "Name" input field contains non-whitespace string characters.
- * Toggles structural validation layout classes and dynamically alters placeholder texts.
- * @returns {boolean} True if the input value is structurally valid, otherwise false.
  */
 function checkName() {
     const field = document.getElementById('name');
     const isValid = field.value.trim() !== "";
+    const lang = getCurrentLang();
+    
     field.classList.toggle('input-error', !isValid);
-    field.placeholder = isValid ? "Your name goes here" : "Oops! It seems your name is missing";
+    field.placeholder = isValid ? translations[lang].namePlaceholder : translations[lang].nameError;
     return isValid;
 }
 
 /**
  * Validates the syntax of the contact form's Email field in real-time.
- * @returns {boolean} True if input data is a valid email, false otherwise.
  */
 function checkEmail() {
     const f = document.getElementById('email'), v = f.value.trim();
     const isValid = v !== "" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    const lang = getCurrentLang();
+    
     let err = document.getElementById('email-err');
     if (!err) {
         err = Object.assign(document.createElement('span'), {id: 'email-err', className: 'field-error-message'});
         f.parentNode.appendChild(err);
     }
     f.classList.toggle('input-error', !isValid);
-    err.innerText = isValid ? "" : (v === "" ? "E-Mail is required." : "Invalid E-mail.");
+    err.innerText = isValid ? "" : (v === "" ? translations[lang].emailRequired : translations[lang].emailInvalid);
     err.style.display = isValid ? "none" : "block";
     return isValid;
 }
 
 /**
  * Validates the "Help/Message" textarea message body payload field content.
- * Updates CSS validation UI states and placeholder text dynamically.
- * @returns {boolean} True if the message textarea payload contains non-whitespace characters, false otherwise.
  */
 function checkHelp() {
     const field = document.getElementById('help');
     const isValid = field.value.trim() !== "";
+    const lang = getCurrentLang();
+    
     field.classList.toggle('input-error', !isValid);
-    field.placeholder = isValid ? "Hello Max, I am interested in..." : "Please tell me how I can help.";
+    field.placeholder = isValid ? translations[lang].helpPlaceholder : translations[lang].helpError;
     return isValid;
 }
 
 /**
  * Checks if the legal terms & data processing privacy checklist checkbox input is toggled active.
- * Directs visual contextual validation inline error message strings onto the DOM element wrapper.
- * @returns {boolean} True if the checkbox element state is actively checked, false otherwise.
  */
 function checkConsent() {
     const field = document.getElementById('consent');
     const isValid = field.checked;
-    document.getElementById('consent-error').innerText = isValid ? "" : "Please accept the privacy policy.";
+    const lang = getCurrentLang();
+    
+    document.getElementById('consent-error').innerText = isValid ? "" : translations[lang].consentError;
     return isValid;
 }
 
@@ -245,14 +254,19 @@ function updatePlaceholders(lang) {
     const nameField = document.getElementById('name');
     const emailField = document.getElementById('email');
     const helpField = document.getElementById('help');
-    if (nameField && !nameField.classList.contains('input-error')) {
-        nameField.placeholder = lang === "de" ? "Dein Name hier..." : "Your name goes here";
+    const activeLang = translations[lang] ? lang : "en";
+    if (nameField) {
+        nameField.placeholder = nameField.classList.contains('input-error')
+            ? translations[activeLang].nameError
+            : translations[activeLang].namePlaceholder;
     }
-    if (emailField && !emailField.classList.contains('input-error')) {
-        emailField.placeholder = "youremail@email.com";
+    if (emailField) {
+        emailField.placeholder = translations[activeLang].emailPlaceholder;
     }
-    if (helpField && !helpField.classList.contains('input-error')) {
-        helpField.placeholder = lang === "de" ? "Hallo Max, ich interessiere mich für..." : "Hello Max, I am interested in...";
+    if (helpField) {
+        helpField.placeholder = helpField.classList.contains('input-error')
+            ? translations[activeLang].helpError
+            : translations[activeLang].helpPlaceholder;
     }
 }
 
@@ -281,10 +295,14 @@ function initLanguageToggle() {
     updateLanguage(currentLang);
 
     toggle.addEventListener("change", () => {
-        currentLang = toggle.checked ? "de" : "en";
-        localStorage.setItem("selectedLanguage", currentLang);
-        updateLanguage(currentLang);
-    });
+    currentLang = toggle.checked ? "de" : "en";
+    localStorage.setItem("selectedLanguage", currentLang);
+    updateLanguage(currentLang);
+    if (document.getElementById('name').classList.contains('input-error')) checkName();
+    if (document.getElementById('email').classList.contains('input-error')) checkEmail();
+    if (document.getElementById('help').classList.contains('input-error')) checkHelp();
+    if (!document.getElementById('consent').checked) checkConsent();
+});
 }
 
 /**

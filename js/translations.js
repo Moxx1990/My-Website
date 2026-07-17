@@ -155,7 +155,15 @@ const translations = {
         sec5_myfonts_text2: "To check compliance with the license terms and the number of monthly page views, MyFonts transfers your IP address together with the URL of our website and our contract data to its servers in the USA. According to Monotype, your IP address is anonymized immediately after transmission, so that a personal reference can no longer be established (anonymization).",
         sec5_myfonts_text3: "Details can be found in Monotype's privacy policy at <a href=\"https://www.monotype.com/de/rechtshinweise/datenschutzrichtlinie/datenschutzrichtlinie-zum-tracking-von-webschriften\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.monotype.com/de/rechtshinweise/datenschutzrichtlinie/datenschutzrichtlinie-zum-tracking-von-webschriften</a>.",
         sec5_myfonts_text4: "The company is certified under the \"EU-US Data Privacy Framework\" (DPF). The DPF is an agreement between the European Union and the USA intended to ensure compliance with European data protection standards for data processing in the USA. Every company certified under the DPF undertakes to comply with these data protection standards. Further information on this can be obtained from the provider under the following link: <a href=\"https://www.dataprivacyframework.gov/participant/6347\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.dataprivacyframework.gov/participant/6347</a>.",
-        sec5_source: "Source: <a href=\"https://www.e-recht24.de\" target=\"_blank\">https://www.e-recht24.de</a>"
+        sec5_source: "Source: <a href=\"https://www.e-recht24.de\" target=\"_blank\">https://www.e-recht24.de</a>",
+        namePlaceholder: "Your name goes here",
+        nameError: "Oops! It seems your name is missing",
+        emailPlaceholder: "youremail@email.com",
+        emailRequired: "E-Mail is required.",
+        emailInvalid: "Invalid E-mail.",
+        helpPlaceholder: "Hello Max, I am interested in...",
+        helpError: "Please tell me how I can help.",
+        consentError: "Please accept the privacy policy."
     },
     de: {
         navAbout: "Über mich",
@@ -302,6 +310,14 @@ const translations = {
         sec5_myfonts_text2: "Um die Einhaltung der Lizenzbedingungen und die Anzahl der monatlichen Seitenaufrufe zu überprüfen, überträgt MyFonts Ihre IP-Adresse zusammen mit der URL unserer Webseite und unseren Vertragsdaten auf seine Server in den USA. Ihre IP-Adresse wird laut Monotype unmittelbar nach der Übertragung anonymisiert, sodass kein Personenbezug mehr hergestellt werden kann (Anonymisierung).",
         sec5_myfonts_text3: "Details entnehmen Sie der Datenschutzerklärung von Monotype unter <a href=\"https://www.monotype.com/de/rechtshinweise/datenschutzrichtlinie/datenschutzrichtlinie-zum-tracking-von-webschriften\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.monotype.com/de/rechtshinweise/datenschutzrichtlinie/datenschutzrichtlinie-zum-tracking-von-webschriften</a>.",
         sec5_myfonts_text4: "Das Unternehmen verfügt über eine Zertifizierung nach dem „EU-US Data Privacy Framework“ (DPF). Der DPF ist ein Übereinkommen zwischen der Europäischen Union und den USA, der die Einhaltung europäischer Datenschutzstandards bei Datenverarbeitungen in den USA gewährleisten soll. Jedes nach dem DPF zertifizierte Unternehmen verpflichtet sich, diese Datenschutzstandards einzuhalten. Weitere Informationen hierzu erhalten Sie vom Anbieter unter folgendem Link: <a href=\"https://www.dataprivacyframework.gov/participant/6347\" target=\"_blank\" rel=\"noopener noreferrer\">https://www.dataprivacyframework.gov/participant/6347</a>.",
-        sec5_source: "Quelle: <a href=\"https://www.e-recht24.de\" target=\"_blank\">https://www.e-recht24.de</a>"
+        sec5_source: "Quelle: <a href=\"https://www.e-recht24.de\" target=\"_blank\">https://www.e-recht24.de</a>",
+        namePlaceholder: "Bitte trage deinen Namen ein",
+        nameError: "Ups! Es scheint, als fehlt dein Name",
+        emailPlaceholder: "deineenmail@email.de",
+        emailRequired: "E-Mail-Adresse ist erforderlich.",
+        emailInvalid: "Ungültige E-Mail-Adresse.",
+        helpPlaceholder: "Hallo Max, ich interessiere mich für...",
+        helpError: "Bitte lass mich wissen, wie ich helfen kann.",
+        consentError: "Bitte akzeptiere die Datenschutzbestimmungen."
     }
 };

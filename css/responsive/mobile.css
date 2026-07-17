@@ -1,8 +1,8 @@
 @media (max-width: 478px) {
 
 .navigation {
-    padding-left: var(--spacing-xl);
-    padding-right: var(--spacing-xl);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
     flex-direction: row;
 }
 
@@ -11,7 +11,7 @@
     padding: var(--spacing-sm);
 }
 
-.logo-text {
+.navigation .logo-text {
     display: none;
 }
 
@@ -91,11 +91,11 @@
 }
 
 .intro-left-bar {
-    padding-left: var(--spacing-xl);
+    padding-left: var(--spacing-md);
 }
 
 .intro-right-bar {
-    padding-right: var(--spacing-xl);
+    padding-right: var(--spacing-md);
 }
 
 .vertical-line-left {

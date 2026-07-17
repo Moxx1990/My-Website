@@ -170,25 +170,25 @@
     gap: var(--spacing-md);
 }
 
-.logo-icon {
+.navigation .logo-icon {
     width: 3px;
 }
 
-.logo-icon .char-m {
+.navigation .logo-icon .char-m {
     font-size: var(--font-size-xl);
 }
 
-.logo-icon .char-s {
+.navigation .logo-icon .char-s {
     font-size: var(--font-size-xl);
     top: -14px;
 }
 
-.first-name {
+.navigation .first-name {
     font-size: var(--font-size-xl);
     top: 4px;
 }
 
-.last-name {
+.navigation .last-name {
     font-size: var(--font-size-xl);
     top: -10px;
 }
