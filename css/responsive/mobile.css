@@ -263,6 +263,7 @@
         gap: 8px;
         width: max-content; 
         transition: transform 0.3s ease-out;
+        will-change: transform;
     }
 
 .testimonial-card {
@@ -283,8 +284,8 @@
 
 .fixed-quote-icon {
     width: 60px;
-    top: -10px;
-    left: -10px;
+    top: -15px;
+    left: 35px;
 }
 
 .testimonial-author {

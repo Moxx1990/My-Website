@@ -30,12 +30,16 @@ function renderTestimonial() {
     const belt = document.getElementById('testimonial-belt'), wrapper = document.querySelector('.carousel-wrapper');
     const cards = document.querySelectorAll('.testimonial-card');
     if (!belt || !cards.length || !wrapper) return;
-    const wW = wrapper.getBoundingClientRect().width, cW = cards[0].getBoundingClientRect().width;
+    const wW = wrapper.offsetWidth;
+    const cW = cards[0].offsetWidth;
     const pad = parseFloat(window.getComputedStyle(wrapper).paddingLeft) || 0;
-    const gap = parseFloat(window.getComputedStyle(belt).gap) || parseFloat(window.getComputedStyle(cards[0]).marginRight) || 0;
+    let gap = parseFloat(window.getComputedStyle(belt).gap);
+    if (!gap || isNaN(gap)) {
+        gap = parseFloat(window.getComputedStyle(cards[0]).marginRight) || 16;
+    }
     const cOffset = pad > 0 ? ((wW - (pad * 2)) / 2) - (cW / 2) + pad : (wW / 2) - (cW / 2);
-    const offset = (currentTestimonialIndex * (cW + gap)) - cOffset;
-    belt.style.transform = `translateX(-${offset}px)`;
+    const targetX = (currentTestimonialIndex * (cW + gap)) - cOffset;
+    belt.style.transform = `translate3d(${-targetX}px, 0, 0)`;
     cards.forEach((c, i) => c.classList.toggle('focused', i === currentTestimonialIndex));
     document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentTestimonialIndex));
 }
@@ -47,16 +51,13 @@ function renderTestimonial() {
  * @returns {void}
  */
 function switchTestimonial(direction) {
-    if (isTransitioningTestimonial) return;
     const cards = document.querySelectorAll('.testimonial-card');
     const newIndex = currentTestimonialIndex + direction;
     if (newIndex >= 0 && newIndex < cards.length) {
-        isTransitioningTestimonial = true;
         currentTestimonialIndex = newIndex;
         renderTestimonial();
-        setTimeout(() => {
-            isTransitioningTestimonial = false;
-        }, 300);
+    } else {
+        console.log("Abgebrochen! Index außerhalb der Range.");
     }
 }
 

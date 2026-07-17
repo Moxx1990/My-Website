@@ -41,7 +41,7 @@ body {
     display: none !important;
 }
 
-@media (min-width: 769px) {
+@media (hover: hover) {
     .lets-talk__button:hover,
     .introduction__button:hover,
     .submit__button:hover {
@@ -56,9 +56,9 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    .lets-talk__button,
-    .introduction__button {
+@media (hover: none) {
+    body .lets-talk__button,
+    body .introduction__button {
         border-color: var(--alternative-text-color) !important;
         color: var(--alternative-text-color) !important;
     }

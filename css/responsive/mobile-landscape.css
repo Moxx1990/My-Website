@@ -67,6 +67,7 @@
 
 .intro-headline-main {
     font-size: 62px;
+    padding-inline: var(--spacing-2xl);
 }
 
 .introduction__text {
@@ -172,7 +173,7 @@
     font-size: var(--font-size-base);
     padding-bottom: var(--spacing-2xl);
     padding-right: var(--spacing-2xl);
-    width: 75px;
+    width: 90px;
 }
 
 .projects {
@@ -257,7 +258,7 @@
     
 .fixed-quote-icon {
     width: 67px;
-    top: -2px;
+    top: -10px;
     left: 40px;
 }
 
