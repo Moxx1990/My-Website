@@ -138,8 +138,16 @@ function switchTestimonial(direction) {
     }
 }
 
+/**
+ * Initializes the testimonial carousel position safely after DOM content has loaded.
+ */
 document.addEventListener("DOMContentLoaded", () => {
-    if (document.getElementById('testimonial-belt')) renderTestimonial();
+    const belt = document.getElementById('testimonial-belt');
+    if (!belt) return;
+    renderTestimonial();
+    setTimeout(() => {
+        renderTestimonial();
+    }, 50);
 });
 
 window.addEventListener('DOMContentLoaded', () => {

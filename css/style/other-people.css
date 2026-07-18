@@ -11,6 +11,7 @@
 .other-people__headline {
     color: var(--alternative-text-color);
     font-size: var(--font-size-3xl);
+    padding-bottom: var(--spacing-lg);
 }
 
 .navigation__helper {

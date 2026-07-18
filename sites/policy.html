@@ -25,11 +25,9 @@
     <title>Privacy Policy</title>
 </head>
 <body>
-    
-    <div class="intro">
+    <header class="intro" id="top">
         <div class="header header-multi-bg">
-            <div class="navigation">
-                <a href="../index.html" class="logo-link">
+            <nav class="navigation">
                 <div class="logo">
                     <div class="logo-icon">
                         <span class="char-m">M</span>
@@ -41,226 +39,200 @@
                         <span class="last-name">Schmidt</span>
                     </div>
                 </div>
-                </a>
 
-                <div class="nav">
-                    <div class="menu-container">
-                        <div class="burger-icon" id="burger-trigger">
-                            <img src="/img/mobile/menu.svg" id="burger-img">
-                        </div>
-            
-                        <div class="nav-links" id="mobile-menu">
-                            <a href="../index.html#about-me" class="header-category" data-translate="navAbout">
-                                About me
-                            </a>
-                            <a href="../index.html#skills" class="header-category" data-translate="navSkills">
-                                Skills
-                            </a>
-                            <a href="../index.html#projects" class="header-category" data-translate="navProjects">
-                                Projects
-                            </a>
+                <div class="menu-container">
+                    <button class="burger-icon" id="burger-trigger" aria-label="Toggle Menu">
+                        <img src="../img/mobile/menu.svg" id="burger-img" alt="Menu">
+                    </button>
+        
+                    <div class="nav-links mobile-menu">
+                        <a href="../index.html#about-me" class="header-category" data-translate="navAbout">
+                            About me
+                        </a>
+                        <a href="../index.html#skills" class="header-category" data-translate="navSkills">
+                            Skills
+                        </a>
+                        <a href="../index.html#projects" class="header-category" data-translate="navProjects">
+                            Projects
+                        </a>
 
-                            <div class="toggle">
-                                <input type="checkbox" id="lang-toggle"/>
-                                <label for="lang-toggle">
-                                    <div class="toggle-knob"></div>
-                                    <span class="lang-en">EN</span>
-                                    <span class="lang-de">DE</span>
-                                </label>
-                            </div>
+                        <div class="toggle">
+                            <input type="checkbox" id="lang-toggle"/>
+                            <label for="lang-toggle">
+                                <div class="toggle-knob"></div>
+                                <span class="lang-en">EN</span>
+                                <span class="lang-de">DE</span>
+                            </label>
                         </div>
                     </div>
                 </div>
-            </div>
+            </nav>
         </div>
-    </div>
+    </header>
 
-    <div class="introduction introduction-multi-bg legal-notice-page" style="background: #1c1c1c;">
-            <div class="legal-notice-content">
-                <div class="back-arrow">
-                    <a href="../index.html">
-                        <img src="/img/mobile/arrow_back.svg" alt="Back Arrow">
-                    </a>
-                </div>
+    <main class="introduction introduction-multi-bg legal-notice-page" style="background: #1c1c1c;">
+        <div class="legal-notice-content">
+            <div class="back-arrow">
+                <a href="../index.html" aria-label="Go back to home page">
+                    <img src="/img/mobile/arrow_back.svg" alt="Back Arrow">
+                </a>
+            </div>
 
             <h1 class="legal-main-headline" data-translate="privacyHeadline">
                 Privacy Policy
             </h1>
 
-            
+            <section class="legal-section">
+                <h2 data-translate="sec1_title">1. Privacy at a Glance</h2>
+                <h3 data-translate="sec1_hints_title">General Information</h3>
+                <p data-translate="sec1_hints_text"></p>
 
-                <div class="legal-section">
-                    <h2 data-translate="sec1_title">1. Privacy at a Glance</h2>
-                    <h3 data-translate="sec1_hints_title">General Information</h3>
-                    <p data-translate="sec1_hints_text"></p>
-    
-                    <h3 data-translate="sec1_collect_title">Data Collection on This Website</h3>
-                    <h4 data-translate="sec1_who_title">Who is responsible for data collection on this website?</h4>
-                    <p data-translate="sec1_who_text"></p>
-    
-                    <h4 data-translate="sec1_how_title">How do we collect your data?</h4>
-                    <p data-translate="sec1_how_text1"></p>
-                    <p data-translate="sec1_how_text2"></p>
-                    
-                    <h4 data-translate="sec1_purpose_title">What do we use your data for?</h4>
-                    <p data-translate="sec1_purpose_text"></p>
-    
-                    <h4 data-translate="sec1_rights_title">What rights do you have regarding your data?</h4>
-                    <p data-translate="sec1_rights_text"></p>
-                </div>
+                <h3 data-translate="sec1_collect_title">Data Collection on This Website</h3>
+                <h4 data-translate="sec1_who_title">Who is responsible for data collection on this website?</h4>
+                <p data-translate="sec1_who_text"></p>
 
+                <h4 data-translate="sec1_how_title">How do we collect your data?</h4>
+                <p data-translate="sec1_how_text1"></p>
+                <p data-translate="sec1_how_text2"></p>
+                
+                <h4 data-translate="sec1_purpose_title">What do we use your data for?</h4>
+                <p data-translate="sec1_purpose_text"></p>
 
-                <div class="legal-section">
-                    <h2 data-translate="sec2_title">2. Hosting</h2>
-                    <p data-translate="sec2_intro"></p>
-                    <h3 data-translate="sec2_ext_title">External Hosting</h3>
-                    <p data-translate="sec2_ext_text1"></p>
-                    <p data-translate="sec2_ext_text2"></p>
-                    <p data-translate="sec2_ext_text3"></p>
-                    <p><strong data-translate="sec2_hoster_name">netcup GmbH</strong></p>
-    
-                    <h4 data-translate="sec2_avv_title">Data Processing Agreement</h4>
-                    <p data-translate="sec2_avv_text"></p>
-                </div>
+                <h4 data-translate="sec1_rights_title">What rights do you have regarding your data?</h4>
+                <p data-translate="sec1_rights_text"></p>
+            </section>
 
+            <section class="legal-section">
+                <h2 data-translate="sec2_title">2. Hosting</h2>
+                <p data-translate="sec2_intro"></p>
+                <h3 data-translate="sec2_ext_title">External Hosting</h3>
+                <p data-translate="sec2_ext_text1"></p>
+                <p data-translate="sec2_ext_text2"></p>
+                <p data-translate="sec2_ext_text3"></p>
+                <p><strong data-translate="sec2_hoster_name">netcup GmbH</strong></p>
 
-                <div class="legal-section">
-                    <h2 data-translate="sec3_title">3. General Notes and Required Information</h2>
-                    <h3 data-translate="sec3_privacy_title">Data Protection</h3>
-                    <p data-translate="sec3_privacy_text1"></p>
-                    <p data-translate="sec3_privacy_text2"></p>
-                    <p data-translate="sec3_privacy_text3"></p>
-    
-                    <h3 data-translate="sec3_responsible_title">Information on the Responsible Body</h3>
-                    <p class="address-box">
-                        <strong data-translate="companyName">Maximilian Schmidt</strong><br />
-                        <span data-translate="companyStreet">Limburger Str. 8</span><br />
-                        <span data-translate="companyCity">56479 Waldmühlen</span>
-                    </p>
+                <h4 data-translate="sec2_avv_title">Data Processing Agreement</h4>
+                <p data-translate="sec2_avv_text"></p>
+            </section>
 
-                    <p>
-                        Phone: <span data-translate="companyPhone">02664 6750</span><br />
-                        Email: <span data-translate="companyEmail">schmidt-max@gmx.de</span>
-                    </p>
+            <section class="legal-section">
+                <h2 data-translate="sec3_title">3. General Notes and Required Information</h2>
+                <h3 data-translate="sec3_privacy_title">Data Protection</h3>
+                <p data-translate="sec3_privacy_text1"></p>
+                <p data-translate="sec3_privacy_text2"></p>
+                <p data-translate="sec3_privacy_text3"></p>
 
-                    <p data-translate="sec3_responsible_text"></p>
-    
-                    <h3 data-translate="sec3_duration_title">Storage Period</h3>
-                    <p data-translate="sec3_duration_text"></p>
+                <h3 data-translate="sec3_responsible_title">Information on the Responsible Body</h3>
+                <p class="address-box">
+                    <strong data-translate="companyName">Maximilian Schmidt</strong><br />
+                    <span data-translate="companyStreet">Limburger Str. 8</span><br />
+                    <span data-translate="companyCity">56479 Waldmühlen</span>
+                </p>
 
-                    <h3 data-translate="sec3_legal_title">General Notes on the Legal Basis for Data Processing on This Website</h3>
-                    <p data-translate="sec3_legal_text"></p>
-                    
-                    <h3 data-translate="sec3_recipients_title">Recipients of Personal Data</h3>
-                    <p data-translate="sec3_recipients_text"></p>
-    
-                    <h3 data-translate="sec3_revoke_title">Revocation of Your Consent to Data Processing</h3>
-                    <p data-translate="sec3_revoke_text"></p>
-    
-                    <h3 data-translate="sec3_object_title">Right to Object to Data Collection in Special Cases and to Direct Advertising (Art. 21 GDPR)</h3>
-                    <p class="legal-warning" data-translate="sec3_object_text1"></p>
-                    <p class="legal-warning" data-translate="sec3_object_text2"></p>
-    
-                    <h3 data-translate="sec3_complaint_title">Right to Lodge a Complaint with the Competent Supervisory Authority</h3>
-                    <p data-translate="sec3_complaint_text"></p>
-                    
-                    <h3 data-translate="sec3_portability_title">Right to Data Portability</h3>
-                    <p data-translate="sec3_portability_text"></p>
-    
-                    <h3 data-translate="sec3_info_title">Information, Correction and Deletion</h3>
-                    <p data-translate="sec3_info_text"></p>
-    
-                    <h3 data-translate="sec3_restrict_title">Right to Restriction of Processing</h3>
-                    <p data-translate="sec3_restrict_text_intro"></p>
-                    <ul>
-                        <li data-translate="sec3_restrict_li1"></li>
-                        <li data-translate="sec3_restrict_li2"></li>
-                        <li data-translate="sec3_restrict_li3"></li>
-                        <li data-translate="sec3_restrict_li4"></li>
-                    </ul>
+                <p>
+                    Phone: <span data-translate="companyPhone">02664 6750</span><br />
+                    Email: <span data-translate="companyEmail">schmidt-max@gmx.de</span>
+                </p>
 
-                    <p data-translate="sec3_restrict_text_outro"></p>
-    
-                    <h3 data-translate="sec3_crypto_title">SSL or TLS Encryption</h3>
-                    <p data-translate="sec3_crypto_text1"></p>
-                    <p data-translate="sec3_crypto_text2"></p>
-    
-                    <h3 data-translate="sec3_spam_title">Objection to Advertising Emails</h3>
-                    <p data-translate="sec3_spam_text"></p>
-                </div>
+                <p data-translate="sec3_responsible_text"></p>
 
+                <h3 data-translate="sec3_duration_title">Storage Period</h3>
+                <p data-translate="sec3_duration_text"></p>
 
-                <div class="legal-section">
-                    <h2 data-translate="sec4_title">4. Data Collection on This Website</h2>
-                    <h3 data-translate="sec4_cookies_title">Cookies</h3>
-                    <p data-translate="sec4_cookies_text1"></p>
-                    <p data-translate="sec4_cookies_text2"></p>
-                    <p data-translate="sec4_cookies_text3"></p>
-                    <p data-translate="sec4_cookies_text4"></p>
-                    <p data-translate="sec4_cookies_text5"></p>
-                    <p data-translate="sec4_cookies_text6"></p>
-    
-                    <h3 data-translate="sec4_form_title">Contact Form</h3>
-                    <p data-translate="sec4_form_text1"></p>
-                    <p data-translate="sec4_form_text2"></p>
-                    <p data-translate="sec4_form_text3"></p>
-    
-                    <h3 data-translate="sec4_direct_title">Inquiry by Email, Phone or Fax</h3>
-                    <p data-translate="sec4_direct_text1"></p>
-                    <p data-translate="sec4_direct_text2"></p>
-                    <p data-translate="sec4_direct_text3"></p>
-                </div>
+                <h3 data-translate="sec3_legal_title">General Notes on the Legal Basis for Data Processing on This Website</h3>
+                <p data-translate="sec3_legal_text"></p>
+                
+                <h3 data-translate="sec3_recipients_title">Recipients of Personal Data</h3>
+                <p data-translate="sec3_recipients_text"></p>
 
+                <h3 data-translate="sec3_revoke_title">Revocation of Your Consent to Data Processing</h3>
+                <p data-translate="sec3_revoke_text"></p>
 
-                <div class="legal-section">
-                    <h2 data-translate="sec5_title">5. Plugins and Tools</h2>
-                    <h3 data-translate="sec5_myfonts_title">MyFonts</h3>
-                    <p data-translate="sec5_myfonts_text1"></p>
-                    <p data-translate="sec5_myfonts_text2"></p>
-                    <p data-translate="sec5_myfonts_text3"></p>
-                    <p data-translate="sec5_myfonts_text4"></p>
-    
-                    <div class="source-credit" data-translate="sec5_source"></div>
-                </div>
-            
+                <h3 data-translate="sec3_object_title">Right to Object to Data Collection in Special Cases and to Direct Advertising (Art. 21 GDPR)</h3>
+                <p class="legal-warning" data-translate="sec3_object_text1"></p>
+                <p class="legal-warning" data-translate="sec3_object_text2"></p>
+
+                <h3 data-translate="sec3_complaint_title">Right to Lodge a Complaint with the Competent Supervisory Authority</h3>
+                <p data-translate="sec3_complaint_text"></p>
+                
+                <h3 data-translate="sec3_portability_title">Right to Data Portability</h3>
+                <p data-translate="sec3_portability_text"></p>
+
+                <h3 data-translate="sec3_info_title">Information, Correction and Deletion</h3>
+                <p data-translate="sec3_info_text"></p>
+
+                <h3 data-translate="sec3_restrict_title">Right to Restriction of Processing</h3>
+                <p data-translate="sec3_restrict_text_intro"></p>
+                <ul>
+                    <li data-translate="sec3_restrict_li1"></li>
+                    <li data-translate="sec3_restrict_li2"></li>
+                    <li data-translate="sec3_restrict_li3"></li>
+                    <li data-translate="sec3_restrict_li4"></li>
+                </ul>
+
+                <p data-translate="sec3_restrict_text_outro"></p>
+
+                <h3 data-translate="sec3_crypto_title">SSL or TLS Encryption</h3>
+                <p data-translate="sec3_crypto_text1"></p>
+                <p data-translate="sec3_crypto_text2"></p>
+
+                <h3 data-translate="sec3_spam_title">Objection to Advertising Emails</h3>
+                <p data-translate="sec3_spam_text"></p>
+            </section>
+
+            <section class="legal-section">
+                <h2 data-translate="sec4_title">4. Data Collection on This Website</h2>
+                <h3 data-translate="sec4_cookies_title">Cookies</h3>
+                <p data-translate="sec4_cookies_text1"></p>
+                <p data-translate="sec4_cookies_text2"></p>
+                <p data-translate="sec4_cookies_text3"></p>
+                <p data-translate="sec4_cookies_text4"></p>
+                <p data-translate="sec4_cookies_text5"></p>
+                <p data-translate="sec4_cookies_text6"></p>
+
+                <h3 data-translate="sec4_form_title">Contact Form</h3>
+                <p data-translate="sec4_form_text1"></p>
+                <p data-translate="sec4_form_text2"></p>
+                <p data-translate="sec4_form_text3"></p>
+
+                <h3 data-translate="sec4_direct_title">Inquiry by Email, Phone or Fax</h3>
+                <p data-translate="sec4_direct_text1"></p>
+                <p data-translate="sec4_direct_text2"></p>
+                <p data-translate="sec4_direct_text3"></p>
+            </section>
+
+            <section class="legal-section">
+                <h2 data-translate="sec5_title">5. Plugins and Tools</h2>
+                <h3 data-translate="sec5_myfonts_title">MyFonts</h3>
+                <p data-translate="sec5_myfonts_text1"></p>
+                <p data-translate="sec5_myfonts_text2"></p>
+                <p data-translate="sec5_myfonts_text3"></p>
+                <p data-translate="sec5_myfonts_text4"></p>
+
+                <div class="source-credit" data-translate="sec5_source"></div>
+            </section>
         </div>
-    </div>
+    </main>
     
-    
-    <div class="footer">
+    <footer class="footer">
         <div class="footer-me">
             <div class="footer-left-side">
-                <a href="#top" class="footer-logo-link">
+                <a href="#top" class="footer-logo-link" aria-label="Scroll back to top">
                     <div class="logo">
                         <div class="logo-icon">
-                            <span class="char-m">
-                                M
-                            </span>
-
-                            <span class="char-s">
-                                S
-                            </span>
+                            <span class="char-m">M</span>
+                            <span class="char-s">S</span>
                         </div>
     
                         <div class="logo-text">
-                            <span class="first-name">
-                                Maximilian
-                            </span>
-
-                            <span class="last-name">
-                                Schmidt
-                            </span>
+                            <span class="first-name">Maximilian</span>
+                            <span class="last-name">Schmidt</span>
                         </div>
                     </div>
                 </a>
 
-                <div>
-                    Web Developer
-                </div>
-
-                <div>
-                    Waldmühlen Germany
-                </div>
+                <div>Web Developer</div>
+                <div>Waldmühlen Germany</div>
             </div>
         </div>
 
@@ -268,27 +240,27 @@
             &copy; Maximilian Schmidt 2026
         </div>
 
-        <div class="footer-links-container">
-            <a class="footer-link" href="https://github.com/Moxx1990" target="_blank">
+        <nav class="footer-links-container" aria-label="Footer Navigation">
+            <a class="footer-link" href="https://github.com/Moxx1990" target="_blank" rel="noopener">
                 Github
             </a>
 
-            <a class="footer-link" href="https://www.linkedin.com/" target="_blank">
+            <a class="footer-link" href="https://www.linkedin.com/" target="_blank" rel="noopener">
                 LinkedIn
             </a>
 
-            <a class="footer-link" href="mailto:contact@maximilianschmidt.de" target="_blank">
+            <a class="footer-link" href="mailto:contact@maximilianschmidt.de" target="_blank" rel="noopener">
                 Email
             </a>
 
             <a class="footer-link" href="../sites/legal.html">
                 Legal Notice
             </a>
-        </div>
-    </div>
+        </nav>
+    </footer>
 
     <div class="footer-mobile">
-            &copy; Maximilian Schmidt 2026
+        &copy; Maximilian Schmidt 2026
     </div>
 
 </body>

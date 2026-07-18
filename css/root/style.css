@@ -32,6 +32,15 @@ body {
     overflow-x: hidden;
 }
 
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+}
+
 .logo-link {
     text-decoration: none;
     color: var(--text-color);

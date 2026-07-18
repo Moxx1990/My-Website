@@ -49,6 +49,7 @@
 }
 
 .project {
+    width: 100%;
     border-bottom: 1px solid var(--alternative-text-color);
     border-top: 1px solid var(--alternative-text-color);
     padding: var(--spacing-xl);
