@@ -16,14 +16,17 @@ function openProjectInfo(projectName) {
 }
 
 /**
- * Safely extracts project metadata from the global data store, providing fallbacks for missing properties.
+ * Safely extracts project metadata from the global data store, providing localized fallbacks.
  * @param {string} projectName - The name of the project to retrieve.
- * @returns {{info: string, number: string, languages: string[], link: string, github: string}} The processed project data object.
+ * @returns {{info: string, number: string, languages: string[], link: string, github: string}} The processed data.
  */
 function getProjectData(projectName) {
     const project = projectsData[projectName];
+    const lang = typeof getCurrentLang === 'function' ? getCurrentLang() : 'en';
+    const infoText = project?.info?.[lang] || project?.info?.[lang === 'de' ? 'en' : 'de'] || '';
+    
     return {
-        info: project?.info || '',
+        info: infoText,
         number: project?.number || '',
         languages: project?.languages || [],
         link: project?.link || '#',
@@ -92,14 +95,17 @@ function createProjectCardHeaderandInfo(number, projectName) {
 }
 
 /**
- * Renders the body description text and technology chips inside the project modal.
+ * Renders the body description text and technology chips inside the project modal using localized strings.
  * @param {string} info - Project description text.
  * @param {string[]} languages - List of programming languages/frameworks used.
  * @returns {void}
  */
 function createProjectCardContent(info, languages) {
     const contentContainer = document.getElementById('project-card-content');
-    contentContainer.innerHTML = createProjectCardContentTemplate(info, languages);
+    if (!contentContainer) return;
+    const lang = typeof getCurrentLang === 'function' ? getCurrentLang() : 'en';
+    const headlineText = translations[lang]?.projectHeadline || 'What is this project about?';
+    contentContainer.innerHTML = createProjectCardContentTemplate(info, languages, headlineText);
 }
 
 /**
@@ -114,13 +120,16 @@ function createProjectCardButton(github, link) {
 }
 
 /**
- * Generates the right side structure (e.g., control buttons, navigation arrow close buttons) of the project card modal.
+ * Generates the right side structure of the project card modal using localized strings.
  * @param {string} projectName - Name of the project.
  * @returns {void}
  */
 function createProjectCardRightSide(projectName) {
     const rightSideContainer = document.getElementById('project-info-card-right-side');
-    rightSideContainer.innerHTML = createProjectCardRightSideTemplate(projectName);
+    if (!rightSideContainer) return;
+    const lang = typeof getCurrentLang === 'function' ? getCurrentLang() : 'en';
+    const nextProjectText = translations[lang]?.nextProject || 'Next Project';
+    rightSideContainer.innerHTML = createProjectCardRightSideTemplate(projectName, nextProjectText);
 }
 
 /**
@@ -144,4 +153,28 @@ function switchCard() {
     const nextIndex = (currentIndex + 1) % projectKeys.length;
     const nextProjectName = projectKeys[nextIndex];
     openProjectInfo(nextProjectName);
+}
+
+/**
+ * Updates the localized information body text inside a specific project DOM container.
+ * @param {string} key - The lookup name identifier of the project data element.
+ * @param {string} lang - The active dynamic language code ("en" or "de").
+ */
+function renderSingleProjectTranslation(key, lang) {
+    const project = projectsData[key];
+    const container = document.querySelector(`[data-project-name="${key}"] .project-info-text`);
+    if (project && container) {
+        container.innerText = project.info[lang] || project.info['en'];
+    }
+}
+
+/**
+ * Loops across the localized projects dataset to update visible content cards dynamically.
+ * @param {string} lang - The destination translation packet key string (e.g., "en" or "de").
+ */
+function updateProjectLanguages(lang) {
+    const activeLang = translations[lang] ? lang : "en";
+    Object.keys(projectsData).forEach(key => {
+        renderSingleProjectTranslation(key, activeLang);
+    });
 }

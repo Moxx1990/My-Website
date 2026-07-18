@@ -163,7 +163,9 @@ const translations = {
         emailInvalid: "Invalid E-mail.",
         helpPlaceholder: "Hello Max, I am interested in...",
         helpError: "Please tell me how I can help.",
-        consentError: "Please accept the privacy policy."
+        consentError: "Please accept the privacy policy.",
+        projectHeadline: "What is this project about?",
+        nextProject: "Next project"
     },
     de: {
         navAbout: "Über mich",
@@ -318,6 +320,8 @@ const translations = {
         emailInvalid: "Ungültige E-Mail-Adresse.",
         helpPlaceholder: "Hallo Max, ich interessiere mich für...",
         helpError: "Bitte lass mich wissen, wie ich helfen kann.",
-        consentError: "Bitte akzeptiere die Datenschutzbestimmungen."
+        consentError: "Bitte akzeptiere die Datenschutzbestimmungen.",
+        projectHeadline: "Worum geht es in diesem Projekt?",
+        nextProject: "Nächstes Projekt"
     }
 };

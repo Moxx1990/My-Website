@@ -59,20 +59,21 @@ function createProjectCardHeaderandInfoTemplate(number, projectName) {
 /**
  * Generates the HTML string template for the main body info description text and technical skill chips.
  * @param {string} info - Description detailing what the project is about.
- * @param {string[]} languages - List of tech stack labels used to render relevant visual badge icons.
+ * @param {string[]} languages - List of tech stack labels used to render visual badge icons.
+ * @param {string} headlineText - The dynamic localized title text for the info section.
  * @returns {string} HTML markup string containing the description block and rendered programming languages.
  */
-function createProjectCardContentTemplate(info, languages) {
+function createProjectCardContentTemplate(info, languages, headlineText) {
     return `
-        <div class="project-info__headline">
-            What is this project about?
+       <div class="project-info__headline">
+            ${headlineText}
         </div>
         <div class="project-card-content-text">
             ${info}
         </div>
         <div class="project-languages">
             ${renderLanguages(languages)}
-        </div>`
+        </div>`;
 }
 
 /**
@@ -99,7 +100,7 @@ function createProjectCardButtonTemplate(github, link) {
  * @param {string} projectName - Name of the project, used dynamically to fetch the matching cover image file.
  * @returns {string} HTML markup string containing close triggers, image components, and navigation buttons.
  */
-function createProjectCardRightSideTemplate(projectName) {
+function createProjectCardRightSideTemplate(projectName, nextProjectText) {
     return `
         <div class="project-info-close">
             <img src="img/projects/close_small.svg" onclick="closeCard()">
@@ -108,8 +109,8 @@ function createProjectCardRightSideTemplate(projectName) {
             <img src="img/projects/${projectName}.jpg">
         </div>
         <div class="next-project__button" onclick="switchCard()">
-            Next project <img src="img/projects/arrow_forward.svg">
-        </div>`
+            ${nextProjectText} <img src="img/projects/arrow_forward.svg">
+        </div>`;
 }
 
 /**

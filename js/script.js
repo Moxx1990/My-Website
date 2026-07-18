@@ -1,66 +1,3 @@
-let currentTestimonialIndex = 1;
-let isTransitioningTestimonial = false;
-
-/**
- * Calculates the horizontal translation offset based on the window viewport width.
- * @param {number} width - The current window inner width in pixels.
- * @returns {number} The calculated CSS translateX pixel offset value.
- */
-function calculateTestimonialOffset(width) {
-    if (width >= 769 && width <= 1023) {
-        const positions = [80, -560, -1200]; 
-        return positions[currentTestimonialIndex] || 0;
-    }
-    if (width >= 479 && width <= 768) {
-        const positions = [70, -330, -730]; 
-        return positions[currentTestimonialIndex] || 0;
-    }
-    if (width <= 478) {
-        const positions = [0, -310, -620]; 
-        return positions[currentTestimonialIndex] || 0;
-    }
-    return currentTestimonialIndex * -780;
-}
-
-/**
- * Re-calculates positions and updates styles of the testimonial horizontal belt slider container.
- * @returns {void}
- */
-function renderTestimonial() {
-    const belt = document.getElementById('testimonial-belt'), wrapper = document.querySelector('.carousel-wrapper');
-    const cards = document.querySelectorAll('.testimonial-card');
-    if (!belt || !cards.length || !wrapper) return;
-    const wW = wrapper.offsetWidth;
-    const cW = cards[0].offsetWidth;
-    const pad = parseFloat(window.getComputedStyle(wrapper).paddingLeft) || 0;
-    let gap = parseFloat(window.getComputedStyle(belt).gap);
-    if (!gap || isNaN(gap)) {
-        gap = parseFloat(window.getComputedStyle(cards[0]).marginRight) || 16;
-    }
-    const cOffset = pad > 0 ? ((wW - (pad * 2)) / 2) - (cW / 2) + pad : (wW / 2) - (cW / 2);
-    const targetX = (currentTestimonialIndex * (cW + gap)) - cOffset;
-    belt.style.transform = `translate3d(${-targetX}px, 0, 0)`;
-    cards.forEach((c, i) => c.classList.toggle('focused', i === currentTestimonialIndex));
-    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentTestimonialIndex));
-}
-
-/**
- * Shifts the testimonial index by a dynamic relative delta (e.g., -1 for backward, +1 for forward), 
- * handling edge-wraparounds smoothly before initiating a visual repaint.
- * @param {number} direction - Direction value modifier integer (typically -1 or 1).
- * @returns {void}
- */
-function switchTestimonial(direction) {
-    const cards = document.querySelectorAll('.testimonial-card');
-    const newIndex = currentTestimonialIndex + direction;
-    if (newIndex >= 0 && newIndex < cards.length) {
-        currentTestimonialIndex = newIndex;
-        renderTestimonial();
-    } else {
-        console.log("Abgebrochen! Index außerhalb der Range.");
-    }
-}
-
 /**
  * Retrieves the currently selected language from LocalStorage.
  * @returns {string} "de" or "en"
@@ -301,8 +238,11 @@ function initLanguageToggle() {
     if (document.getElementById('name').classList.contains('input-error')) checkName();
     if (document.getElementById('email').classList.contains('input-error')) checkEmail();
     if (document.getElementById('help').classList.contains('input-error')) checkHelp();
-    if (!document.getElementById('consent').checked) checkConsent();
-});
+    const consentErr = document.getElementById('consent-error');
+    if (consentErr && consentErr.innerText !== "") {
+            consentErr.innerText = translations[currentLang].consentError;
+        }
+    });
 }
 
 /**
@@ -388,7 +328,6 @@ function initMobileNavigation() {
  * @returns {void}
  */
 document.addEventListener("DOMContentLoaded", () => {
-    if (document.getElementById('testimonial-belt')) renderTestimonial();
     const infoContainer = document.getElementById('project-info');
     infoContainer?.addEventListener('click', (e) => e.target === infoContainer && closeCard());
     
@@ -404,12 +343,4 @@ document.addEventListener("DOMContentLoaded", () => {
     AOS.init({
         duration: 1000,
     });
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-    renderTestimonial();
-});
-
-window.addEventListener('resize', () => {
-    renderTestimonial();
 });
