@@ -49,6 +49,8 @@
     height: 24px;
     transition: all 0.3s ease;
     cursor: pointer;
+    padding-left: 6px;
+    padding-top: 6px;
 }
 
 .people__arrow-right:hover {
@@ -61,6 +63,8 @@
     height: 24px;
     transition: all 0.3s ease;
     cursor: pointer;
+    padding-right: 6px;
+    padding-top: 6px;
 }
 
 .people__arrow-left:hover {
@@ -95,7 +99,7 @@
     top: 0;
     left: 0;
     height: 100%;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     width: max-content; 
 }
 
